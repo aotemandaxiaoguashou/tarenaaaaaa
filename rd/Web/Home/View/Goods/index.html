@@ -1,0 +1,132 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>商品首页 - 酷结网</title>
+</block>
+
+<block name="style">
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index-5.0.css">
+	
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/newhotel_index.css">
+	<script type="text/javascript" src="__PUBLIC__/js/newhotel_index.js"></script>
+</block>
+
+<block name="nav">
+	<div id="nav">
+		<div class="w">
+			<ul class="fl">
+                <li>
+                    <a href="__APP__/index">首页</a>
+                </li>
+				<volist name="columns" id="col">
+					<li>
+                    <a href="__CONTROLLER__/{$col['english']}" target="_blank">{$col['columnname']}</a>
+					</li>
+				</volist>
+            </ul>
+			<div class="tel"><span class="iconfont"></span>400-616-6000</div>
+		</div>
+	</div>
+</block>
+
+<block name="eachContent">
+	<!--banner start -->
+<div class="warp">
+
+<!--礼炮 start -->
+<div class="case">
+    <div class="case-title">
+        <span class="line"></span><span class="case-title1">礼炮</span> <div class="case-title2"><a href="__CONTROLLER__/salute" target="_blank">更多</a> </div>
+    </div>
+    <div class="case-mian">
+        <ul>
+			<volist name="salute" id="sal">
+				<li class="case1">
+                <div class="caseimg">
+                    <a href="__CONTROLLER__/detail/id/{$sal.id}" target="_blank"> <span class="big-transparency"></span><img src="__PUBLIC__/Uploads/goods/{$sal.pic}" style="width:280px;height:199px;"></a>
+                    <div class="price">￥{$sal.price}</div>
+                </div>
+                <div class="case1-l" style="width:268px;height:80px;">
+					<p><span class="allshow_style">商品积分：{$sal.points}</span></p>
+					<p><a href="__CONTROLLER__/detail/id/{$sal.id}" target="_blank"><span class="allshow_title">{$sal.goodsname}</span></a></p>
+				</div>
+            </li>
+			</volist>
+        </ul>
+    </div>
+</div>
+<!--家庭装饰品-->
+	<div class="case">
+    <div class="case-title">
+        <span class="line"></span><span class="case-title1">家庭装饰品</span> <div class="case-title2"><a href="__CONTROLLER__/decoration" target="_blank">更多</a> </div>
+    </div>
+    <div class="case-mian">
+        <ul>
+			<volist name="decoration" id="deco">
+				<li class="case1">
+                <div class="caseimg">
+                    <a href="__CONTROLLER__/detail/id/{$deco.id}" target="_blank"> <span class="big-transparency"></span><img src="__PUBLIC__/Uploads/goods/{$deco.pic}" style="width:280px;height:199px;"></a>
+                    <div class="price">￥{$deco.price}</div>
+                </div>
+                <div class="case1-l" style="width:268px;height:80px;">
+                    <p><span class="allshow_style">商品积分：{$deco.points}</span></p>
+					<p><a href="__CONTROLLER__/detail/id/{$deco.id}" target="_blank"><span class="allshow_title">{$deco.goodsname}</span></a></p>
+                    
+                </div>
+				</li>
+			</volist>
+        </ul>
+    </div>
+</div>
+
+<!--鲜花-->
+<div class="case">
+    <div class="case-title">
+        <span class="line"></span><span class="case-title1">鲜花</span> <div class="case-title2"><a href="__CONTROLLER__/flower" target="_blank">更多</a> </div>
+    </div>
+    <div class="case-mian">
+        <ul>
+            <volist name="flower" id="flo">
+				<li class="case1">
+                <div class="caseimg">
+                    <a href="__CONTROLLER__/detail/id/{$flo.id}" target="_blank"> <span class="big-transparency"></span><img src="__PUBLIC__/Uploads/goods/{$flo.pic}" style="width:280px;height:199px;"></a>
+                    <div class="price">￥{$flo.price}</div>
+                </div>
+                <div class="case1-l" style="width:268px;height:80px;">
+                    <p><span class="allshow_style">商品积分：{$flo.points}</span></p>
+					<p><a href="__CONTROLLER__/detail/id/{$flo.id}" target="_blank"><span class="allshow_title">{$flo.goodsname}</span></a></p>
+                </div>
+				</li>
+			</volist>
+        </ul>
+    </div>
+</div>
+
+<!--化妆品-->
+<div class="case">
+    <div class="case-title">
+        <span class="line"></span><span class="case-title1">化妆品</span> <div class="case-title2"><a href="__CONTROLLER__/toiletry" target="_blank">更多</a> </div>
+    </div>
+    <div class="case-mian">
+        <ul>
+             <volist name="toiletry" id="toile">
+				<li class="case1">
+                <div class="caseimg">
+                    <a href="__CONTROLLER__/detail/id/{$toile.id}" target="_blank"> <span class="big-transparency"></span><img src="__PUBLIC__/Uploads/goods/{$toile.pic}" style="width:280px;height:199px;"></a>
+                    <div class="price">￥{$toile.price}</div>
+                </div>
+                <div class="case1-l" style="width:268px;height:80px;">
+					<p><span class="allshow_style">商品积分：{$toile.points}</span></p>
+					<p><a href="__CONTROLLER__/detail/id/{$toile.id}" target="_blank"><span class="allshow_title">{$toile.goodsname}</span></a></p>
+
+				</div>
+				</li>
+			</volist>
+        </ul>
+    </div>
+</div>
+</block>
+
+<block name="contact">
+
+</block>

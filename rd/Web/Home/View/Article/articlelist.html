@@ -1,0 +1,74 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>文章内容</title>
+</block>
+
+<block name="style">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="__PUBLIC__/css/layout.css" rel="stylesheet" />
+	<link href="__PUBLIC__/css/commons.css" rel="stylesheet" />
+	<link href="__PUBLIC__/css/user.css" rel="stylesheet" />
+	<script src="__PUBLIC__/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/js/jquery.superslide.2.1.1.js"></script>
+	<script src="__PUBLIC__/js/index.js"></script>
+</block>
+
+<block name="search">
+
+</block>
+
+<block name="eachContent">
+	<!--主体区域-->
+<div class="container">
+	<div id="main">
+		<!-- 小广告区域 -->
+		<div class="row area">
+			<!--左侧-->
+			<div class="span3 area_l">
+			<!--左侧文章分类-->
+				<div class="box">
+					<h3>文章分类</h3>
+					<ul class="list_help">
+					<foreach name="article" item="vo">
+					<li><h4><i class="icon-tag"></i><a href="__URL__/articlelist/id/{$vo.id}">{$vo.cat_name}</a></h4></li>
+					<foreach name="vo" item="v2">
+						<foreach name="v2" item="v3">
+						<li><h5><a href="__URL__/articleinfo/id/{$v3.article_id}">{$v3.title}</a></h5></li>
+						</foreach>
+					</foreach>
+					</foreach>				
+					</ul>
+				</div>
+			</div>
+			
+			<!--右侧文章详情-->
+			<div class="span9 area_r">
+			<div class="box2">
+				<h3>{$list.cat_name}</h3>
+				<ul class="article">
+					<empty name="art_title">
+					没有文章
+					<else />
+					<foreach  name="art_title" item="vo">
+					<li><span class="right">{$vo.addtime|date="Y-m-d H:i:s",###}</span><a href="__URL__/articlelist/id/{$list.cat_id}">[{$list.cat_name}]</a> <a href="__URL__/articleinfo/id/{$vo.article_id}">{$vo.title}</a></li>
+					</foreach>
+					</empty>
+				</ul>
+			</div>
+		</div>	
+		<include file="Common:right"/>
+		</div>
+	
+	</div>
+	<!--主体区域结束-->
+	
+
+	<!--页脚区域-->
+	
+</div>
+
+</block>
+
+

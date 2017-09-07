@@ -1,0 +1,293 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>化妆品-酷结网</title>
+</block>
+
+<block name="style">
+    <script type="text/javascript">
+	$(document).ready(function(){
+		var result = decodeURIComponent(document.URL);
+		var regu2=/filter=[\d+\:\-]*/;
+		var filter= result.match(regu2);  
+  
+	  if(filter!=null)
+	  {
+		  filter = filter.toString();
+		  var v = filter.replace('filter=','');
+		  v=v.split('-');
+		  $('#screening').find("a").removeClass("curr");
+		  /*var len=$('#screening').children('li').length;
+		  if(v!=''&& v.length!=len){
+			  history.go(-1);
+			  return false;
+		  }*/
+		  for(var i=0;i<v.length;i++)
+		  {
+			  $('#screening').find("a[id='"+v[i]+"']").attr("class", "curr");
+		  }
+	  }
+	  
+	  $('#screening a').click(function(){
+		  var me=$(this);
+		  var filter_str='';
+		  $('#screening').find('a').each(function(){
+			  if($(this).attr('class')=='curr'&& $(this).attr('id')!='')
+				  filter_str+=$(this).attr('id')+'-';
+		  });
+		  filter_str=filter_str.substr(0,filter_str.length-1);
+	  	  filter=filter_str.split('-');
+		  for(var i=0;i<filter.length;i++)
+		  {
+			var str1=filter[i].toString();
+			var str2=$(this).attr('id').toString();
+			str1=str1.split(':');
+			str2=str2.split(':');
+			if(str1[0]==str2[0])
+			{
+				filter_str=filter_str.replace(filter[i],$(this).attr('id'));
+			}
+		  }		  
+          var result = decodeURIComponent(document.URL);
+ 		  var regu=/filter=[\d+\:\-]*/;
+     	  var result = result.match(regu);
+		  if(result!=null)
+		  {
+			  if(filter_str==''){
+				  url=decodeURIComponent(document.URL).replace(result,'');
+        	  }else
+			  url=decodeURIComponent(document.URL).replace(result,'filter='+filter_str);
+
+			  location.href= url;
+		  }
+          else
+          {
+        	  if(document.URL.indexOf('?')<0)
+        		  url=document.URL+'?filter='+filter_str;
+        	  else
+        		  url=document.URL+'&filter='+filter_str;
+        	  if(filter_str==''){
+        		  url=document.URL;
+        	  }
+        	  location.href= url;
+ 		  }
+		  
+	  });
+	  
+
+  });
+  function addCarts(gid){
+      var product_id = $("#product_"+gid).val();
+      location.href='cart.php?act=save&goods_id='+gid+'&product_id='+product_id+'&number=1';
+  }
+  </script>
+ 
+	<style type="text/css">
+		.mini-pages .next_disabled,.prev_disabled {
+			background-color: #FFFFFF;
+			border: 1px solid #CCCCCC;
+			color: #797979;
+			display: inline;
+			float: left;
+			height: 20px;
+			line-height: 20px;
+			margin-right: 6px;
+			text-align: center;
+			width: 58px;
+		}
+	  .quick-entry{margin-top:7px;}
+	  .quick-entry .quick-box li {
+			background-position: 0 -161px;
+			display: inline;
+			float: left;
+			height: 88px;
+			margin: 0 5px 0 4px;
+			padding: 6px 8px 1px;
+			width: 64px;
+		}
+		.scree-box .scree-hd {
+			background-color: #f4f4f4;
+			color: #555555;
+			height:auto;
+			line-height: 24px;
+		}
+	</style>
+</block>
+
+<block name="nav">
+	<div id="nav">
+		<div class="w">
+			<ul class="fl">
+                <li>
+                    <a href="__APP__/index">首页</a>
+                </li>
+                <li>
+                    <a href="__CONTROLLER__/salute" target="_blank">礼炮</a>
+                </li>
+                <li>
+                    <a href="__CONTROLLER__/decoration" target="_blank">家庭装饰用品</a>
+                </li>
+                <li>
+                    <a href="__CONTROLLER__/flower" target="_blank">鲜花</a>
+                </li>
+                <li>
+                    <a href="__CONTROLLER__/toiletry" target="_blank">化妆品</a>
+                </li>
+            </ul>
+			<div class="tel"><span class="iconfont"></span>400-616-6000</div>
+		</div>
+	</div>
+</block>
+
+<block name="eachContent">
+<div class="w clearfix">
+	<div class="scree-box-desc">
+		花艺装饰对于现代婚礼是不可替代的。花艺装饰为婚礼现场带来最美好的感受，美好的日子需要美丽的花朵烘托气氛。花艺最终价格通常由花艺师设计费、花材费、
+		运输费、花器费等费用打包形成，所以费用高低与花量大小并不直接成正比。酷结建议您选择花艺商品时，尽量选择同一个服务商，这样对于婚礼花艺整体的搭配效
+		果更好，沟通也更轻松。
+	</div>
+	<div class="cate-list mb8">
+		<div class="cate-hd">
+			<div class="sorting">
+				<span>排序:</span>
+				<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;sale=desc">销量<em class="iconfont">󰀇</em></a>
+				<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;price=desc">价格<em class="iconfont">󰀇</em></a>
+				<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;comment=desc">评论数<em class="iconfont">󰀇</em></a>
+			</div>
+			<div class="mini-pages">
+				<div class="num-box">共465个商品</div>
+				<div class="p-num"><span>1</span>/20</div><a class="prev_disabled"><em class="iconfont">󰀂</em>上一页</a> <a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=2" class="p-btn">下一页<em class="iconfont">󰀨</em></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="w clearfix">
+	<div class="main-cont fl">
+		<div class="cate-list mb15">
+			<div class="cate-bd">
+				<ul id="cate-goods" class="goods-list mb10 clearfix">
+				<volist name="toiletry" id="toile">
+					<li>
+						<div class="img-box">
+							<a href="__CONTROLLER__/detail/id/{$toile.id}"><img src="__PUBLIC__/Uploads/goods/{$toile.pic}" alt="白绿色系花艺套餐" width="316" height="235"></a>
+						</div>
+						<div class="img-name">
+							<a href="__CONTROLLER__/detail/id/{$toile.id}">{$toile.goodsname}</a>
+						</div>
+						<div class="price-box">
+							<strong>酷结价：￥{$toile.price}&nbsp;&nbsp;<i>市场价：<del>￥{$toile.mar-price}</del></i></strong>
+						</div>
+						<div class="team"><a href="#">幸福季花艺</a></div>
+						
+						<script>
+							function guigeedit(obj,id){
+								$(obj).parent().children().removeClass();
+								$(obj).addClass('curr');
+								var str='';
+								$("#standard_"+id).find('a').each(function(){
+									if($(this).attr('class')=='curr')
+										 str += $(this).attr('attr')+':';
+								});
+								str = str.substring(0,str.length-1);
+								//alert(str);
+								$.getJSON('category.php',{'act':'conPage','goods_id':id,'props_str':str},function(json){
+									  if(json.data=='ok'){
+										  $("#product_"+id).val(json.value);
+									  }
+								  });
+							}
+						</script>
+					</li>
+				</volist>	
+                </ul>
+                <div class="pages mb15">
+					<div class="page-box">
+						<a class="prev_disabled"><i class="iconfont">󰀆</i></a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=1" class="current">1</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=2">2</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=3">3</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=4">4</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=5">5</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=6">6</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=7">7</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=8">8</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=9">9</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=20" class="listpagefooter">..20</a>
+						<a href="http://www.coolmarry.cn/category.php?g_id=0&amp;category_id=6&amp;page=2" class="next"><i class="iconfont">󰀅</i></a>
+					</div>
+				</div>
+            </div>
+		</div>
+	</div>
+	<div class="sidebar fr">
+		<div class="module2">
+			<div class="mod-hd">销售排行</div>
+				<div class="mod-bd">
+					<ul class="item-list">
+						<li>
+							<div class="imgbox">
+								<a href="http://www.coolmarry.cn/goods.php?goods_id=41419"><img alt="婚纱摄影青木社摄影创作中..." src="__PUBLIC__/images/thumb_201412311537086314.jpg" height="61" width="82"></a>
+								<em class="bg">1</em>
+							</div>
+							<div class="img-name">
+								<a href="http://www.coolmarry.cn/goods.php?goods_id=41419">婚纱摄影青木社摄影创作中...</a>
+							</div>
+							<p class="price">
+								<span class="goods-price">市场价：<del>￥14300</del><br>酷结价：￥10999</span>
+							</p>
+						</li>
+							  <li>
+						<div class="imgbox">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41417"><img alt="婚礼摄影师宣野" src="__PUBLIC__/images/thumb_201412311530099448.JPG" height="61" width="82"></a>
+						  <em class="bg">2</em>
+						</div>
+						<div class="img-name">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41417">婚礼摄影师宣野</a>
+						</div>
+						<p class="price">
+						  <span class="goods-price">市场价：<del>￥3500</del><br>酷结价：￥2000</span></p>
+					  </li>
+							  <li>
+						<div class="imgbox">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41415"><img alt="主持人刘驰" src="__PUBLIC__/images/thumb_201412311516496448.png" height="61" width="82"></a>
+						  <em class="bg">3</em>
+						</div>
+						<div class="img-name">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41415">主持人刘驰</a>
+						</div>
+						<p class="price">
+						  <span class="goods-price">市场价：<del>￥6000</del><br>酷结价：￥3600</span></p>
+					  </li>
+							  <li>
+						<div class="imgbox">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41413"><img alt="化妆造型师蓉蓉" src="__PUBLIC__/images/thumb_201412311510109920.jpg" height="61" width="82"></a>
+						  <em class="bg">4</em>
+						</div>
+						<div class="img-name">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41413">化妆造型师蓉蓉</a>
+						</div>
+						<p class="price">
+						  <span class="goods-price">市场价：<del>￥1500</del><br>酷结价：￥1000</span></p>
+					  </li>
+							  <li>
+						<div class="imgbox">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41411"><img alt="『金手指花艺』粉色花艺套..." src="__PUBLIC__/images/thumb_201412311505213087.jpg" height="61" width="82"></a>
+						  <em class="bg">5</em>
+						</div>
+						<div class="img-name">
+						  <a href="http://www.coolmarry.cn/goods.php?goods_id=41411">『金手指花艺』粉色花艺套...</a>
+						</div>
+						<p class="price">
+						  <span class="goods-price">市场价：<del>￥18000</del><br>酷结价：￥10260</span></p>
+					  </li>
+							</ul>
+				  </div>
+		</div>
+        <div class="ad">
+			<a href="http://www.coolmarry.cn/team.php?tid=94"><img src="__PUBLIC__/images/201412161336132701.jpg" alt="花样年华" height="113" width="210"></a>
+		</div>
+        <div class="ad">
+			<a href="http://www.coolmarry.cn/goods.php?goods_id=40689"><img src="__PUBLIC__/images/201412161336493452.jpg" alt="化妆造型师李冰" height="113" width="210"></a>
+		</div>
+    </div>
+</div>
+</block>

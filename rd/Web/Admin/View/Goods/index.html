@@ -1,0 +1,86 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> &nbsp; 关键字：<input type="text" name="keyword" value="{$Think.post.keyword}" /> [商品名、商品价格]
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="delete" href="__URL__/del/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/goodslist" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<!-- <li><a class="delete" href="__URL__/del/id/11/navTabId/goodslist" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li> -->
+			<li><a class="edit" href="__URL__/edit/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}"  target="navTab"><span>编辑商品信息</span></a></li>
+			<li><a class="add" href="__URL__/add" target="navTab" rel="goodslist" title="添加商品"><span>添加商品</span></a></li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+		</ul>
+	</div>
+	<table class="list" width="100%" layoutH="112">
+		<thead>
+		  <tr>
+			<th width="60" orderField="id" <if condition="$Think.request._order eq 'id'">class="{$Think.request._sort}"</if>>商品ID</th>
+			<th width="60" orderField="goodsname" <if condition="$Think.request._order eq 'goodsname'">class="{$Think.request._sort}"</if>>商品名</th>
+			<th width="60">商品价格</th>
+			<th width="60" orderField="total" <if condition="$Think.request._order eq 'total'">class="{$Think.request._sort}"</if>>商品库存</th>
+			<th width="60" orderField="sales" <if condition="$Think.request._order eq 'sales'">class="{$Think.request._sort}"</if>>销售量</th>
+			<th width="60" orderField="status" <if condition="$Think.request._order eq 'status'">class="{$Think.request._sort}"</if>>状态</th>
+			<th width="60" orderField="points" <if condition="$Think.request._order eq 'points'">class="{$Think.request._sort}"</if>>商品积分</th>
+			<th width="140" orderField="addtime" <if condition="$Think.request._order eq 'addtime'">class="{$Think.request._sort}"</if>>添加时间</th>
+			<th width="140" orderField="newtime" <if condition="$Think.request._order eq 'newtime'">class="{$Think.request._sort}"</if>>更新时间</th>
+			<th width="120">商品图片</th>	
+			<th width="100">商品详情</th>	
+			<th width="60">操作</th>	
+		  </tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo">
+				<tr target="item_id" rel="{$vo.id}">
+					<td>{$vo.id}</td>
+					<td>{$vo.goodsname}</td>
+					<td>{$vo.price}</td>
+					<td>{$vo.total}</td>
+					<td>{$vo.sales}</td>
+					<td><if condition="$vo.status eq 0">下架<elseif condition="$vo.status eq 1"/>在售<else />上架</if></td>
+					<td>{$vo.points}</td>
+					<td>{$vo.addtime|date="Y-m-d H:i",###}</td>
+					<td>{$vo.newtime|date="Y-m-d H:i",###}</td>
+					<td><img src="__PUBLIC__/Uploads/goods/{$vo.pic}" style="height:100px;"/></td>
+					<td><a href="__URL__/view/id/{$vo.id}" target="navTab" title="商品信息详情"><span style="color:orange;">商品详情</span></a></td>
+
+					<td><a href="__URL__/edit/id/{$vo.id}/navTabId/goodslist" class="btnEdit" target="navTab" title="编辑商品信息"><span>编辑商品信息</span></a>
+					<a href="__URL__/del/id/{$vo.id}" class="btnDel" target="ajaxTodo" title="确定要删除吗?"><span>删除商品</span></a></td>
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>

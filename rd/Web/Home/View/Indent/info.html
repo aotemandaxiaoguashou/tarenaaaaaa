@@ -1,0 +1,66 @@
+<extend name="Public:layout" />
+
+<block name="title">
+	<title>订单收货人信息 - CoolMarry-酷结网</title>
+</block>
+
+<block name="style">
+	  <link href="__PUBLIC__/css/shopping.css" rel="stylesheet" type="text/css">
+</block>
+
+<block name="eachContent">
+	<div class="w clearfix">
+  <div class="clearfix page_area">
+  <form method="post" action="__CONTROLLER__/addinfo" onsubmit="return saveinfo();">
+    <div class="user_default">
+    	<div class="title_s mb0"><span class="title01_s">填写订单信息</span></div>
+       	<div class="p0 flow">
+        	<div class="order_title">配送地址</div>
+            <div class="address_info">
+				<table id="showinfo_id" width="600" border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+						  <td width="80" align="right">新人姓名：</td>
+						  <td width="320" align="left"><input name="tname" id="tname" size="50" maxlength="20" type="text"></td>
+						  <td>&nbsp; </td>
+						</tr>
+						
+						<tr>
+						  <td width="80" align="right">详细地址：</td>
+							<td width="320" align="left"><input name="address" id="address" maxlength="50" size="50" type="text"></td>
+							<td align="left">（填写详细地址有助于快速配送） </td>
+						</tr>
+						<tr>
+						  <td width="80" align="right">邮政编码：</td>
+							<td width="320" align="left"><input name="zipcode" id="zipcode" size="50" type="text"></td>
+							<td>&nbsp; </td>
+						</tr>
+						<tr>
+						  <td width="80" align="right">手机号码：</td>
+						  <td width="320" align="left"><input name="phone" id="phone" size="20" type="text"></td>
+						  <td><input class="bot_red_4" value="" name="address_id" type="hidden"></td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+            
+              
+            </div>
+            
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td align="center">
+						  <input class="next01_s" value="保存" type="submit" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+ 
+</block>

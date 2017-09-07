@@ -1,0 +1,115 @@
+	/*用于页面登陆 注册 找回密码*/
+/*会员登录开始*/
+.frame #ttlm_login {
+    background-image: url("../images/ttlm_login.gif");
+}
+	.ttlpic {
+    background-position: left top;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #e0e0e0;
+    height: 35px;
+    margin: 20px;
+    text-indent: -99999px;
+}
+/*登陆*/
+.frame .tab_form input.btn_login {
+    background: url("../images/btn_login.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    cursor: pointer;
+    float: left;
+    height: 36px;
+    width: 100px;
+}
+/*忘记密码*/
+.frame .findPsw {
+    background: url("../images/suo.gif") no-repeat scroll left center rgba(0, 0, 0, 0);
+    display: block;
+    float: left;
+    margin-left: 10px;
+    padding: 10px 10px 12px 20px;
+}
+/*点击注册*/
+.frame .goRegist {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    padding: 10px 0 12px;
+}
+/*会员登录结束*/
+/*会员注册开始*/
+.frame #ttlm_regs {
+    background-image: url("../images/ttlm_regist.gif");
+}
+.frame .ttlpic {
+    background-position: left top;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #e0e0e0;
+    height: 35px;
+    margin: 20px;
+    text-indent: -99999px;
+}
+
+.frame .tab_form {
+    margin: 0 auto;
+}
+
+.frame table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.frame .tab_form input.btn_regs {
+    width: 100px;
+    height: 36px;
+    background: url('../images/btn_regs.gif') repeat scroll 0% 0% transparent;
+    border: medium none;
+    cursor: pointer;
+}
+.frame .registerinfo {
+    width: 600px;
+    height: 100px;
+    border: 1px solid #DDD;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 5px 0px 0px 5px;
+	}
+
+/*会员注册结束*/
+/*找回密码开始*/
+.frame #ttlm_serPsw {
+    background-image: url("../images/ttlm_serPsw.gif");
+}
+.frame .ttlpic {
+    background-position: left top;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #e0e0e0;
+    height: 35px;
+    margin: 20px;
+    text-indent: -99999px;
+}
+.frame h2 {
+    border-bottom: 2px solid #f76f10;
+    font-weight: normal;
+    height: 40px;
+    line-height: 43px;
+    position: relative;
+    text-align: left;
+}
+
+.frame .tab_form input.btn_findpsw {
+    background: url("../images/btn_findpsw.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    cursor: pointer;
+    height: 36px;
+    width: 100px;
+}
+.frame element.style {
+    color: rgb(153, 153, 153);
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 0 0 3px;
+    padding: 0 0 0 25px;
+}
+
+
+/*找回密码结束*/

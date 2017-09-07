@@ -1,0 +1,33 @@
+<div class="PageContent">
+	<div class="accountInfo">
+		<p>编辑广告</p>
+	</div>
+</div>
+
+<div id="pageContent"  layouth="100" style="overflow:auto;">
+	<!--callbackType/closeCurrent不能随便添加-->
+	<form action="__URL__/update/navTabId/adlist/callbackType/closeCurrent" method="post" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone);">
+	<table class="form_table">
+		<tbody>
+		<volist name="ads" id="ad">
+		<input type="hidden" name="id" value="{$ad.id}">
+		<tr>
+			<th>广告名称：</th>
+			<td><input type="text" value="{$ad['adname']}" name="adname" class="span2 required"></td>
+		</tr>
+		<tr>
+			<th>广告图片：</th>
+			<td><input type="file" name="pic"></td>
+		</tr>
+		<tr><th></th><td class="gray"></td></tr>
+		</volist>
+		
+		<tr><th></th><td><input type="submit" value="编辑广告"/></td>
+		</tr>
+		
+	</tbody>
+	</table>
+		
+		
+	</form>
+</div>			

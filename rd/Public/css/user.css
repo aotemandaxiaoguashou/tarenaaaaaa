@@ -1,0 +1,179 @@
+#main .path{
+		border-top: 2px solid #FF4D80;
+	}
+#main h3{
+	font-size:16px;
+	margin:0px;
+	line-height: 26px;
+	padding:3px;
+}
+/*左边菜单*/
+#main .area .leftCloumns{
+	height:auto;
+	padding:0px;
+}
+#main .area .leftCloumns .l_menu h3{
+	cursor:pointer;
+	background:url(../images/img_ttlm_bg.gif);
+	position: relative;
+	padding-left:30px;
+	border-bottom:#999 solid 1px;
+}
+#main h3 i {
+   background: url("../images/left_icons.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 14px;
+    left:10px;
+    position: absolute;
+    top:9px;
+    width: 14px;
+}
+#main h3 span.close {
+    background-position: left top;
+}
+#main h3 span.open {
+    background-position: -14px top;
+}
+#main .area .leftCloumns .l_menu li{
+	padding:5px 30px;
+	border-bottom:#CCC dashed 1px;
+}
+#main .area .Cloumnsright{ width:238px}
+#main .area .leftCloumns .l_menu li:hover{background-color: #FF4D80;}
+#main .area .leftCloumns .l_menu li:hover a{color:#000000;}
+
+/*右栏*/
+#main .area .rightCloumns{
+	height:auto;
+}
+
+/*用户中心*/
+#main .rightCloumns .topInfo {
+    background: url("../images/img_user_topT.jpg") no-repeat scroll left top rgba(0, 0, 0, 0);
+    font-size: 14px;
+    padding: 20px 40px 16px 250px;
+	border:solid 1px #CCC;
+}
+#main .rightCloumns .topInfo .normal span {
+    color: ##FF1a10;
+    margin-right: 25px;
+}
+#main .rightCloumns .topInfo span.f20 {
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 0 6px;
+}
+#main .rightCloumns .topInfo p {
+    margin-bottom: 18px;
+}
+#main .rightCloumns .topInfo .lastInfo {
+    color: #FF4D80;
+    font-size: 12px;
+}
+#main .rightCloumns .topInfo .lastInfo span {
+    color: #999;
+    margin-right: 25px;
+}
+#main .rightCloumns .bottomInfo {
+    padding: 5px;
+}
+#main .rightCloumns .bottomInfo li{float: left;margin:0px 8px;}
+#main .rightCloumns .bottomInfo a{color:#006666;}
+
+/*购物车*/
+#main .userShop{
+
+}
+#main .userShop .title{
+	border-bottom: 3px solid #ddd;
+}
+#main .userShop .title>h3{
+	display: inline;
+	font-weight:bold;
+	border-bottom: 3px solid #ffa200;
+}
+#main .userShop .goodsCards{
+	margin:10px 0px;
+	font-size:12px;	
+}
+#main .userShop .goodsCards table td,#main .userShop .goodsCards table th{
+	text-align: center;
+	vertical-align: middle;
+}
+#main .userShop .goodsCards table td .summary{
+	text-align: left;
+}
+#main .userShop .goodsCards .btn{padding:5px 2px;font-weight:bold;}
+
+.red{color:red;}
+.details{color:#FF9000;}
+
+/*购物车无商品时*/
+#main .goodsCards .tipCar {
+    background: url("../images/img_tip_01.gif") no-repeat scroll 200px center rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #e4e4e4;
+    height: 120px;
+    padding: 80px 0 0 310px;
+}
+#main .goodsCards .tipCar p {
+    font-size: 14px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+#main .goodsCards .tipCar a {
+    color: #f88e0f;
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: 15px;
+    text-decoration: underline;
+}
+#main .goodsCards .tipCar a:hover {
+    text-decoration: underline;
+}
+
+/*我的订单*/
+#main .userShop .goodsCards .list_goods li{
+	border-bottom:1px dashed #ddd;
+	margin:2px 0px;
+	padding:8px 0px;
+}
+#main .userShop .goodsCards .list_goods .quti{
+	float: right;
+    padding-top: 0px;
+    text-align: center;
+    width: 60px;
+}
+#main .userShop .goodsCards .orderInfo{
+	background-color: #fffae9;
+    border-bottom: 1px solid #ffa200;
+    border-top: 2px solid #ffa200;
+    padding: 5px 15px;
+    text-align: left;
+}
+
+/*我的订单--确认订单*/
+#main .userShop .goodsCards .ttls_tab{
+	text-align:left;
+	font-weight:bold;
+	background-color: #eee;
+}
+#main .userShop .goodsCards .left{
+	text-align:left;
+}
+#main .userShop .goodsCards table .add{
+	text-align:left;
+	font-weight:bold;
+}
+#main .userShop .goodsCards table .right{
+	text-align:right;
+}
+
+/*我的订单--订单详情*/
+#main .orderInfo th{
+	color:#868695;
+	text-align: center;
+}
+#main .orderInfo .head{
+	font-weight:bold;
+	background-color: #eee;
+}

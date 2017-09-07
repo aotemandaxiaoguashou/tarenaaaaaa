@@ -1,0 +1,971 @@
+/*easywed - v2.0.0 - 2014-12-03  16:12:36*/
+@charset "UTF-8";
+.warp {
+	width: 1200px;
+	margin: 0 auto
+}
+.hide {
+	display: none
+}
+.w {
+	width: 1200px
+}
+.bar {
+	background:#231E2C;
+	margin-top: 12px;
+	border-bottom: none;
+}
+.bar-nav{
+	height:50px;
+	background:#231E2C;
+
+}
+
+.bar-user {
+	border-top: none;
+	float:left;
+}
+.area-warp {
+	position: relative;
+}
+.area-label {
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+}
+.bar-nav-down {
+	top: 46px;
+	left: 1px
+}
+.bar-nav-ul .bar-nav-text.on, .bar-nav-ul>li.down:hover .bar-nav-text {
+	background-color: #97bf55;
+	color: #fff;
+	height: 46px
+}
+.area-text {
+	display: inline-block;
+	width: 55px;
+	padding: 0 5px;
+	cursor: pointer;
+	height: 20px;
+	line-height: 19px;
+	border: 1px solid #7cbe65;
+	position: relative;
+	background: url("../images/area.png") 50px 8px no-repeat
+}
+.area-text:hover {
+	border-bottom-color: #fff;
+	z-index: 99
+}
+.area-list {
+	display: none;
+	width: 350px;
+	overflow: hidden;
+	z-index: 9999;
+	background: #fff;
+	padding: 5px 25px 25px;
+	border: 1px solid #7cbe65;
+	margin-top: -1px
+}
+.area-filter, .area-list .area-popular {
+	width: 100%;
+	height: 45px;
+	line-height: 45px
+}
+.area-list dl dd, .area-list dl dt, .area-list ul li {
+	float: left
+}
+.area-popular {
+	border-bottom: 1px dashed #ccc
+}
+.area-popular dt {
+	color: #000;
+	font-size: 14px;
+	font-weight: 700;
+	margin-right: 5px
+}
+.area-popular dd {
+	padding: 0 15px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 8px;
+	font-size: 14px;
+	cursor: pointer
+}
+.area-popular dd:hover {
+	background: #73ba5a;
+	color: #fff
+}
+.area-filter {
+	width: 292px;
+	padding-left: 58px;
+	border-bottom: 2px solid #999
+}
+.area-filter li {
+	padding: 0 5px;
+	text-align: center;
+	cursor: pointer
+}
+.area-filter li:hover, li.isHover {
+	border-bottom: 2px solid red
+}
+.area-cell {
+	width: 100%;
+	overflow: hidden
+}
+.area-cell div {
+	float: left;
+	width: 60px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px
+}
+.area-cell ul {
+	float: left;
+	width: 285px;
+	overflow: hidden
+}
+.area-cell ul li {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 8px;
+	padding: 0 5px;
+	cursor: pointer;
+	font-size: 14px
+}
+.area-cell ul li:hover {
+	background: #73ba5a;
+	color: #fff
+}
+.area-cell ul li.enopened, .area-cell ul li.opening {
+	cursor: not-allowed
+}
+.area-cell ul li.opening:hover {
+	background: #fff;
+	color: #333
+}
+.area-cell ul li.enopened:hover {
+	background: #ccc;
+	color: #fff
+}
+.loading {
+	background-color: #ccc;
+	border-color: #aaa
+}
+.top-box {
+	padding-top: 18px;
+	overflow: hidden
+}
+.banner_all {
+	float: left;
+	margin-right: 20px;
+	overflow: hidden;
+	width: 831px
+}
+.banner_all img {
+	float: left
+}
+.step {
+	overflow: hidden;
+	font-size: 16px;
+	line-height: 30px;
+	color: #6e6e6e;
+	clear: both
+}
+.step1, .step2, .step3 {
+	float: left;
+	width: 275px;
+	border: 1px solid #dadada;
+	background-color: #fafafa;
+	text-align: center;
+	padding-top: 10px
+}
+.step1, .step2 {
+	border-right: none
+}
+.contact {
+	width: 316px;
+	border: 6px solid #96c04e;
+	float: left
+}
+.counselor {
+	margin: 12px 0 0 20px
+}
+.counselor-name {
+	font-size: 14px;
+	line-height: 48px;
+	color: #333
+}
+.counselor img {
+	width: 48px;
+	height: 48px;
+	margin-right: 10px;
+	border-radius: 50px
+}
+.counselor-intro {
+	font-size: 12px;
+	line-height: 20px;
+	color: #888;
+	margin-top: 10px
+}
+.counselor-intro1 {
+	width: 38px;
+	display: inline-block;
+	vertical-align: top
+}
+.counselor-intro2 {
+	width: 238px;
+	display: inline-block
+}
+.consult {
+	margin-left: 10px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #4d4d4d
+}
+.consult h3 {
+	font-size: 14px;
+	color: #333;
+	margin-top: 20px
+}
+.h3 {
+	font-size: 14px;
+	color: #333;
+	margin-top: 20px;
+	display: inline-block
+}
+.qq {
+	margin-top: 18px;
+	display: inline-block;
+	margin-left: 10px
+}
+.your-tel {
+	line-height: 18px;
+	height: 18px;
+	width: 152px;
+	border: 1px solid #d3d3d3;
+	margin: 8px 5px 8px 22px;
+	text-indent: 10px;
+	padding: 7px 0;
+	float: left
+}
+.consult-btn {
+	font-size: 14px;
+	line-height: 34px;
+	height: 34px;
+	color: #fff;
+	background-color: #ff7e00;
+	border: 1px solid #ff7e00;
+	padding: 0 8px;
+	border-radius: 3px;
+	cursor: pointer;
+	float: left;
+	margin-top: 8px
+}
+.consult-btn:hover {
+	background-color: #e86200
+}
+*+html .your-tel {
+	float: left
+}
+*+html .consult-btn {
+	float: left;
+	margin-top: 8px;
+	line-height: 20px
+}
+*+html .callback {
+	clear: both
+}
+.consult form {
+	margin: 10px
+}
+*+html .consult form {
+	margin-left: 0
+}
+.callback {
+	margin: 20px 0 0 20px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #a9a9a9;
+	clear: both;
+	display: block
+}
+.wechat-QRcode {
+	margin: 10px 0 10px 20px;
+	width: 152px;
+	height: 152px
+}
+
+
+.heart-gey {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	margin-right: 10px;
+	background: url("../images/heart-gey.jpg") center center no-repeat
+}
+/*婚礼案例*/
+.case {
+	clear: both
+}
+.case-title {
+	overflow: hidden
+}
+.case-title1 {
+	font-size: 20px;
+	line-height: 22px;
+	color: #666;
+	float: left
+}
+.case-title2 a {
+	font-size: 16px;
+	line-height: 32px;
+	color: #ff7e00;
+	text-align: right;
+	float: right
+}
+.case1 {
+	float: left;
+	width: 278px;
+	margin-right: 19px;
+	background-color: #f7f7f7;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #96c04e;
+	border-right: 1px solid #dadada;
+	border-left: 1px solid #dadada
+}
+.case2 {
+	float: left;
+	width: 278px;
+	background-color: #f7f7f7;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #96c04e;
+	border-right: 1px solid #dadada;
+	border-left: 1px solid #dadada
+}
+.caseimg {
+	position: relative
+}
+.caseimg img {
+	height: 199px
+}
+.big-transparency {
+	width: 280px;
+	height: 199px;
+	position: absolute;
+	top: 0;
+	left: 0
+}
+.big-transparency:hover {
+	background-image: url("../images/big.png")
+}
+.price {
+	width: 100%;
+	line-height: 28px;
+	color: red;
+	background-color: rgba(0,0,0,.6);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	text-indent: 10px
+}
+.case1-l {
+	font-size: 14px;
+	line-height: 22px;
+	color: #333;
+	float: left;
+	margin-left: 10px;
+	width: 170px
+}
+.case1-title {
+	line-height: 60px
+}
+.case1-r {
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px
+}
+.case1-r img {
+	border-radius: 50px;
+	width: 74px
+}
+.case1-r p {
+	margin-left: 10px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #838383
+}
+.case1-r p.case1-title2 {
+	font-size: 16px;
+	line-height: 30px;
+	color: #333
+}
+.case1-r p.case1-title2:hover {
+	color: #ff7e00
+}
+/*婚纱摄影*/
+.wedPhoto{
+	
+	clear: both;
+}
+
+.wedPhoto-title {
+	overflow: hidden
+}
+.wedPhoto-title1 {
+	font-size: 20px;
+	line-height: 22px;
+	color: #666;
+	float: left
+}
+.wedPhoto-title2 a {
+	font-size: 16px;
+	line-height: 32px;
+	color: #ff7e00;
+	text-align: right;
+	float: right
+}
+
+.wedPhoto1 {
+	float: left;
+	width: 316px;
+	margin-right:19px;
+	border: 1px solid #dadada;
+}
+
+.wedPhoto2 {
+	float: left;
+	width: 316px;
+	border: 1px solid #dadada;
+}
+
+.wedPhoto1 img{
+	height:316px;
+}
+.wedding_beijing{
+	height:52px;
+	background:url("../images/20140610_new_tallest_018.jpg.png");
+}
+.wedding_beijing_01{
+	width:192px;
+	float:left;
+	color:#eee;
+}
+.wedding_beijing_01 font{
+	display:block;
+	float:left;
+	width:12px;
+	height:14px;
+	margin-left:22px;
+	padding-top:12px;
+}
+.wedding_beijing_02{
+	display:block;
+	float:left;
+	width:71px;
+	height:26px;
+	font-size:20px;
+	padding-top:4px;
+}
+.wedding_beijing_01 del{
+	display:block;
+	/*float:left;*/
+	width:192px;
+	height:14px;
+	line-height:14px;
+	margin-left:18px;
+}
+.wedding_beijing_03{
+	float:left;
+	width:122px;
+	font-size:16px;
+	font-weight:bolder;
+	text-align:center;
+	color:#000000;
+}
+.wedding_beijing_03 a:hover{
+	color:#000;
+}
+
+.wedding_bewrite{
+	height:114px;
+	clear:left;
+}
+.wedding_bewrite_01{
+	height:53px;
+	font-size:15px;
+	line-height:53px;
+	padding-left:15px;
+}
+.wedding_bewrite_01 a:hover{
+	color:#666666;
+}
+.wedding_bewrite_02{
+	height:61px;
+	padding-left:15px;
+}
+.wedding_bewrite_02 a:hover{
+	color:#666666;
+}
+.wedding_bewrite_02 font{
+	color:red;
+}
+
+/*婚礼场地*/
+.wedSide{
+	padding-top: 34px;
+	clear: both;
+}
+
+.wedSide-title {
+	overflow: hidden
+}
+.wedSide-title1 {
+	font-size: 20px;
+	line-height: 22px;
+	color: #666;
+	float: left
+}
+.wedSide-title2 a {
+	font-size: 16px;
+	line-height: 32px;
+	color: #ff7e00;
+	text-align: right;
+	float: right
+}
+
+/*婚礼团队*/
+.team {
+	padding-top: 50px;
+	clear: both
+}
+.team span {
+	font-size: 26px;
+	line-height: 43px;
+	color: #666;
+	padding: 0 10px;
+	display: inline-block
+}
+.team-title {
+	float: left;
+	margin-right: 45px
+}
+.team-nav {
+	float: left;
+	width: 600px;
+	height: 45px;
+	overflow: hidden
+}
+.team-nav ul li {
+	float: left
+}
+#toastmaster {
+	position: relative
+}
+#mackup, #photo, #video {
+	display: none;
+	position: relative
+}
+*+html .team-nav .on {
+	width: 100px;
+	height: 45px;
+	padding: 0;
+	border: 1px solid #fff
+}
+*+html .team-nav a {
+	padding: 0;
+	width: 100px;
+	height: 45px
+}
+*+html .content {
+	padding-top: 30px
+}
+.team-nav a {
+	display: inline-block;
+	line-height: 42px;
+	padding: 0 24px;
+	font-size: 16px;
+	color: #4d4d4d;
+	text-align: center
+}
+.team-nav .on {
+	color: #fff;
+	background-color: #96c04e;
+	background-image: url("../images/team.png");
+	background-position: bottom center;
+	background-repeat: no-repeat
+}
+.publicity {
+	float: right;
+	font-size: 16px;
+	line-height: 42px;
+	color: #ff7e00;
+	position: absolute;
+	top: -98px;
+	right: 0
+}
+.content {
+	clear: both;
+	padding-top: 50px
+}
+.team1, .team2 {
+	float: left;
+	width: 278px;
+	position: relative;
+	background-color: #f7f7f7;
+	border: 1px solid #dadada;
+	border-bottom: 2px solid #96c04e
+}
+.team1 {
+	margin-right: 20px
+}
+.team1-avatar {
+	position: absolute;
+	top: -40px;
+	left: 22px;
+	width: 74px;
+	height: 74px;
+	border-radius: 50px
+}
+.team1-avatar img {
+	width: 74px;
+	height: 74px;
+	border-radius: 50px
+}
+.team1-main {
+	overflow: hidden
+}
+.team1-name {
+	float: left;
+	margin-top: 34px;
+	margin-left: 20px;
+	width: 80px;
+	height: 62px
+}
+.team1-name h5 {
+	font-size: 16px;
+	line-height: 20px;
+	color: #4d4d4d;
+	text-align: center;
+	padding-top: 10px
+}
+.team1-name h5:hover {
+	color: #ff7e00
+}
+.team1-name p {
+	font-size: 12px;
+	line-height: 20px;
+	color: #838383;
+	text-align: center
+}
+.team-intro {
+	float: right;
+	width: 150px;
+	padding-right: 10px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+	margin-top: 10px;
+	height: 76px;
+	overflow: hidden
+}
+.team-price {
+	font-size: 16px;
+	line-height: 20px;
+	color: red;
+	clear: both;
+	text-align: right;
+	padding-right: 18px;
+	padding-top: 20px
+}
+.team-price .dollar {
+	font-size: 12px;
+	line-height: 20px;
+	color: red;
+	padding: 0
+}
+.team-price .team-del {
+	font-size: 12px;
+	line-height: 20px;
+	color: #888;
+	text-decoration: line-through
+}
+.team-img {
+	padding: 12px 14px;
+	overflow: hidden
+}
+.team-img a {
+	position: relative
+}
+.small-transparency {
+	width: 120px;
+	height: 76px;
+	position: absolute;
+	top: 0;
+	left: 0
+}
+.small-transparency:hover {
+	background-image: url("../images/small.png")
+}
+.teamimg-l {
+	float: left;
+	margin-right: 8px;
+	width: 120px
+}
+.teamimg-r {
+	float: left;
+	width: 120px
+}
+.teamimg-l img, .teamimg-r img {
+	margin-bottom: 8px;
+	height: 76px
+}
+.appraise {
+	padding-top: 50px;
+	clear: both
+}
+.appraise-title {
+	font-size: 16px;
+	line-height: 43px;
+	color: #666
+}
+.appraise-title span {
+	font-size: 26px;
+	line-height: 43px;
+	color: #666;
+	padding: 0 10px;
+	display: inline-block
+}
+.appraise-mian {
+	margin-top: 20px;
+	overflow: hidden
+}
+.appraise-l {
+	float: left;
+	margin-right: 18px;
+	width: 580px
+}
+.appraise-l ul li {
+	background-color: #f6f6f6;
+	overflow: hidden;
+	margin-bottom: 20px;
+	height: 190px
+}
+.appraise-r {
+	float: left;
+	width: 580px
+}
+.appraise-r ul li {
+	background-color: #f6f6f6;
+	overflow: hidden;
+	margin-bottom: 20px;
+	height: 190px
+}
+.appraise-line {
+	width: 2px;
+	height: 93px;
+	background-color: #96c04e;
+	float: left
+}
+.appraise-avatar {
+	margin: 18px 18px 0;
+	float: left
+}
+.appraise-avatar img {
+	border-radius: 3px;
+	width: 52px;
+	height: 52px
+}
+.appraise-intro {
+	float: left;
+	width: 470px;
+	margin-top: 18px
+}
+.appraise-name {
+	font-size: 16px;
+	line-height: 26px;
+	color: #444
+}
+.appraise-intro img {
+	margin-top: 7px;
+	margin-left: 10px
+}
+.appraise-intro1 {
+	font-size: 12px;
+	line-height: 20px;
+	color: #666;
+	margin-top: 10px;
+	height: 64px;
+	overflow: hidden
+}
+.appraise-btn {
+	font-size: 12px;
+	line-height: 28px;
+	color: #686868;
+	border: 1px solid #686868;
+	float: right;
+	display: inline-block;
+	padding: 0 20px;
+	margin: 20px 10px 20px 0;
+	border-radius: 3px
+}
+.appraise-btn:hover {
+	border: 1px solid #ff7e00
+}
+
+.icon-05 {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background: url("../images/icon-05.png") left top no-repeat
+}
+.dialog-title {
+	height: 36px;
+	padding: 8px 0;
+	vertical-align: middle;
+	line-height: 36px;
+	text-align: center;
+	font-size: 18px
+}
+.dialog-title .icon-01, .dialog-title .icon-05 {
+	vertical-align: -10px
+}
+.dialog-con {
+	padding: 20px 30px;
+	font-size: 12px
+}
+.dialog-phone {
+	padding-top: 15px
+}
+.dialog-phone input.text {
+	padding: 5px 4px;
+	width: 290px
+}
+.dialog-btn {
+	height: 34px;
+	padding-top: 15px;
+	padding-bottom: 15px
+}
+.dialog-btn a {
+	display: block;
+	width: 253px;
+	height: 32px;
+	line-height: 32px;
+	margin: 0 auto;
+	background-color: #ff9000;
+	border: 1px solid #ff7200;
+	padding: 0;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	text-decoration: none
+}
+.dialog-btn a:hover {
+	background-color: #ff8200
+}
+.dialog-btn a.loading {
+	background-color: #ccc;
+	border-color: #aaa
+}
+.dialog-sx {
+	color: #666
+}
+.dialog-sx dd {
+	padding-top: 5px
+}
+.dialog-sx dd span {
+	font-weight: bolder
+}
+.dialog-fq {
+	padding: 25px 45px 0
+}
+.dialog-fq dt {
+	font-size: 18px;
+	padding-bottom: 10px;
+	text-align: center
+}
+.dialog-fq dd {
+	color: #666;
+	height: 20px;
+	line-height: 20px;
+	padding-top: 10px
+}
+.dialog-fq dd .icon-h01, .dialog-fq dd .icon-h02, .dialog-fq dd .icon-h03 {
+	float: left;
+	margin-right: 5px
+}
+.dialog-fq dd span {
+	font-weight: bolder
+}
+.dialog-fq-btn {
+	padding: 40px 45px;
+	height: 34px
+}
+.dialog-fq-btn a {
+	display: block;
+	width: 120px;
+	height: 32px;
+	font-size: 14px;
+	line-height: 32px;
+	text-align: center
+}
+.dialog-fq-btn a.btn01 {
+	background-color: #ff9000;
+	border: 1px solid #ff7200;
+	color: #fff;
+	float: left
+}
+.dialog-fq-btn a.btn01:hover {
+	background-color: #ff8200
+}
+.dialog-fq-btn a.btn02 {
+	background-color: #f8f8f8;
+	border: 1px solid #d5d5d5;
+	color: #666;
+	float: right
+}
+.dialog-fq-btn a.btn02:hover {
+	background-color: #f2f2f2
+}
+.dialog-success-msg {
+	margin: 10px 20px 0;
+	padding-bottom: 20px;
+	border-bottom: dotted 1px #d8d8d8
+}
+.dialog-tx {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: #666
+}
+.dialog-tx p {
+	padding-left: 20px
+}
+.dialog-tx ul {
+	padding-top: 10px;
+	padding-left: 10px
+}
+.dialog-tx li {
+	width: 100px;
+	height: 100px;
+	padding-left: 10px;
+	float: left
+}
+.dialog-tx li a {
+	display: block;
+	width: 100px;
+	height: 64px;
+	overflow: hidden
+}
+.dialog-tx li a img {
+	width: 100px;
+	height: 64px
+}
+.dialog-tx li span {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-weight: bolder;
+	padding-top: 8px
+}

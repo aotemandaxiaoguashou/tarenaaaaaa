@@ -1,0 +1,36 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/adminlist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>用户名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="admin_name"/></dd>
+			</dl>
+			
+			<dl>
+				<dt>密码：</dt>
+				<dd><input type="password" class="required"  style="width:100%" name="pwd"/></dd>
+			</dl>
+			
+			<dl>
+				<dt>是否启用：</dt>
+				<dd><input type="radio" name="status" value="0" checked />启用
+					<input type="radio" name="status" value="1"/>禁用</dd>
+			</dl>
+			<dl>
+				<dt>邮箱：</dt>
+				<dd><input type="text" class="required email" style="width:100%" name="email"/></dd>
+			</dl>
+			
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

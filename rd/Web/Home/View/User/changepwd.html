@@ -1,0 +1,140 @@
+<extend name="Public:layout" />
+
+<block name="title">
+	<title>会员中心-修改密码-酷结网</title>
+</block>
+
+<block name="style">
+	<script type="text/javascript" src="__PUBLIC__/js/WdatePicker.js"></script>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/WdatePicker.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/member.css">
+</block>
+
+<block name="eachContent">
+	<div class="w page-here mb10">
+  <span>当前位置：</span><a href="__APP__/Index/index">首页</a>&gt; <em>修改密码</em>
+</div>
+<div class="w clearfix mb15">
+    <div class="sidebar fl">
+    <div class="user-moudle clearfix">
+      <div class="user-hd tc">个人中心首页</div>
+      <div class="user-bd">
+        <dl class="user-menu pb10">
+          <dt><i></i>交易管理</dt>
+          <dd><a href="__CONTROLLER__/ordercenter">订单中心</a></dd>
+        </dl>
+        <dl class="user-menu pb10">
+          <dt><i></i>个人中心</dt>
+          <dd><a href="__CONTROLLER__/userIM">个人信息管理</a></dd>
+          <dd><a href="__CONTROLLER__/changepwd">修改密码</a></dd>
+          <dd><a href="__CONTROLLER__/address">收货地址</a></dd>
+        </dl>
+	</div>
+    </div>
+  </div>  <div class="maincont fr">
+    <div class="user-title">
+      修改密码
+    </div>
+    <div class="clearfix user-content">
+      <div class="clearfix p10 mb10">
+        <p>提示：密码修改成功后，请退出重新登录</p>
+        <form method="post" action="__CONTROLLER__/dochangepwd">
+        <table class="user-tab4" width="100%" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr><td class="passwordl">当前密码：</td><td><input name="oldpassword" id="oldpassword" onblur="checkOldPassword();" class="tab4-txt" type="password"/><span id="error_msg1"></span></td></tr>
+            <tr><td class="passwordl">新密码：</td><td><input name="newpassword" id="newpassword" onblur="checkPwd();" class="tab4-txt" type="password"/><span id="error_msg2"></span></td></tr>
+            <tr><td class="passwordl">确认密码：</td><td><input name="newpassword2" id="newpassword2" onblur="checkPwd2();" class="tab4-txt" type="password"><span id="error_msg3"></span></td></tr>
+            <tr><td class="passwordl">&nbsp;</td><td><input value="提 交" class="tab4-btn" type="submit"></td></tr>
+          </tbody>
+        </table>
+         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--检查旧的密码是否正确-->
+<script>
+	function checkOldPassword(){
+		var oldpwd=$('#oldpassword');
+		var oldpwds=oldpwd.val();
+		var data={"userpwd":oldpwds};
+		$.post('__CONTROLLER__/checkpwd',data,function(d){
+			if(d=='success'){
+				return true;
+			}else{
+				alert('原密码输入错误');
+			}
+		});
+	}
+</script>
+<!--旧密码检查 结束-->
+
+<script>
+var validatePrompt = {
+	newpassword:{
+    succeed:"正确",
+    isNull:"请输入6-16位字符，可由英文、数字及“_”、“-”组成密码",
+    error:{
+      badLength:"密码长度只能在6-16位字符之间",
+      badFormat:"密码只能由英文、数字及“_”、“-”组成"
+    }
+  },
+  newpassword2:{
+    succeed:"正确",
+    isNull:"请再次输入密码",
+    error:{
+      badFormat:"两次输入密码不一致"
+    }
+  }
+}
+//check newpassword
+function checkPwd()
+{
+  if(!$("#newpassword").val())
+  {
+    $("#newpassword").next("#error_msg2").html(validatePrompt.newpassword.isNull);
+    $("#newpassword").next("#error_msg2").css('visibility','visible');
+    return false;
+  }
+  if($("#newpassword").val().length < 6 || $("#newpassword").val().length > 16)
+  {
+    $("#newpassword").next("#error_msg2").html(validatePrompt.newpassword.error.badLength);
+    $("#newpassword").next("#error_msg2").css('visibility','visible');
+    return false;
+  }
+  if(!(/^[A-Za-z0-9_-]+$/).test($("#newpassword").val()))
+  {
+    $("#newpassword").next("#error_msg2").html(validatePrompt.newpassword.error.badFormat);
+    $("#newpassword").next("#error_msg2").css('visibility','visible');
+    return false;
+  }
+  else
+  {
+    $("#newpassword").next("#error_msg2").html(validatePrompt.newpassword.succeed);
+    $("#newpassword").next("#error_msg2").css("visibility","hidden");
+    return true;
+  }
+}
+//check newpassword2
+function checkPwd2()
+{
+  var pwdfs = $("#newpassword").val();
+  if(!$("#newpassword2").val()){
+    $("#newpassword2").next("#error_msg3").html(validatePrompt.newpassword2.isNull);
+    $("#newpassword2").next("#error_msg3").css('visibility','visible');
+    return false;
+  }else{
+    if($("#newpassword2").val() != pwdfs){
+      $("#newpassword2").next("#error_msg3").html(validatePrompt.newpassword2.error.badFormat);
+      $("#newpassword2").next("#error_msg3").css('visibility','visible');
+      return false;
+    }else{
+      $("#newpassword2").next("#error_msg3").html(validatePrompt.newpassword2.succeed);
+      $("#newpassword2").next("#error_msg3").css("visibility","hidden");
+      return true;
+    }
+  }
+}
+</script>
+</block>

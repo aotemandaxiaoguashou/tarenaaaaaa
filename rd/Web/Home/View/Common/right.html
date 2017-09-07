@@ -1,0 +1,26 @@
+<block name="style">	
+	<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+</block>
+
+<div class="row area">
+		  <div class="leftCloumns well span2 Cloumnsright">
+			<div class="l_menu">
+				<h3><i class="open"></i>婚纱推荐</h3>
+				<ul id="uid" style="overflow:hidden">
+					<volist name="deslist" id="vo">
+					<li class="cc"><a href="__APP__/Home/Dresses/info/id/{$vo.id}"><img src="__PUBLIC__/{$vo.pic_name}" style="width:40px;height:30px;">{$vo.title|strdel=0,8}</a></li>
+					</volist>
+					
+				</ul>
+			</div>
+		 </div>
+		 		 
+		 <script type='text/javascript'>
+			$(function(){				
+				setInterval(function(){
+					$("li.cc:last").hide().prependTo("#uid").slideDown(1500);			
+				},3500);		
+			});
+		 
+		 </script>
+</div>

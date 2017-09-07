@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>我的订单—--婚庆一站式</title>
+<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/layout.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/user.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/pagination.css" rel="stylesheet" />
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/jquery.superslide.2.1.1.js"></script>
+<script src="__PUBLIC__/js/index.js"></script>
+<script src="__PUBLIC__/js/user.js"></script>
+</head>
+<body>
+<div class="container">
+<!--header区域-->
+	<include file="Public:header"/>
+	<!--header区域结束-->
+
+	<!--主体区域-->
+	<div id="main">
+		<div class="path">
+			所在位置：<a href="__MODULE__">首页</a>> 我的订单
+		</div>
+		
+		<!-- 用户中心侧边栏区域 -->
+			<include file="Common:left"/>		
+		  <!-- 用户中心侧边栏区域结束 -->
+		  <div class="rightCloumns span9">
+			<div class="userShop">
+				<div class="title">
+					<h3>我的订单</h3>
+				</div>
+				<div class="goodsCards">
+						<table class="table table-bordered">
+							<tbody>
+							<tr class="well">
+									<th width="360px">商品信息</th>
+									<th width="60px">数量</th>
+									<th>总价</th>
+									<th>订单状态</th>
+									<th>操作</th>
+							</tr>
+							
+							<!--订单-->
+							<empty name="orderData">
+								<tr>
+									<td colspan="5">当前订单消息为空</td>
+								</tr>
+							<else />
+							<volist name="orderData" id="vo">
+							<tr>
+								<td colspan="2" class="orderInfo"><label for="order_1"> 订单编号：<a style="color:#E38016;" title="查看订单详情" href="#">{$vo.orderno}</a></label>
+								</td>
+								<td colspan="3" class="orderInfo">下单时间：{$vo.order_time|date="Y-m-d H:i:s",###}</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+								<ul class="list_goods">
+									<volist name="vo[0]" id="goods">
+									<li>
+										<div class="goodsInfo">
+											<div class="photo"><a target="_blank" href="__MODULE__/Category/info/id/{$goods.goods_id}"><img width="80" height="80" align="left" src="__PUBLIC__/Uploads/goods/s_{$goods.pic}"></a>
+											</div>
+											<div class="summary">
+												<p><a target="_blank" href="__MODULE__/Category/info/id/{$goods.goods_id}">{$goods.goods_name}</a></p>
+												<p>价格：{$goods.goods_price}元</p>
+											</div>
+										</div>
+										<div class="quti"> {$goods.buy_num} </div>
+										<div class="clear"></div>
+									</li>
+									</volist>
+									
+								</ul>
+								</td>
+								<td class="border_l pt30">
+								<span class="fbolder">总价：<span>{$vo.sum_money} 元</span></span>
+								<div style="color:#666">(含运费：0.00元<br>
+								</div>
+                                </td>
+								<td class="border_l pt30">
+								<span class="red"><eq name="vo.is_pay" value="1"><span style="color:green;">已支付</span><else/>未支付</eq></span><br>
+								<span class="red"><eq name="vo.is_send" value="1"><span style="color:green;">已发货</span><br>
+								<if condition="$vo['is_recieve'] eq 1">
+								<span style="color:green;">已收货</span>
+								</if>
+								<else/>
+								<span>未发货</eq>
+								</span>
+								</td>
+								<td class="border_l  pt30"> 
+								<if condition="$vo.is_pay eq 0">
+								<a onclick="return confirm('确定要取消该订单吗？');" href="__MODULE__/Order/del/id/{$vo.order_id}" class="red">取消订单</a><br>
+								<a href="__MODULE__/Pay/index/orderno/{$vo.orderno}" class="details">付款</a><br>
+								<else/>
+								</if>
+								<if condition="$vo.is_send eq 1"><span  class="red">
+									<if condition="$vo['is_recieve'] eq 0">
+									<a href="__CONTROLLER__/recieve/id/{$vo.order_id}"  class="red">确认收货</a><br>
+									</if>
+								</if>
+								<if condition="$vo['is_recieve'] eq 1">
+									<a href="__MODULE__/Category/info/id/{$goods.goods_id}#comment"  style="color:green;">去评论</a><br>
+								</if>
+								<a title="{$vo.order_name}" href="__URL__/orderview/order_id/{$vo.order_id}" class="details">查看详情</a>
+								</td>
+							</tr>
+							</volist>
+							</empty>
+							</tbody>
+						</table>
+						<div class="pagination" style="text-align:center">{$page}</div>
+				</div>
+				
+			</div>
+			
+		  </div>
+		  <include file="Common:right"/>
+		  </div>
+		
+		 </div>
+	
+	</div>
+	<!--主体区域结束-->
+
+	<!--页脚区域-->
+	<include file="Public:footer"/>
+	<!--页脚区域结束-->
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<div class="PageContent">
+	<div class="accountInfo">
+		<p>作品详情</p>
+	</div>
+</div>
+
+<div class="pageContent">
+		<div class="pageFormContent" layoutH="60">			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">作品图</h3>			
+			<ul>
+				<li><span>图片信息：</span></li>
+					<li >
+						<volist name="list" id="vo">
+							<img src="__PUBLIC__/{$vo.pic_name}" style='width:200px;height:200px'>&nbsp &nbsp &nbsp					
+						</volist>
+					</li>						
+			</ul>		
+			</div> 		
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">主题</h3>
+			<ul>
+				<li><span>主题：</span>{$vo.title}</li>			
+			</ul>
+			</div> 
+			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">酒店</h3>
+			<ul>
+				<li><span>酒店：</span>{$vo.hole_name}</li>						
+			</ul>
+			</div>
+			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">价格</h3>
+			<ul>
+				<li><span>价格：</span>{$vo.price}</li>
+						
+			</ul>
+			</div>
+			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">新人介绍</h3>
+			<ul>
+				<li><span>新人介绍：</span>{$vo.presoninfo}</li>
+						
+			</ul>
+			</div>
+			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">新人要求</h3>
+			<ul>
+				<li><span>新人要求：</span>{$vo.requires}</li>					
+			</ul>
+			</div>	<br>		
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">详情</h3>
+			<div class="box_table" style="width:95%;">
+				<table width="100%"><!--这个加上，处理小bug-->
+					<ul>
+						<li><span>内容：</span><textarea disabled = "true" class="editor" name="detail" rows="20" cols="80" tools="Copy">{$vo.detail}</textarea></li>
+					</ul>
+					<ul>
+						<li><span>更新时间：</span>{$vo.addtime|date="Y-m-d H:i",###}</li>						
+					</ul>
+				</table>
+			</div>
+			</div> 
+		</div>
+</div>
+

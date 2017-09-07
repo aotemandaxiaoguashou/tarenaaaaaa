@@ -1,0 +1,104 @@
+	/**dwz辅助样式类
+	* 仿boostrap
+	* 实现后台的几种通用样式，使用方法与bootstrap一样
+	* 只需加上class="类名"即可
+	* 
+	* By 余建材 2014-10-13 20:44:12
+	*/
+	
+	#pageContent{padding:8px;}/*外框*/
+	
+	.accountInfo{height:30px;line-height: 30px;}/*页头样式*/
+	
+	.box_table {
+		border: 1px solid #ccc;
+		padding: 0 10px;
+		width:100%;
+	}
+	.box_table table th, .box_table table td {
+		border-bottom: 1px solid #ddd;
+		padding:10px 0px;
+	}
+	.box_table table th {
+		color: #555;
+		font-weight: bolder;
+		padding: 5px 8px;
+		width: 105px;
+	}
+	.box_table table td {
+		color: #666;
+	}
+	
+	
+	.box_table table td a {
+		color: #f60;
+		margin-right: 15px;
+		text-decoration: none;
+	}
+	.items {
+		border: 1px solid #ddd;
+		float: left;
+		margin-right: 4%;
+		margin-top: 20px;
+		padding-bottom: 20px;
+		text-align: left;
+		width: 45%;
+	}
+	.items .ttlm {
+		background: url("../images/infoboxbg.gif") repeat-x scroll left top rgba(0, 0, 0, 0);
+		border-bottom: 1px solid #ddd;
+		color: #333;
+		font-size: 14px;
+		height: 27px;
+		line-height: 27px;
+		padding: 0 0 0 20px;
+	}
+	.items ul {
+		margin-left: 15px;
+		margin-top: 15px;
+	}
+	.items li {
+		background: url("../images/arrow_01.gif") no-repeat scroll left 10px rgba(0, 0, 0, 0);
+		color: #999;
+		overflow: hidden;
+		padding: 8px 0 5px 25px;
+	}
+	.items li span {
+		color: #666;
+		font-weight: bolder;
+	}
+	
+	.form_table {
+		margin: 5px 0;
+		width: 100%;
+	}
+	.form_table th {
+		color: #666666;
+		font-weight: bold;
+		padding: 10px 0 0;
+		text-align: right;
+		width: 170px;
+	}
+	.form_table td {
+		padding: 10px 0 0;
+	}
+	.form_table td.gray {
+		color: #aaaaaa;
+		height: 16px;
+		line-height: 16px;
+		padding: 0;
+	}
+	.span0{width:85px;}
+	.span1{width:132px;}
+	.span2{width:264px;}
+	.span3{width:396px;}
+	.span4{width:528px;}
+	.span5{width:660px;}
+	.span6{width:792px;}
+	.span7{width:924px;}
+	.span8{width:1056px;}
+	.red{color:red;}
+	.green{color:green;}
+	.grey{color:grey;}
+	
+	

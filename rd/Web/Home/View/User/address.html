@@ -1,0 +1,129 @@
+<extend name="Public:layout" />
+
+<block name="title">
+	<title>会员中心-收货地址-酷结网</title>
+</block>
+
+<block name="style">
+	<script type="text/javascript" src="__PUBLIC__/js/WdatePicker.js"></script>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/WdatePicker.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/member.css">
+	<style>
+		.user_order_list2 td {
+			line-height: 31px;
+			padding: 1px 4px;
+		}
+	</style>
+	<style>
+		.user-tab2 th strong{font-weight:bold;}
+		.user-tab2 td{text-align:left;}
+		.user-tab2 .tr{width:14%; text-align:right;}
+	</style>
+</block>
+
+<block name="eachContent">
+	
+
+<div class="w page-here mb10">
+  <span>当前位置：</span><a href="__APP__/Index/index">首页</a>&gt; <em>收货地址</em>
+</div>
+<div class="w clearfix mb15">
+    <div class="sidebar fl">
+		<div class="user-moudle clearfix">
+			<div class="user-hd tc">个人中心首页</div>
+			<div class="user-bd">
+				<dl class="user-menu pb10">
+				  <dt><i></i>交易管理</dt>
+				  <dd><a href="__CONTROLLER__/ordercenter">订单中心</a></dd>
+				</dl>
+				<dl class="user-menu pb10">
+				  <dt><i></i>个人中心</dt>
+				  <dd><a href="__CONTROLLER__/userIM">个人信息管理</a></dd>
+				  <dd><a href="__CONTROLLER__/changepwd">修改密码</a></dd>
+				  <dd><a href="__CONTROLLER__/address">收货地址</a></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<div class="maincont fr">
+      	<div class="clearfix user-content p10">
+            <div class="user_tab">
+                <div id="tabs_cont_s" class="margin_left_12">
+                    <table class="user-tab2 usertab" width="100%" bgcolor="#cccccc" border="0" cellpadding="0" cellspacing="1">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" bgcolor="e5e5e5">
+                                    <span class="fl f_indent"><strong>收货地址</strong></span>
+                                    <span class="fr f12">                                                                                        
+                                        <a href="javascript:;" id="editadd">编辑</a>
+                                    </span>
+                                    <span class="clear"></span>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="tr" width="14%" align="left" bgcolor="ffffff">收货人：</td>
+                                <td align="left" bgcolor="ffffff">{$users.tname}</td>
+                            </tr>
+							<tr>
+								<td class="tr" align="left" bgcolor="ffffff">地址：</td>
+								<td align="left" bgcolor="ffffff">{$users.address}</td>
+							</tr>
+							<tr>
+								<td class="tr" align="left" bgcolor="ffffff">邮编：</td>
+								<td align="left" bgcolor="ffffff">{$users.zipcode}</td>
+							</tr>
+							<tr>
+								<td class="tr" align="left" bgcolor="ffffff">手机：</td>
+								<td align="left" bgcolor="ffffff">{$users.phone}</td>
+							</tr>
+                        </tbody>
+                    </table>
+                    <div class="margin_bottom_10">&nbsp;</div>      
+                    <div style="display: none;" class="add_address margin_bottom_10" id="hid">
+						<input onclick="showShipping();" type="button">
+					</div>
+                </div>
+                    
+                <form action="__CONTROLLER__/editAddress" id="shippingForm" method="post">
+					<table style="display: none;" class="user-tab2 usertab" id="addShipping" width="100%" bgcolor="#cccccc" border="0" cellpadding="0" cellspacing="1">
+						<tbody>
+								<tr>
+								<th colspan="2" bgcolor="e5e5e5">
+									<strong id="title" class="fl"></strong>
+								</th>
+							</tr>
+							<tr>
+								<td class="tr" width="180" bgcolor="#FFFFFF">收货人：</td>
+								<td bgcolor="#FFFFFF"><input name="tname" class="fl" id="consignee" type="text" value="{$users.tname}"/></td>
+							</tr>
+							<tr>
+								<td class="tr" bgcolor="#FFFFFF">地址：</td>
+								<td bgcolor="#FFFFFF"><input name="address" id="address" type="text" value="{$users.address}"/></td>
+							</tr>
+							<tr>
+								<td class="tr" bgcolor="#FFFFFF">邮编：</td>
+								<td bgcolor="#FFFFFF"><input name="zipcode" id="zipcode" type="text" value="{$users.zipcode}"/></td>
+							</tr>
+							<tr>
+								<td class="tr" bgcolor="#FFFFFF">手机：</td>
+								<td bgcolor="#FFFFFF"><input name="tel" id="tel" type="text" value="{$users.phone}"/></td>
+							</tr>
+							<tr>
+								<td bgcolor="#FFFFFF"></td>
+								<td bgcolor="#FFFFFF"><input class="orange_buttom_4" value="确定" type="submit"></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--点击‘编辑’按钮时，显示编辑信息的表单-->
+<script>
+	$('#editadd').click(function(){
+		$('#addShipping').removeAttr('style');
+	});
+</script>
+</block>

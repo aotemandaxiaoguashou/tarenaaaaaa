@@ -1,0 +1,271 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>摄像师 – 易结网 - 北京结婚 – 北京婚礼人 – 易结网</title>
+</block>
+
+<block name="style">
+	<link rel="shortcut icon" href="http://easywed.cn/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/vendors.css">
+		<script type="text/javascript" src="__PUBLIC__/js/jquery.easing.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		style = 'easeOutQuart';
+		$('.photo').hover(
+			function() {
+				$(this).children('div:first').stop(false,true).animate({top:0},{duration:200, easing: style});
+				$(this).children('div:last').stop(false,true).animate({bottom:0},{duration:200, easing: style});
+			},
+			function() {
+				$(this).children('div:first').stop(false,true).animate({top:-50},{duration:200, easing: style});
+				$(this).children('div:last').stop(false,true).animate({bottom:-50},{duration:200, easing: style});
+			}
+		);
+	});
+	</script>
+	<style>
+.photo { position:relative; font-family:arial; text-align:center;height:195px;background:color:#26c3e5;display:block;}
+.photo .heading, .photo .caption { position:absolute; background:#000; height:50px; width:168px; opacity:0.6; }
+.photo .heading { top:-50px; }
+.photo .caption { bottom:-50px; left:0px; }
+.photo .heading span { color:#26c3e5; top:-50px; font-weight:bold; display:block; padding:5px 0 0 10px; }
+.photo .caption span { color:#26c3e5; font-size:12px; display:block; padding:5px 10px 0 10px; 
+		
+	</style>
+	
+		
+
+
+
+	</block>
+
+<block name="eachContent">
+	<div class="w pb20">
+    <!--标题-->
+    <div class="ui-nav-class  clx">
+	<ul class="fl">
+					<li><a href="__APP__/compere/index" >主持人</a></li>
+					<li><a href="__APP__/designer/index">婚礼造型</a></li>
+					<li><a href="__APP__/cameraman/index" class="on">婚礼摄像</a></li>
+					<li><a href="__APP__/assigner/index">场地布置</a></li>
+					<li><a href="__APP__/planner/index">婚礼策划</a></li>
+			</ul>
+</div>
+     <div class="ui-nav-param pt20" id="j-param">
+	<dl class="clx">
+		<dt>性别：</dt>
+		<dd>
+			<ul class="clx">
+				<li>
+					<a href="__URL__/index" class="on">全部</a>
+				</li>
+								<li>
+					<a href="__URL__/index/sex/0">男</a>
+				</li>
+								<li>
+					<a href="__URL__/index/sex/1">女</a>
+				</li>
+							</ul>
+
+			<div class="more">
+				<a href="javascript:;" class="j-switch"><i class="icons"></i><span class="item-1">更多</span><span class="item-2">收起</span></a>
+			</div>
+		</dd>
+	</dl>
+ 	<dl class="clx">
+		<dt>身高：</dt>
+		<dd>
+			<ul class="clx">
+				<li>
+					<a href="__URL__/index" class="on">全部</a>
+				</li>
+								<li>
+					<a href="__URL__/index/height/175,180">175-180</a>
+				</li>
+								<li>
+					<a href="__URL__/index/height/170,175">170-175</a>
+				</li>
+								<li>
+					<a href="__URL__/index/height/170">170以下</a>
+				</li>
+								<li>
+					<a href="__URL__/index/height/180">180+</a>
+				</li>
+							</ul>
+
+			<div class="more">
+				<a href="javascript:;" class="j-switch"><i class="icons"></i><span class="item-1">更多</span><span class="item-2">收起</span></a>
+			</div>
+		</dd>
+	</dl>
+ 	<dl class="clx">
+		<dt>年龄：</dt>
+		<dd>
+			<ul class="clx">
+				<li>
+					<a href="__URL__/index/" class="on">全部</a>
+				</li>
+								<li>
+					<a href="__URL__/index/age/30,40">80后</a>
+				</li>
+								<li>
+					<a href="__URL__/index/age/40,50">70后</a>
+				</li>
+								<li>
+					<a href="__URL__/index/age/50,60">60后</a>
+				</li>
+								<li>
+					<a href="__URL__/index/age/20,30">90后</a>
+				</li>
+							</ul>
+
+			<div class="more">
+				<a href="javascript:;" class="j-switch"><i class="icons"></i><span class="item-1">更多</span><span class="item-2">收起</span></a>
+			</div>
+		</dd>
+	</dl>
+ </div>
+
+    <div class="wrap clx">
+        <div class="wrap-fl fl">
+            <!-- 没有列表数据显示 -->
+                            <!--数据列表如果没有数据不显示循环li标签-->
+                <div class="pt20 vendors-list" id="j-vendors-list">
+                    <ul class="vendors-list-ul">
+							<!--主持人所有信息的开始-->
+							<volist name="datas" id="vo">
+                            <li class="clx">
+                                <div class="vendors-list-photo is">
+									<!--主持人1头像-->	
+                                    <div class="ui-photo c150-150">
+                                        <a href="__URL__/work/id/{$vo.id}" target="_blank">
+                                            <img width="150" height="150" alt="{$vo.name}" src="__PUBLIC__/Uploads/marriager/{$vo['pic']}" class="imgLoad" style="display: block;">
+                                            <i class="hack"></i>
+                                        </a>
+                                    </div>
+                                    <!--易结价修改-->
+                                    <div class="vendors-list-photo-msg clx">
+                                    <span>
+										<a href="http://easywed.cn/vendors/263/opus" target="_blank"><!-- 有没有连接都行 -->
+											<i class="text-overflow">2</i>
+											作品
+										</a>
+                                    </span>
+                                    <span>
+                                        <i class="text-overflow">7</i>
+                                        点赞
+                                    </span>
+                                    <span>
+                                        <a href="http://easywed.cn/vendors/263/articles" target="_blank"><!-- 有没有连接都行 -->
+											<i class="text-overflow">1</i>
+                                              专栏
+                                            </a>
+                                    </span>
+                                    </div>
+                                    <!--易结价-认证商家-->
+                                    <!--易结价 -普通人（非认证策划师）-->
+                                                                            
+                                    <p class="vendors-easywed-price tc">易结价：￥3500</p>
+                                            
+                                                                            
+                                </div>
+								<!--主持人的基本信息-->
+                                <div class="vendors-list-info">
+                                    <div class="vendors-list-name">
+                                        <h3>
+                                            <a href="http://easywed.cn/vendors/263" target="_blank">
+                                               {$vo['name']}                                            </a>
+                                        </h3>
+                                    </div>
+                                    <!--易结认证-->
+                                    <div class="vendors-easywed-rz mt10">
+                                        <p>易结认证</p>
+                                        <div class="vendors-list-address">
+                                            <i class="icons icon-15"></i>{$vo['address']}
+                                        </div>                                        
+                                    </div>
+                                    <div class="vendors-list-job text-overflow">
+                                        	
+										<span><i class="icons  icon-job-3"></i>摄像师</span>
+                                    </div>
+                                    <p>
+										{$vo['detail']}
+                                        <!--居住：北京身高：1米83所属朗艺北京主持人团队！作为一名职业的婚礼人,从业5年来很荣幸能够一直站在这个舞台上,见证每一对新人的幸福结合.感受着属于她们的爱情故事,一次次的体会幸福瞬间美丽绽放. -->                                
+									</p>
+                                </div>
+								
+								
+
+                                <!-- 主持人1 作品图片, 循环a标签   -->
+                                <!-- 作品图片, 循环a标签 -->
+								<div class="box">
+                                <div class="vendors-list-img clx picbox">
+									
+									<ul class="vendors-list-img-ul piclist mainlist">
+                                    <!-- 图片  介绍的信息图片和作品图片-->
+									<volist name="vo['pics']" id="vos">
+										<li>
+											<div class="photo">
+											<div class="heading"><span>摄像师</span></div>
+											<a href="__URL__/work/id/{$vo.id}" target="_blank">
+											<div class="pic">
+												<img style="display: block;" src="__PUBLIC__/Uploads/image/{$vos['pic']}" class="imgLoad" alt="" height="170" width="170">                                          
+											</div>
+											</a>
+										    <div class="vendors-list-hit">
+                                            <span>
+                                                <i class="icons icon-20"></i>22                                            </span>
+                                            <span>
+                                                <i class="icons icon-19"></i>0                                            </span>
+											</div>
+											<div class="caption"><span>{$vos['content']}</span></div>
+										</li>
+										<!-- <li>
+											<div class="pic">
+												<img style="display: block;" src="__PUBLIC__/Uploads/image/{$vos['pic']}" class="imgLoad" alt="" height="170" width="170">                                          
+											</div>
+										                                        <div class="vendors-list-hit">
+                                            <span>
+                                                <i class="icons icon-20"></i>11                                           </span>
+                                            <span>
+                                                <i class="icons icon-19"></i>3                                            </span>
+											</div>
+										</li> -->
+										<!-- <li>
+											<div class="pic">
+												<img style="display: block;" src="__PUBLIC__/Uploads/image/{$vos['pic']}" class="imgLoad" alt="" height="170" width="170">                                          
+											</div>
+										                                        <div class="vendors-list-hit">
+                                            <span>
+                                                <i class="icons icon-20"></i>21                                           </span>
+                                            <span>
+                                                <i class="icons icon-19"></i>1                                           </span>
+											</div>
+										</li> -->
+										</volist>
+									</ul>
+									<ul class="piclist swaplist"></ul>
+								</div>
+								<div class="og_prev"></div>
+								<div class="og_next"></div>
+								</div>
+								</li>
+								</volist>
+							<!--主持人的所有信息到此结束-->
+							
+							
+							
+							
+                         
+                        </ul>
+                </div>
+                        <div id="j-mod-page" class="mod-page mt20 pb20" data-pagecount="12">
+		<div class="inner">
+	<a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=1" class="no-link">&lt;&lt;上一页</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=1">1</a><span class="on">2</span><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=3">3</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=4">4</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=5">5</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=6">6</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=7">7</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=8">8</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=9">9</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=10">10</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=11">11</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=12">12</a><a href="http://easywed.cn/vendors/wedmaster.html?search=0-0-0&amp;page=3" class="no-link">下一页&gt;&gt;</a>			<span>共12页，到<input value="3" type="text">页<input value="确认" type="button"></span>
+		</div>
+	</div>
+        </div>
+      
+        </div>
+</div>		
+</block>

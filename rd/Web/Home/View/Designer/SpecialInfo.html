@@ -1,0 +1,103 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>最美新娘必读——穿婚纱走路有讲究哦！ - 专栏  - 易结网</title>
+</block>
+
+<block name="style">
+		<link rel="shortcut icon" href="http://easywed.cn/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/articles.css">
+</block>
+<block name="eachContent">
+	<!--标题-->
+	<div class="w pb20">
+    <div class="ui-nav-class  clx">
+	<ul class="fl">
+					<li><a href="__APP__/compere/index" >造型师</a></li>
+					<li><a href="__APP__/designer/index" class="on">婚礼造型</a></li>
+					<li><a href="__APP__/cameraman/index" >婚礼摄像</a></li>
+					<li><a href="__APP__/assigner/index">场地布置</a></li>
+					<li><a href="__APP__/planner/index">婚礼策划</a></li>
+			</ul>
+</div>
+		<div class="w pb20">
+    <!-- 面包屑 -->
+    <div class="ui-nav-crumbs text-overflow pt10">
+		<a href="__URL__/index">首页</a><i>&gt;</i><a href="__URL__/index">认证婚礼人专栏</a><i>&gt;</i>最美新娘必读——穿婚纱走路有讲究哦！    </div>
+
+
+    <div class="wrap clx pt10" style="">
+        <div class="wrap-fl fl" style="">
+			<volist name="data" id="vo">
+            <h1 class="ui-h2 mt20">{$vo.name}</h1>
+            <div class="articles-content">
+                                    <p>
+		{$vo.content}
+</p>
+<p>
+	<img src="__PUBLIC__/Uploads/image/{$vo.pic}" title="易结网" alt="易结网" width="888px" height="700px">
+</p>
+</volist>
+</div>
+</div>
+</div>
+        <div class="wrap-fr fr" style="">
+				<volist name="p" id="vos">
+                <!-- 作者信息 -->
+                <div class="opus-d-author">
+                    <div class="ui-photo c150-150-2">
+                        <a href="__URL__/work/id/{$vos.id}" target="_blank">
+                            <img width="150" height="150" src="__PUBLIC__/Uploads/marriager/{$vos.pic}" alt="{$vo.pic}">
+                            <i class="hack"></i>
+                        </a>
+                    </div>
+                    <div class="title text-overflow">
+                        <a href="__URL__/work/id/{$vos.id}" target="_blank">{$vos.name}</a>
+                    </div>
+                    <div class="job">
+						                        <span>
+                            <i class="icons  icon-job-3"></i>造型师                      </span>
+						                    </div>
+                    <div class="hit">
+                        <span class="item-1 text-overflow">
+                            <i class="icons icon-19"></i>赞<i id="j-zan-num" class="num">56</i>
+                        </span>
+                        <span class="item-2 text-overflow">
+                            <i class="icons icon-21"></i>作品<i class="num">3</i>
+                        </span>
+                    </div>
+					
+                </div>
+				</volist>
+
+            <!-- 选择造型师说明 -->
+            <div class="wrap-side mt20">
+                <h3 class="ui-h3">如何选择造型师</h3>
+                <div class="side-desc pt10">
+                    <dl>
+                        <dt>
+                            选择技巧
+                        </dt>
+                        <dd>
+                            热门造型师的档期一般非常紧张，我们建议您如果档期明确，越早约好。热门档期的造型师，超过50%在半年甚至1年前就已被预订
+                        </dd>
+                        <dt>
+                            为什么要支付定金
+                        </dt>
+                        <dd>
+                            如果您有看好的造型师，建议您直接预订他的档期，热门时间的造型师一般比较抢手，易结按照优先支付定金的顺序和造型师敲定档期，所以，如果您确定了人选，一定要尽快支持。
+                        </dd>
+                    </dl>
+                    <strong>预定不成功，100%退款</strong>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+		
+</div>
+</div>
+</div>
+</block>	

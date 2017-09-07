@@ -1,0 +1,31 @@
+<div id="pageContent">
+<div class="box_table">
+	
+</div>
+
+<div class="items">
+	<h3 class="ttlm">程序数据库/版本</h3>
+	<ul>
+		<li><span>服务器操作系统：</span>{:php_uname('s')}({$Think.server.SERVER_ADDR})</li>
+		<li><span>PHP 运行方式：</span>{: php_sapi_name()}</li>
+		<li><span>PHP 版本：</span>{:phpversion()}</li>					
+		<li><span>MySQL 版本：</span>{:mysql_get_client_info()}</li>
+		<li><span>文件上传的最大大小：</span>{:ini_get("upload_max_filesize")}</li>					
+		<li><span>时区设置：</span>{:date_default_timezone_get()}</li>
+		<li><span>安装日期：</span>2015-1-05 12:12:12</li>					
+	</ul>
+</div> 
+<div class="items">
+	<h3 class="ttlm">开发及测试</h3>
+	<ul>
+		<li><span>版权信息：</span>Return Dream</li>
+		<li><span>系统设计：</span><span style="color:#FF9326;">Return Dream</span></li>
+		<li><span>开发及测试：</span><span style="color:#ff9326">李梦梦</span></li>
+		<li><span>后台框架：</span><a href="http://j-ui.com/" style="color:#999;">DWZ富客户端框架(J-UI.com)</a></li>
+		<li><span>项目开始时间：</span>2016-10-05 12:12:12</li>
+		<li><span>地点：</span>北京市海淀区紫金大厦六层达内科技</li>
+		<li><span>期别：</span>PHP1603</li>
+		<li><span>指导老师：</span></li>
+	</ul>
+</div> 
+</div>			

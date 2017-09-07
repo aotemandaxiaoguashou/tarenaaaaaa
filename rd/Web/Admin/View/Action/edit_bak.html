@@ -1,0 +1,49 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/nodelist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>节点名称：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="action_myname" value="{$vo.action_myname}"/></dd>
+			</dl>
+			
+			<dl>
+				<dt>控制器名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="controllers_name" value="{$vo.controllers_name}"/></dd>
+			</dl>
+			
+			<dl>
+				<dt>方法名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="mothods_name" value="{$vo.mothods_name}"/></dd>
+			</dl>
+			
+			<dl>
+				<dt>状态：</dt>
+				<dd><input type="radio" name="status" value="1" <if condition="$vo.action_status eq 1">checked</if>/>启用
+					<input type="radio" name="status" value="0" <if condition="$vo.action_status eq 0">checked</if>>禁用</dd>
+			</dl>
+			
+			<dl>
+				<dt>节点说明：</dt>
+				<dd><textarea class="required"  style="width:100%" name="action_des">{$vo.action_des}</textarea></dd>
+			</dl>
+			
+			<dl>
+				<dt></dt>
+				<dd style="margin:35px 0px 0px 30px;width:100%;color:#666;">说明：方法名一般有index,add,edit,del,delete_tags等等。不用写insert和update以及首页的index方法。</dd>
+			</dl>
+		</div>
+			
+		
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

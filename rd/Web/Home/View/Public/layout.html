@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<!--head部分-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta name="Keywords" content="婚庆公司，婚礼策划，婚庆布置，婚庆策划，婚礼策划，婚庆用品，婚庆网，婚礼服务，酷结网">
+		<meta name="Description" content="酷结网是国内首家一站式婚庆服务网络直购平台,让新人直接选择心仪的婚礼策划师,婚礼主持,化妆师,摄影师,摄像师,花艺设计,婚纱摄影等,同样的婚礼最低的价格,帮助新">
+		<meta property="qc:admins" content="42702303365131754636">
+		<!--网页标题 开始-->
+		<block name="title">
+		<title>首页-酷结网</title>
+		</block>
+		<!--网页标题 结束-->
+		
+		<link rel="stylesheet" href="__PUBLIC__/css/base.css">
+		<link rel="stylesheet" href="__PUBLIC__/css/style.css">
+		<script src="__PUBLIC__/js/jquery-1.js"></script>
+		<script src="__PUBLIC__/js/global.js"></script>
+		
+		<!--此处是头部占位，用来写各页面自己的CSS、JS和各CSS、JS的链接-->
+		<block name="style">
+		</block>
+		<!--头部占位结束-->
+		
+	<!--导航栏下拉样式 开始-->
+	<style type="text/css" id="6409554000">
+		.newnav *{
+			text-decoration:none;
+		}
+		
+		.newmenu{
+			list-style:none;
+		}
+		.newnav{
+			list-style:none;
+			height:38px;
+			margin:0 auto;	
+		}
+		.newnav li{
+			float:left;
+			position:relative;
+		}
+		.newnav li a{
+			color:#fff;
+			height:38px;
+			line-height:38px;
+			padding:0 0px;
+			blr:expression(this.onFocus=this.close());
+			blr:expression(this.onFocus=this.blur());
+			display:inline-block;
+		}
+		.newnav li a:focus{ 
+			-moz-outline-style: none; 
+		}
+		.newnav li .drop-down{
+			position:absolute;
+			top:37px;
+			left:-1px;
+			list-style:none;
+			background-color:#333;
+			display:none;
+		}
+		.newnav li .drop-down li{
+			text-align:center;
+			clear:left;
+			width:90px;
+			height:35px;
+			line-height:35px;
+			position:relative;
+		}
+		.newnav li .drop-down li a{
+			height:34px;
+			line-height:34px;
+			width:90px;
+			padding:0;
+			display:inline-block;
+		}
+	</style>	
+	<!--导航栏下拉样式 结束-->
+		
+	<!--导航栏下拉菜单js 开始-->
+	<script>
+		$(function(){
+			$(".newnav>li").hover(function(){
+				$(this).children('ul').stop(true,true).show(300);
+			},function(){
+				$(this).children('ul').stop(true,true).hide(300);
+			})
+		})
+	</script>
+	<!--导航栏下拉菜单js 结束-->
+		
+	</head>
+	<!--head部分结束-->
+	
+	<body>
+	<!--头部部分的开始-->
+		<div id="header">
+			<!--此处各个页面都相同，只需继承即可-->
+			<div class="top-nav">
+				<div class="w">
+				  <ul class="fr">
+					<if condition="$_SESSION[C('SESSION_USER')]['islogin'] eq 1"><li><a href="__MODULE__/User/index">{$_SESSION[C('SESSION_USER')]['username']}</a></li>
+					<li><a href="__MODULE__/Login/logout">退出</a></li>
+					<else/><li><a href="__MODULE__/Login/login">登录</a></li>
+					<li><a href="__APP__/Login/reg">注册</a></li>
+					</if>
+					<li><a href="__APP__/User/index">我的酷结</a></li>
+					<li><if condition="$_SESSION[C('SESSION_USER')]['islogin'] eq 1"><a href="__APP__/Shopcar/index">购物车</a>
+					<else/><a href="__MODULE__/Login/login">购物车</a></if>
+					</li>
+					<li><a href="__APP__/article/articlelist/id/2">帮助中心</a></li>
+					<li id="wx" class="wx"><a>酷结微信</a><img src="__PUBLIC__/images/wx.png" alt="微信二维码"></li>
+				  </ul>
+				</div>
+			</div>
+			<div class="header">
+				<div class="w clearfix">
+					<div id="logo"><a href="./"><img src="__PUBLIC__/images/201409231029163368.gif"></a></div>
+					<div class="search-cart clearfix">
+						<div id="search-form">
+							<form action="__APP__/Hole/search" method="get">
+								<input name="keyword" class="keyword" value="请输入酒店名称" onfocus="if ($(this).val()=='请输入酒店名称') $(this).val(''); $(this).addClass('keyword-hover')" onblur="if ($(this).val()=='') $(this).val('请输入酒店名称');  $(this).removeClass('keyword-hover')" type="text">
+								<button class="submit-btn" type="submit">提 交</button>
+							</form>
+							<block name="search">
+							<div class="search-hot">
+								<a href="#" target="_blank">主持人谢添</a>
+								<a href="#" target="_blank">文博</a>
+								<a href="#" target="_blank">邹祥</a>
+								<a href="#" target="_blank">大张 </a>
+								<a href="#" target="_blank">龙飞 </a>
+							</div>
+							</block>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--上面不变部分的结束-->
+			
+<!--*****************(BLOCK=NAV)开始*********导航栏开始，此处各页面可能会有不同**************************************************-->
+			<block name="nav"> 
+			<div id="nav">
+				
+				<div class="w newmenu">
+					<ul class="fl newnav"  style="position:absolute;z-index:999">
+						<li class="nav-title">
+							<a href="__APP__/Index">首页</a>
+						</li>
+						<foreach name="columns" item="col">
+						<li class="nav-title">
+							<a href="__APP__/{$col['english']}" target="_blank">{$col['columnname']}</a>
+							<ul class="drop-down">
+								<foreach name="col['col']" item="cols">
+								<li><a href="__APP__/{$col['english']}/{$cols['english']}">{$cols['columnname']}</a></li>
+								</foreach>
+							</ul>
+						</li>
+						</foreach>
+					</ul>
+				</div>
+				
+			</div>
+			</block>
+<!--***********************(BLOCK=NAV)结束****导航栏结束*****************************************-->	
+
+		</div>
+	<!--头部部分的结束-->
+	
+	
+<!--*********(BLOCK=eachCONTENT)开始，各页面中间的自己独有的部分*****************************************************************************************-->
+		<div class="eachContent">
+			<block name="eachContent"></block>
+		</div>
+	
+<!--*********(BLOCK=eachCONTENT)结束*******************************************************************************************-->	
+	
+	
+	<!--尾部部分的开始-->
+		<!--contact部分开始，此处有的页面用了可能会有CSS方面的冲突，因此不用此处，若不用继承时将其覆盖即可-->
+<!--*********************(BLOCK=CONTACT)开始******************************************************-->		
+		<block name="contact">
+		<div class="contact">			
+			<div class="cont-box">
+				<div class="tel"><span class="iconfont"></span> 客服热线<br>400-616-6000</div>
+				<div class="icon-box">
+					<span class="iconfont">酷</span>
+					<a href="http://weibo.com/coolmarry" target="_blank">关注我们</a>
+				</div>
+				<div class="icon-box">
+					<span class="iconfont">结</span>
+					<a href="https://wx.qq.com" target="_blank">官方微信</a>
+				</div>
+				<div class="icon-box wx">
+					<img src="__PUBLIC__/images/wx.gif" alt="wx">
+				</div>
+				<div class="contact-box">
+					<div class="bg"></div>
+					<strong>CONTACT US 联系我们</strong>
+					<p>工作时间：09:00-20:00<br>(星期一至星期五，节假日除外)</p>
+				</div>
+			</div>	
+		</div>
+		</block>
+<!--*****************(BLOCK=CONTACT)结束  contact部分结束**********************************************************************-->
+	
+		
+		<!--此处是页面尾部不变的部分，因此各页面都继承即可-->
+		<div class="help-center w">
+			<div class="help-box clearfix">
+			<!-- 显示文章分类 -->
+				<foreach name="articleData" item="vo">
+					<dl class="guidelinks">
+					<dt><a href="__MODULE__/Article/articlelist/id/{$vo.id}">{$vo.cat_name}</a></dt>
+					<foreach name="vo" item="v2">
+						<foreach name="v2" item="voo">
+							<dd><a href="__MODULE__/Article/articleinfo/id/{$voo.article_id}">{$voo.title}</a></dd>
+						</foreach>
+					</foreach>
+					</dl>	
+				</foreach>
+			
+			</div>
+			<div class="f_nav">
+			
+				<foreach name="footArtData" item="vo">
+					<a href="__MODULE__/Article/articleinfo/id/{$vo.article_id}">{$vo.title}</a>|
+				</foreach>
+					<a href="__MODULE__/Article/articlelist/id/2">帮助中心</a>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="bot-nav">
+			<foreach name="friends" item="vo">
+				<span><a href="{$vo.urls}"><img src="__PUBLIC__/Uploads/links/{$vo.logo}" title="{$vo.linksname}" width='60px'></a></span>	
+			</foreach>
+			</div>
+			
+			<p class="copyright">北京酷结网络技术有限公司&nbsp;&nbsp; 400-616-6000&nbsp;Copyright&nbsp;<a href="”mailto:www.coolmarry.com”">COOLMARRY</a> &nbsp;All Rights Reserved&nbsp; 京ICP备14040451号-1   京公网安备110105002103  100020     <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253323250'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/z_stat.php%3Fid%3D1253323250%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1253323250"><a href="http://www.cnzz.com/stat/website.php?web_id=1253323250" target="_blank" title="站长统计"><img src="http://icon.cnzz.com/img/pic.gif" border="0" hspace="0" vspace="0"></a></span><script src=" http://s9.cnzz.com/z_stat.php?id=1253323250&amp;show=pic" type="text/javascript"></script><script src="http://c.cnzz.com/core.php?web_id=1253323250&amp;show=pic&amp;t=z" charset="utf-8" type="text/javascript"></script></p>
+			<p class="attestation">
+				<a><img src="__PUBLIC__/images/x1.gif" alt="img"></a>
+				<a><img src="__PUBLIC__/images/x2.gif" alt="img"></a>
+				<script src="http://kxlogo.knet.cn/seallogo.dll?sn=e141103110105557699ypu000000&amp;size=0"></script><span style="display:inline-block;position:relative;width:auto;"><a href="https://ss.knet.cn/verifyseal.dll?sn=e141103110105557699ypu000000&amp;ct=df&amp;a=1&amp;pa=0.6754567698108634" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;"><img src="http://rr.knet.cn/stati__PUBLIC__/images/logo/cnnic.png" style="border:none;" ></a></span>
+				<a href="https://search.szfw.org/cert/l/CX20141031005807005872" target="_blank"><img src="__PUBLIC__/images/x4.gif" alt="诚信网站"></a>
+			</p>
+		</div>
+		<!--尾部不变部分的结束-->
+	<!--尾部部分的结束-->
+	</body>
+</html>

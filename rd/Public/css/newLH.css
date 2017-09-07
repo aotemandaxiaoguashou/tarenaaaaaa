@@ -1,0 +1,19 @@
+.container{width:700px;margin:0 auto;}
+.mian_con{width:700px}
+.mian_con .slide_area{padding:0px}
+.fr{float:right}
+.slide_area{position:relative;margin-bottom:10px;height:325px;overflow:hidden}
+.slide_area .slide_list{overflow:hidden;height:325px}
+.slide_area .slide_list img{width:100%;height:100%}
+.slide_area .slide_triggers{position:absolute;right:20px;bottom:10px;/*z-index:10*/}
+.slide_area .slide_triggers a{display:inline-block;margin-right:5px;width:20px;height:20px;line-height:20px;cursor:pointer;-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;background:#fff;text-align:center;color:#000;opacity:0.8;filter:alpha(opacity=80);outline:none; font-size:12px; text-decoration:none;}
+.slide_area .slide_triggers a:hover,.slide_area .slide_triggers a.curr{background:#000;color:#fff;text-decoration:none;opacity:0.8;filter:alpha(opacity=80)}
+.slide_list ul{margin:0;padding:0}
+.slide_area .slide_list li{position:relative;height:325px;text-align:center}
+.slide_area,.new_actHei .slide_area{width:700px;height:325px;float:left;margin:0px 0;zoom:1}
+.new_actHei .slide_area .slide_triggers{width:700px;right:auto;left:0px;bottom:0px;height:30px}
+.new_actHei .slide_area .slide_triggers a{width:164px;margin:0
+0 0 1px;display:inline-block;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;color:#FFF;height:30px;line-height:30px;overflow:hidden;padding:0
+5px;opacity:0.6;filter:alpha(opacity=60);background:#000;float:left;*zoom:1}
+.new_actHei .slide_area .slide_triggers a.curr{font-weight:bold;background:#000;opacity:0.8;filter:alpha(opacity=80)}
+.nums a{font-family:Arial;}

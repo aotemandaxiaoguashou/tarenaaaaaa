@@ -1,0 +1,92 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> &nbsp; 关键字:<input type="text" name="keyword" value="{$Think.post.keyword}" /> [订单编号][收货地址]
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="delete" href="__URL__/del/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/orderlist" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+		  <tr>
+			<th width="20" orderField="id" <if condition="$Think.request._order eq 'id'">class="{$Think.request._sort}"</if>>ID</th>
+			<th width="40">订单编号</th>
+			<th width="40">会员名</th>
+			<th width="80">收获地址</th>
+			<th width="100">下单时间</th>
+			<th width="100">支付时间</th>
+			<th width="100">确认时间</th>
+			<th width="50">是否支付</th>
+			<th width="50">订单状态</th>
+			<th width="50">发货状态</th>
+			<th width="50">收货状态</th>
+			<th width="70">操作</th>	
+		  </tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo">
+				<tr target="item_id" rel="{$vo.id}">
+					<td>{$vo.id}</td>
+					<td>{$vo.ident}</td>
+					<td>{$vo.username}</td>
+					<td>{$vo.address}</td>
+					<td>{$vo.buytime|date="Y-m-d H:i:s",###}</td>
+					<td>{$vo.paytime|date="Y-m-d H:i:s",###}</td>
+					<td>{$vo.suretime|date="Y-m-d H:i:s",###}</td>
+					<td><if condition="$vo.ispay eq 1"><span class="green">已支付</span><else/><span class="red">未支付</span></if></td>
+					<td><eq name="vo.isure" value="1">已确认<else/>未确认</eq></td>
+					<td><eq name="vo.issend" value="1"><span class="green">已发货</span><else/><span class="red">未发货</span></eq></td>
+					<td><eq name="vo.isgets" value="1"><span class="green">已收货</span><else/><span class="red">未收货</span></eq></td>
+					<td>
+					<if condition="$vo.issure eq 0">
+					<a href="__CONTROLLER__/doset/aa/order/id/{$vo.id}" target="ajaxTodo"><span style="color:blue;">确认订单</span></a>
+					</if>
+					<if condition="($vo.issure eq 1) AND ($vo.issend eq 0)">
+					<a href="__CONTROLLER__/doset/aa/send/id/{$vo.id}" target="ajaxTodo"><span style="color:blue;">确认发货</span></a>
+					</if>
+					<a href="__URL__/view/id/{$vo.id}/userid/{$vo.userid}" target="navTab" title="订单详情"><span style="color:orange;">详情</span></a>&nbsp;&nbsp;
+					<a href="__URL__/del/id/{$vo.id}" class="btnDel" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+					</td>
+				
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<div id="pageContent"  layouth="100" style="overflow:auto;">
+	<!--callbackType/closeCurrent不能随便添加-->
+	<form action="__URL__/update/navTabId/picturelist/callbackType/closeCurrent" method="post" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);">
+	<table class="form_table">
+	
+		<tbody>
+		<tr id="cat">
+			<th>添加相册：</th>
+			<td>
+				<select name="id" class="span2">
+					<volist name="lists" id="cat">
+						<option value="{$cat.id}">{:countPath($cat['path'])}{$cat.xname}</option>
+					</volist>
+				</select>
+			</td>
+		</tr>
+		<tr>
+		<volist>
+			<input type="hidden" name="id" value="{$dataes.id}"/>
+			<th>图片名称：</th>
+			<td><input type="text" name="name" class="span2 required" value="{$dataes.name}"></td>
+		</tr>
+		<tr>
+			<th>添加人：</th>
+			<td><input type="text" name="uid" class="span2 required" value="{$dataes.uid}"></td>
+		</tr>
+		<tr><th></th><td class="gray"></td></tr>
+		
+		<tr>
+			<th>图片描述：</th>
+			<td>
+				<textarea class="span5 editor required" name="content" style="height:200px;">{$dataes.content}</textarea>
+			</td>				
+		</tr>
+		</volist>
+		<tr><th></th><td><input type="submit" value="修改图片"/></td>
+		</tr>
+		
+	</tbody>
+	</table>
+		
+		
+	</form>
+</div>			

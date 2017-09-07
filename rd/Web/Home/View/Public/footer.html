@@ -1,0 +1,14 @@
+<!--页脚区域-->
+<div id="footer">
+	
+	<div class="row foot">
+		<div class="f_nav">
+		<foreach name="footArtData" item="vo">
+			<a href="__MODULE__/Article/articleinfo/id/{$vo.article_id}">{$vo.title}</a>|
+		</foreach>
+			<a href="__MODULE__/Article/articlelist/id/4">帮助中心</a>
+        </div>
+		<p class="lightgray">Powered by <a style="color:#f77a07;font-weight:bold;" href="__ROOT__" target="_blank">婚庆一站式服务</a> RETURN DREAM</p>{$siteData.copyright}<a target="_blank" href="http://52fhy.tk">{$siteData.icp}</a> 
+	</div>
+</div>
+<!--页脚区域结束-->

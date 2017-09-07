@@ -1,0 +1,49 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/photosadd/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		<div class="pageFormContent" layoutH="60">
+				<if condition="isset($_GET['id'])">
+				<input type="hidden" name="pid" value="{$Think.get.id}">
+				<else/>
+			<dl>
+				<dt>选择相册：</dt>
+				<dd>
+					<select name="pid" class="span2">
+						<option value="0">根相册</option>
+						<volist name="data" id="cat">
+							<option value="{$cat.id}">{:countPath($cat['path'])}{$cat.xname}</option>
+						</volist>
+					</select>
+				</dd>
+			</dl>
+			</if>
+			
+			<dl>
+				<dt>相册名：</dt>
+				<dd><input type="text" name="xname" class="required" value=""/>
+					
+			</dl>
+			<dl>
+				<dt>添加人：</dt>
+				<dd><select class="required" style="width:100%;" name="uname">
+					<volist name="user" id="cats">
+						<option name="uname">{$cats.name}</option>
+					</volist>
+					</select></dd>
+			</dl>
+			<dl>
+				<dt>相册描述：</dt>
+				<dd><textarea class="span2 required" name="description"></textarea></dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">添加</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

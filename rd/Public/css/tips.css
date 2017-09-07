@@ -1,0 +1,31 @@
+/*页面跳转自定义样式*/
+.order{
+	border: 3px solid #ebebeb;
+	margin: 80px auto 100px;
+	text-align: left;
+	width: 600px;
+}
+.order .tipOrder p {
+	color: #000;
+	font-size: 14px;
+	font-weight: bolder;
+	margin: 20px auto;
+	padding: 14px 0 20px 80px;
+	width: 500px;
+}
+.order .tipOrder p span {
+	font-size: 12px;
+}
+.order .tipOrder .suce {
+	background: url("../images/tip_icons.gif") no-repeat scroll 10px top rgba(0, 0, 0, 0);
+}
+.order .tipOrder .suce a {
+	color: #ffa200;
+	font-size: 12px;
+	font-weight: normal;
+	margin-left: 30px;
+	text-decoration: underline;
+}
+.order .tipOrder .lost {
+	background: url("../images/tip_icons.gif") no-repeat scroll 20px -50px rgba(0, 0, 0, 0);
+}

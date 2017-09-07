@@ -1,0 +1,91 @@
+/*商品列表页*/
+#main .area_l .box{}
+#main .area_l .box .menu{}
+#main .area_l .box .menu h3{
+	color: #f76f10;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+}
+#main .area_l .box .category{
+	border-bottom: 1px dashed #ddd;
+	padding:8px 0px;
+}
+#main .area_l .box .category dt{
+	background: url("../images/h3_bg.gif") no-repeat scroll 3px 6px rgba(0, 0, 0, 0);
+    padding: 0 0 0px 22px;
+	display: block;
+	font-size: 14px;
+	height: 25px;
+	line-height: 26px;
+	padding-bottom:5px;
+	margin:10px 0px 6px 0px;
+	border-bottom:1px solid #ddd;
+}
+#main .area_l .box .category dd{
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	overflow: hidden;
+	padding: 2px 5px 2px 15px;
+	width: 50px;
+	font-size: 12px;
+}
+
+/*左侧热销排行等*/
+#main .area_l .box .viewRecord li {
+	max-width:190px;
+	float:left;
+}
+#main .area_l .box .viewRecord div{
+	float:left;
+	max-width:100px;
+	padding:6px 3px;
+	font-size:12px;
+}
+#main .area_l .box ul.notice{
+	overflow:hidden;
+}
+#main .area_r h3{
+	font-size:18px;
+	font-family: "黑体";
+	margin:5px 0px;
+}
+#main .area_r .sort{
+	background-image: url(../images/list_ttls_bg.gif);
+	border:1px solid #ddd;
+	position: relative;
+	padding:10px 6px 0px;
+}
+#main .area_r .sort p{
+	display: inline-block;
+	font-weight:bold;
+}
+#main .area_r .sort ul{
+	display: inline-block;
+	position: absolute;
+	top:8px;
+	right:3px;
+}
+#main .area_r .sort li{
+	float:left;
+	margin:0px 8px;
+}
+#main .area_r .boxItems{
+	margin:4px 0px;
+	
+	font-size:12px;
+	padding:10px;
+}
+#main .area_r .boxItems li{
+	border-bottom:1px dashed #ddd;
+	padding:10px 0px;
+	margin:3px 0px;
+	display:inline-block;
+}
+#main .area_r .boxItems .pic{
+	
+	width:120px;
+	height:120px;
+}
+#main .area_r .boxItems h4{font-size:12px;}
+

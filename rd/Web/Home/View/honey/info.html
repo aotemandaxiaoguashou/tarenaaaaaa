@@ -1,0 +1,66 @@
+﻿<extend name="Public:layout" />
+<block name="title">
+<title>{$linfo.title}</title>
+</block>
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/foot.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/gonglue_channel.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/travel_center.css">
+</block>
+
+<block name="eachContent">
+
+<div class="top-bread">
+  <div class="bread"> <a href="__APP__/honey">蜜月攻略</a>&nbsp;&gt;&nbsp; <em>{$linfo.title}</em></div>
+</div>
+<div class="box">
+  <div class="content clearfix">
+    <div class="hot clearfix"> 
+      <!-- cre 块   -->
+      <div class="portlet" id="yw0">
+        <div class="portlet-content">
+          <div class="hot-left">
+            <div class="hot-left-title">相关目的地</div>
+            <div class="left-details">
+			<volist name="lovelist" id="llist">
+              <div class="hot-place"> 
+				<a href="__CONTROLLER__/info/id/{$llist.id}" class="scenery"><img src="__PUBLIC__/{$llist.pic}" height="50" width="50"></a> 
+				<span class="scenery-details"> <a href="__CONTROLLER__/info/id/{$llist.id}" target="_self" title="{$llist.title}">{$llist.title}</a> </span> 
+			  </div>
+            
+			</volist>
+            
+			</div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="clearfix note-center">
+        <div class="center-head">
+          <div class="context clearfix">
+            <div class="author-left"><a href="#" target="_blank" class="about-auther"><img src="__PUBLIC__/{$linfo.pic}" height="74" width="75"></a></div>
+            <div class="author-right"> <b>{$linfo.title}</b>
+				
+              <p><em id="author_name">{$linfo.auther}</em>&nbsp;<span>发表于：{$linfo.addtime|date="Y-m-d H:i:s",###}</span>&nbsp;&nbsp;&nbsp浏览数：{$linfo.num}		  
+			  </p>
+            
+			</div>
+          </div>
+          
+        </div>
+        <div id="daybox">
+          <div class="room-context"><a href="#" target="_blank" class="relatedlink">{$linfo.area_name}</a><br>
+            <p style="line-height:24px;text-indent:nullem;text-align:left"> 
+            {$linfo.detail}
+			</p>
+          </div>
+        </div>
+        
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+</block>

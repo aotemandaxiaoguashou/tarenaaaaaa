@@ -1,0 +1,46 @@
+<!-- header区域-->
+	<div id="header">
+		<!--header顶部-->
+		<div class="row top">
+			<div class="span3"><a href="__MODULE__"><img src="__PUBLIC__/images/logo.gif" alt="logo"/></a></div>
+			<div class="span6">
+				<div class="navtop">
+				<span class="lightgray">您好，{$userData.username|default="游客"}&nbsp;欢迎来到{$siteData.sitename}</span>	
+				<empty name="userData.username">
+					<a href="__MODULE__/Login/index">登录</a>|<a href="__MODULE__/Login/reg">免费注册</a>
+				<else />
+					<a href="__MODULE__/Login/logout">退出</a>
+				</empty>
+				|<a class="shop_cart" href="__MODULE__/Cart/index"><i class="icon-shopping-cart"></i>购物车</a>|
+				<empty name="userData.username">
+					<a href="__MODULE__/Article/articlelist/id/1">关于商城</a>
+				<else />
+					<a href="__MODULE__/User/index"><i class="icon-user"></i>用户中心</a>
+					|<a href="__MODULE__/Sms/index"><i class="icon-envelope"></i>消息<notempty name="smsCount">(<span class="highlight">{$smsCount}</span>)</notempty></a>
+				</empty>
+				|<a href="__MODULE__/Article/articlelist/id/1">帮助</a>
+				</div>
+				<div class="search">
+				<form id="search_form" method="GET" action="__MODULE__/Search/search">
+				<div class="input-append">
+				<input type="text" value="{$keyword}" placeholder="输入商品关键字" name="key" maxlength="20" autocomplete="off" style="width:100px;"/><input class="btn" style="width:60px;" type="submit" value="搜索">
+				</div>
+				<script>
+					$(document).ready(function(){
+						$("input[name='key']").focus(function(){
+							$(this).animate({width: '+160px'}, "slow");
+						});
+						$("input[name='key']").blur(function(){
+							$(this).animate({width: '+100px'}, "slow");
+						});
+					});
+					
+				</script>
+				<!--
+				<a href="__MODULE__/Search/index">高级搜索</a>
+				-->
+			</form>
+				</div>
+			</div>
+		</div>
+		<!--header顶部结束-->

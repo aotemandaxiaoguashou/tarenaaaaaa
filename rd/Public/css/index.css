@@ -1,0 +1,159 @@
+	/*公共样式及头部样式在common.css里面*/
+	
+	/*内容区域 大图轮播*/
+	#main .foucs_photo{
+		width:950px;
+		height:235px;
+		float:left;
+		padding-right:0px;
+		position:relative;
+	}
+	#main .prev,#main .next{
+		display:none;
+		width:40px;height:100px;
+		background:url(../images/btn.png) no-repeat;/*注意路径*/
+		position:absolute;
+		top:80px;
+	}
+	#main .prev{left:0px;}
+	#main .next{right:0;background-position: right;}
+	#main ul{ list-style: none ; }
+
+	#main .num {position:absolute;bottom:0px;right:25px;  }
+	#main .num li {
+		width:20px;line-height:20px;text-align:center;
+		font-family:"微软雅黑"; color: #FFFFFF; background: #444444; margin-right: 10px; border-radius:50%;cursor:pointer; float: left; 
+	}
+	#main .num li.on { background: #FF7700; } /*当前项*/
+	
+	/*商品展示区域*/
+	#main .area{}
+	
+	/*左区域分类*/
+	#main .area_l{margin:5px;}
+	#main .area_l .box{
+		border:1px solid #ccc;
+		margin:4px 6px 10px 0px;
+		padding:0px 8px;
+		height:auto;
+	}
+	/*左区域分类信息*/
+	#main .area_l .box .category{
+		display:inline-block;
+	}
+	#main .area_l .box .category a{
+		color:#666;
+		text-decoration:none;
+	}
+	#main .area_l .box .category a:hover{
+		color:#000;
+	}
+	#main .area_l .box .category dt{
+		display: block;
+		font-size: 14px;
+		height: 25px;
+		line-height: 26px;
+		padding-bottom:5px;
+		margin:10px 0px 6px 0px;
+		border-bottom:1px solid #ddd;
+	}
+	#main .area_l .box .category dd{
+		float: left;
+		height: 18px;
+		line-height: 18px;
+		overflow: hidden;
+		padding: 2px 5px 2px 15px;
+		width: 50px;
+		font-size: 12px;
+	}
+	/*左区域公告、品牌专区等*/
+	#main .area_l .box h3{
+		font-size: 14px;
+		height:30px;
+		line-height:30px;
+		color:#666;
+		position: relative;
+		background-color: #EEEEEE;
+		padding:2px 5px;
+	}
+	/*左区域公告*/
+	#main .area_l .box .notice{
+		padding:2px 5px;
+		margin:3px;
+		font-size: 12px;
+		height:90px;
+		overflow:hidden;
+	}
+	/*左区域品牌专区*/
+	#main .area_l .box .brand{
+		padding:3px 5px;
+	}
+	#main .area_l .box .brand li{
+		float: left;
+		margin:3px;	
+	}
+	
+	/*右区域*/
+	#main .area_r{}
+	/*右区域标题*/
+	#main .area_r h2{
+		border-bottom: 2px solid #f76f10;
+		position:relative;
+		font-family: "黑体";
+		font-weight: normal;
+		font-size:26px;
+	}
+	#main .area_r h2 b{
+		color:#f76f10;
+	}
+	#main .area_r h2 em{
+		font-size:18px;
+		font-style:normal;
+		color:#ddd;
+	}
+	/*"更多"的样式*/
+	#main .area_r h2 .more,#main .area_l .box h3 .more{
+		position:absolute;
+		top:0px;
+		right:18px;
+		font-size:12px;
+		font-weight: normal;
+		color:#666;
+		text-decoration: none;
+	}
+	#main .area_r h2 .more:hover,#main .area_l .box h3 .more:hover{
+		color:#f76f10;
+	}
+	/*右区域商品展示*/
+	#main .area_r .product{
+		border:1px solid #ccc;
+		padding:9px;
+		height:auto;	
+	}
+	/*右区域商品展示：单件信息*/
+	#main .area_r .product li{
+		margin:5px;
+		width:165px;
+		height:270px;
+		float:left;
+	}
+	
+	#main .area_r .product li img{
+		border:1px solid #ccc;
+	}
+	#main .area_r .product li h4{
+		font-size:12px;
+		color:#666;
+	}
+	#main .area_r .product li p{
+		padding:0px;
+		margin:0px;
+		font-size:12px;
+	}
+	#main .area_r .product li strong{
+		font-size:12px;
+	}
+	
+	
+	/*页脚区域样式在common.css里面*/
+	

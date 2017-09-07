@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>订单详情—JellyShop商城</title>
+<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/layout.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/user.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/guestbook.css" rel="stylesheet" />
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/jquery.superslide.2.1.1.js"></script>
+<script src="__PUBLIC__/js/index.js"></script>
+<script src="__PUBLIC__/js/user.js"></script>
+</head>
+<body>
+<div class="container">
+<!--header区域-->
+	<include file="Public:header"/>
+	<!--header区域结束-->
+
+	<!--主体区域-->
+	<div id="main">
+		<div class="path">
+			所在位置：<a href="index.php">首页</a>> 订单详情
+		</div>
+		
+		<!-- 用户中心侧边栏区域 -->
+			<include file="Common:userleft"/>		
+		  <!-- 用户中心侧边栏区域结束 -->
+		<div class="rightCloumns span9">
+			<div id="order_view" style="height:auto;">
+				<div class="ttlm">
+					<h3>订单详情</h3>
+				</div>
+				
+				<div class="orderInfo">
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="head">订单信息</td>
+						</tr>
+						<tr><th width="100">订单编号</th><td style="text-align:left;">{$order.orderno}</td></tr>
+						<tr>
+						<th>付款时间</th><td colspan="1" width="190">{$order.pay_time|date="Y-m-d H:i:s",###}</td>
+						<th>确认时间</th><td width="190"><if condition="$order['ok_time']">{$order.ok_time|date="Y-m-d H:i:s",###}</if></td>
+						</tr>
+						<tr><th>总价</th><td colspan="1">{$order.sum_money} 元</td><th>获得积分</th><td>{$order.sum_point}</td></tr>
+						<tr><th>状态</th><td colspan="4">
+						<span class="highlight"><eq name="order.is_pay" value="1">已支付<else/>请支付</eq></span> 
+						<span class="highlight"><eq name="order.is_ok" value="1">已确认<else/>等待商家确认</eq></span> 
+						<span class="highlight"><eq name="order.is_send" value="1">已发货<else/>待发货</eq></span>
+						</td>
+						</tr> 
+					</table>
+					
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="head">收货人信息</td>
+						</tr>
+						 <tr>
+							<th width="100">收获地址</th><td style="text-align:left;">{$order.address}</td>
+						 </tr>
+						 <tr>
+							<th>买家留言</th><td>{$order.buy_msg}</td>
+						 </tr>
+					</table>
+					
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="head">商品信息</td>
+						</tr>
+						<tr class="well">
+							<th width="100px">图片</th>
+							<th width="250px">商品信息</th>
+							<th width="60px">数量</th>
+							<th>总价</th>
+						</tr>
+						
+						<!--订单-->
+						<volist name="orderData" id="v">
+						<volist name="v[0]" id="vo">
+						<tr>
+							<td><a target="_blank" href="__MODULE__/Category/info/id/{$vo.goods_id}"><img width="80" height="80" align="left" src="__PUBLIC__/Uploads/goods/s_{$vo.pic}"></a></td>
+							<td><a target="_blank" href="__MODULE__/Category/info/id/{$vo.goods_id}">{$vo.goods_name}</a></td>
+							<td>{$vo.buy_num}</td>
+							<td>{$vo.goods_price}*{$vo.buy_num}</td>
+						</tr>
+						</volist>
+							</volist>
+					</table>
+					
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="head">物流信息</td>
+						</tr>
+						 <tr><th width="100">发货方式</th><td style="text-align:left;">快递</td></tr>
+						 <tr><th width="100">物流公司</th><td style="text-align:left;">百世汇通</td></tr>
+						 <tr><th width="100">运单号码</th><td style="text-align:left;">280229606926 </td></tr>
+						 <tr><th width="100">物流跟踪</th><td style="text-align:left;">暂无</td></tr>
+					</table>
+				</div>
+				
+		
+		  <!-- 以上订单详情结束 -->
+			</div>
+		</div>
+	
+	</div>
+	
+	<!--主体区域结束-->
+
+	<!--页脚区域-->
+	<include file="Public:footer"/>
+	<!--页脚区域结束-->
+</div>
+</body>
+</html>

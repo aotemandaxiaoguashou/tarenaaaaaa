@@ -1,0 +1,52 @@
+<extend name="Public:layout" />
+
+<block name="title">
+	<title>会员中心-个人信息管理-酷结网</title>
+</block>
+
+<block name="style">
+	<script type="text/javascript" src="__PUBLIC__/js/WdatePicker.js"></script><link type="text/css" rel="stylesheet" href="%E4%BC%9A%E5%91%98%E4%B8%AD%E5%BF%83-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86-CoolMarry-%E9%85%B7%E7%BB%93%E7%BD%91_files/WdatePicker.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/member.css">
+</block>
+
+<block name="eachContent">
+	<div class="w page-here mb10">
+  <span>当前位置：</span><a href="__APP__/Index/index">首页</a>&gt; <em>会员中心</em>
+</div>
+<div class="w clearfix mb15">
+    <div class="sidebar fl">
+    <div class="user-moudle clearfix">
+      <div class="user-hd tc">个人中心首页</div>
+      <div class="user-bd">
+        <dl class="user-menu pb10">
+          <dt><i></i>交易管理</dt>
+          <dd><a href="__CONTROLLER__/ordercenter">订单中心</a></dd>
+        </dl>
+        <dl class="user-menu pb10">
+          <dt><i></i>个人中心</dt>
+          <dd><a href="__CONTROLLER__/userIM">个人信息管理</a></dd>
+          <dd><a href="__CONTROLLER__/changepwd">修改密码</a></dd>
+          <dd><a href="__CONTROLLER__/address">收货地址</a></dd>
+        </dl>
+	</div>
+    </div>
+  </div>
+  <div class="maincont fr">
+    <div class="user-title">
+      个人信息管理
+    </div>
+    <div class="clearfix user-content">
+      <div class="clearfix p10 mb10">
+        <p>帮助我们完善您的个人信息，有助于我们末来根据您的情况提供更加个性化的服务;我们会对您的个人资料隐私加以保密。</p>
+        <table class="user-tab4" width="100%" cellpadding="0" cellspacing="0">
+          <form method="post" action="__CONTROLLER__/adduser">
+            <tr><td class="passwordl">用户名：</td><td>{$_SESSION[C('SESSION_USER')]['username']}<span></span></td></tr>
+            <tr><td class="passwordl"><em>*</em>真实姓名：</td><td><input class="tab4-txt" id="tname" name="tname" type="text"><span></span></td></tr>
+            <tr><td class="passwordl">&nbsp;</td><td><input value="提 交" class="tab4-btn"  type="submit"></td></tr>
+          </form>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> 
+</block>

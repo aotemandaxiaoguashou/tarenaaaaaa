@@ -1,0 +1,124 @@
+<div class="PageContent">
+	<div class="accountInfo">
+		<p>编辑商品信息</p>
+	</div>
+</div>
+<script>
+	function showAttr(cat_id){
+		$("#cat").nextAll(".attr").remove();
+		$.ajax({
+			url:"__URL__/showattr",
+			type:"get",
+			data:'cat_id='+cat_id,
+			dataType:"json",
+			success:function(data){
+				var info ="";
+				for(var i=0;i<data.length;i++){
+					info+="<tr class='attr'><th>"+data[i].attr_name+"</th>";
+					info+="<td>";
+					if(data[i][0]!=null){
+						for(var j=0;j<data[i][0].length;j++){
+							info+="<input type='checkbox' value='"+data[i][0][j].attr_name+"' name='attr["+data[i].attr_name+"][]'>"+data[i][0][j].attr_name;
+						}
+					}
+					info+="</td>";
+					//info+="<td><input type='checkbox' value='' name='attr[]'></td>";				
+					info+="</tr>";
+				}
+				//alert(info);
+				$("#cat").after(info); //将拼装好的信息添加到当前下拉框后面。
+			}
+		});
+	}
+</script>
+<div id="pageContent"  layouth="100" style="overflow:auto;">
+	<!--callbackType/closeCurrent不能随便添加-->
+	<form action="__URL__/update/navTabId/goodsadd/" method="post" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, navTabAjaxDone);">
+	<table class="form_table">
+		<input type="hidden" name="goods_id" value="{$vo.goods_id}">
+		<tbody>
+		<tr id="cat">
+			<th>商品分类：</th>
+			<td>
+				<select name="cat_id" class="span2" onchange="showAttr(this.value)">
+					<volist name="catlist" id="cat">
+						<option value="{$cat.cat_id}" <if condition="substr_count($cat['path'],',')-1 elt 1">disabled</if><if condition="$vo.cat_id eq $cat.cat_id">selected</if> >{:countPath($cat['path'])}{$cat['cat_name']}</option>
+					</volist>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>商品名称：</th>
+			<td><input type="text" value="{$vo.goods_name}" name="goods_name" class="span2 required"></td>
+		</tr>
+		
+		<tr>
+			<th>商品编号：</th>
+			<td><input type="text" name="goods_no" value="{$vo.goods_no}" class="required" /></td>
+		</tr>
+		
+		<tr><th>商品价格：</th>
+			<td><input type="text" name="goods_price" value="{$vo.goods_price}"  class="required"/> 元	
+			</td>
+		</tr>
+		
+		<tr>
+			<th>商品积分：</th>
+			<td><input type="text" name="points" value="{$vo.points}" class="required"></td>
+		</tr>
+		<tr><th></th><td class="gray">用于购买商品时赠送的积分，默认为0不赠送</td></tr>
+		
+		<tr>
+			<th>商品图片：</th>
+			<td><input type="file" name="pic"></td>
+		</tr>
+		<tr><th></th><td class="gray"></td></tr>
+		
+		<tr>
+			<th>商品关键字：</th>
+			<td><input type="text" value="{$vo.keywords}" name="keywords" class="span2 required"></td>
+		</tr>
+		<tr>
+			<th></th><td class="gray">多个关键字用逗号隔开</td>
+		</tr>
+		<tr>
+			<th>商品描述：</th>
+			<td>
+				<textarea class="span5 required editor" name="content" style="height:200px;">{$goodsinfo.content}</textarea>
+			</td>				
+		</tr>
+		<tr>
+			<th></th><td class="gray">商品的详细描述信息</td>
+		</tr>
+		
+		<tr>
+			<th>库存：</th>
+		<td><input type="text" name="goods_num" value="{$vo.goods_num}" class="required"/>件</td>
+		</tr>
+		
+		<tr>
+			<th>上架：</th>
+		<td><input type="checkbox" name="is_onsale" value="1" <eq name="vo.is_onsale" value="1">checked</eq>  /></td>
+		</tr>
+		
+		<tr>
+			<th>加入推荐：</th>
+			<td>
+				<input type="checkbox"  name="is_hot" value="1" <eq name="vo.is_hot" value="1">checked</eq>>热销&nbsp;&nbsp;&nbsp;
+				<input type="checkbox"  name="is_new" value="1" <eq name="vo.is_new" value="1">checked</eq>>新品&nbsp;&nbsp;&nbsp;
+				<input type="checkbox"  name="is_promoted" value="1" <eq name="vo.is_promoted" value="1">checked</eq>>促销&nbsp;&nbsp;&nbsp;
+			</td>
+		</tr>
+		<tr><th></th><td class="gray"></td></tr>
+		
+		
+		</tr>
+		<tr><th></th><td><input type="submit" value="更新商品"/></td>
+		</tr>
+		
+	</tbody>
+	</table>
+		
+		
+	</form>
+</div>			

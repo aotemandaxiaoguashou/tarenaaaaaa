@@ -1,0 +1,117 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>确认订单信息-酷结网</title>
+</block>
+
+<block name="style">
+  <link href="__PUBLIC__/css/shopping.css" rel="stylesheet" type="text/css">
+</block>
+
+<block name="eachContent">
+
+<div class="clearfix page_area">
+    <div class="user_default">
+     	<div class="nav_2"></div>
+     	<div class="title_s mb0"><span class="title01_s">填写订单信息</span></div>
+       	<div class="flow p0">
+        	<div class="order_title">配送地址<a href="__CONTROLLER__/changeIndent/userid/{$users.id}">[修改]</a></div>
+            <div class="address_info">
+            	<table border="0" cellpadding="0" cellspacing="0" width="600">
+                	<tbody>
+						<tr>
+							<td align="right" width="80">新人姓名：</td>
+							<td align="left" width="320">{$users.tname}</td>
+							<td>&nbsp; </td>
+						</tr>
+					
+						<tr>
+						  <td align="right" width="80">详细地址：</td>
+							<td align="left" width="320">{$users.address}</td>
+							<td align="left">（填写详细地址有助于快速配送） </td>
+						</tr>
+						<tr>
+							<td align="right" width="80">邮政编码：</td>
+							  <td align="left" width="320">{$users.zipcode}</td>
+							  <td>&nbsp; </td>
+						</tr>
+
+						<tr>
+						  <td align="right" width="80">手机号码：</td>
+							<td align="left" width="320">{$users.phone}</td>
+							<td>&nbsp; </td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+         
+        
+            
+            <div class="order_title">商品列表<a href="__APP__/Shopcar/index">[返回购物车]</a></div>
+                
+			
+				<div class="address_info">
+                    <table class="flow-tab-f3" bgcolor="#dcdcdc" cellpadding="0" cellspacing="1" width="100%">
+						<thead>
+							<tr>
+								<th width="15%">商品图片</th>
+								<th width="55%">商品名称</th>
+															<th>市场价</th>
+								<th width="10%">酷结价</th>
+															<th width="10%">数量</th>
+								<th width="10%">小计</th>
+							</tr>
+						</thead>
+						<tbody>
+						<foreach name="info" item="inf">
+							<foreach name="inf['goods']" item="goods">	
+							<tr id="content_3009">
+						        <td><img class="f_l" width="29px" height="22px" src="__PUBLIC__/Uploads/goods/{$goods.pic}" alt="{$goods.goodsname}" onerror="this.src='static/__PUBLIC__/images/product/default.gif'"></td>
+						        <td class="name tab-f3-name">
+						          {$goods.goodsname}<br>
+						        </td>
+						        <td><del>￥{$goods.mar-price}</del></td>
+						        <td><strong class="f_red">￥<span id="cart_price_3009">{$goods.price}</span></strong></td>
+						        <td>{$inf.total}</td>
+						        <td>￥<span id="subtotal_3009">{$goods.sum-price}</span></td>
+						    </tr>
+							</foreach>
+						</foreach>
+						</tbody>
+                    </table>
+                </div>
+				<div>
+					<div class="p10 count-f1">
+                        <div class="tr">商品金额：<em>{$info.all-price}元</em></div>
+						<div class="tr">运费：<em>0.00元</em></div>
+						<div class="tr">应付总额：<em><span class="f_red">￥{$info.all-price}</span> 元</em></div>
+                    </div>
+					<form name="form1" id="form1" method="post" action="__CONTROLLER__/doUpIndent" onsubmit="return checkCart()">
+						<input name="userid" value="{$users.id}" type="hidden">
+						<input name="username" id="os" value="{$users.username}" type="hidden">
+						<input name="linkman" id="recommend" value="{$users.tname}" type="hidden">
+						<input name="phone" id="vp_number" value="{$users.phone}" type="hidden">
+						<input name="email" id="usejifen" value="{$users.email}" type="hidden">
+						<input name="address" id="address_id" value="{$users.address}" type="hidden">
+						<input name="zipcode" id="recomm_type" value="{$users.zipcode}" type="hidden">
+						<input name="all-price" id="recomm_gifts" value="{$info.all-price}" type="hidden">
+						<input name="points" id="recomm_gifts" value="{$info.all-point}" type="hidden">
+						<div class="submt_button">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									<tr>
+										<td align="right">
+											<label><span>提交订单 应付总额:<b>￥{$info.all-price}</b>元</span><input value="" type="submit"></label>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+				</div>
+
+			
+		</div>
+	</div>
+</div>
+ 
+</block>

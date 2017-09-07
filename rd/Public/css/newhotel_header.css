@@ -1,0 +1,100 @@
+.h1 a{background:url(http://www.591wed.com/image/logo.jpg) no-repeat; height: 70px;width: 300px;display: block;line-height: 1000px;overflow: hidden;}
+.hotel_wanmei{width: 680px;height: 70px;float: left;}
+.hotel_wanmei1{width:470px;float:left;margin-top: 15px;}
+.hotel_shijie{margin-left:70px;}
+.hotel_zhuxian{width:290px;height:29px;border:2px solid #FF647C;float:left;background: url(http://m.591wed.com/images/search.png) no-repeat 9px -42px;}
+#hotelName_ct{margin: 1px 0 0 34px;border:0;*margin-left:-28px;*margin-top:-1px;width: 255px;height: 26px;color: #b3b3b3;line-height:26px;overflow:hidden;}
+.hotel_fofo{border:none;background:url(/images/hotel_20140402_003.jpg);width:90px;float:left;height:35px;margin-top: -1px;}
+.hotel_shengui{color:#C2C0C1;}
+.hotel_shengui a{color: #C2C0C1;}
+.hotel_zhenzhen{margin-left:8px;}
+
+
+/*头部导航栏目下*/
+.hotel_secondList{clear:both;background:#F9E5E9;height:23px;border:solid 1px #F9E5E9;border-top:none; width:979px; margin:0 auto; padding:8px 0 6px 0; margin-top:-9px;}
+.hotel_secondList a{ display:block; height:23px;width:auto; float:left; padding:0 8px; margin-right:22px; color:#911327;font-size:14px;font-weight: bold;line-height: 25px;}
+.hotel_secondList a:hover{color:#FFFFFF; background:#FF647C;}
+.search_input_hotel_new{height:18px; width:100px; float:left; margin-left:40px;margin-top: -9px; padding-top:6px;}
+.search_input_hotel_new input{border:solid 1px #FF7E9B; width:100px; height:18px;*margin-left:-40px;}
+.search_submit_hotel_new{height:20px; width:45px; float:left; margin-top: -9px; padding-top:6px; margin-left:10px;}
+.search_submit_hotel_new input{width:45px; height:21px; border:none; background:url(/images/hotel_serach_new.gif);*margin-left:-10px;}
+
+.xianshi{background-image: url(http://sale.591wed.com/images/20140221_xstm_03.jpg);
+background-repeat: no-repeat;
+background-position: 100px 6px;}
+
+.bdsharebuttonbox{width: 102px;
+position:fixed;
+_position: absolute;
+_top: expression(documentElement.scrollTop + 382 + 'px');
+top:382px;right:50%;margin-right:-506px;
+background: #FFFFFF;
+border:2px #FF4B4B solid;
+overflow:hidden;
+display:none;
+padding:10px 0;
+}
+.qq_main{width: 102px;
+position:fixed;
+_position: absolute;
+_top: expression(documentElement.scrollTop +290 + 'px');
+top:290px;right:50%;margin-right:-506px;
+background: #FFFFFF;
+border:2px #FF4B4B solid;
+overflow:hidden;
+display:none;
+padding:10px 0;
+}
+.bdsharebuttonbox li{margin-left:20px;width:100px}
+.bbq_{width:78px; cursor:pointer}
+.bbq_a{border:1px #CCCCCC solid;z-index:3;background:#FFFFFF;}
+.bbq_a a{height:69px;}
+.bbq_b{border-top:1px #CCCCCC solid;border-left:1px #CCCCCC solid;border-right:1px #CCCCCC solid;height:91px;}
+.bbq_b a{height:91px;}
+.bbq_c{border-left:1px #CCCCCC solid;border-right:1px #CCCCCC solid;border-bottom:3px solid #FF4B4B;}
+.bbq_c a{height:69px;}
+.share_line{border:2px #FF4B4B solid}
+.line_p{width:10px; height:67px; background:#ffffff;position:fixed;
+_position: absolute;
+_top: expression(documentElement.scrollTop + 384 + 'px');
+top:384px;right:50%;margin-right:-507px; z-index:999;display:none}
+.line_p_1{width:10px; height:88px; background:#ffffff;position:fixed;
+_position: absolute;
+_top: expression(documentElement.scrollTop + 292 + 'px');
+top:292px;right:50%;margin-right:-509px; z-index:999;display:none}
+.qq_main a{display:block;width:84px;height:22px; background-position:10px center;line-height:22px;padding-left:15px;color:#000000}
+.qq_main li{padding-left:5px;margin-top:5px}
+.none {display:none;}
+.right_all{width:80px;text-align:center;background:#FFFFFF;overflow:hidden;position:fixed;_position:absolute;_position: absolute; _top: expression(documentElement.scrollTop + 290 + "px");top:290px;right:50%;margin-right:-585px;}
+.bbq_ a{display:block;line-height:20px}
+.bbq_ a img{margin-top:15px}
+
+/*五哥婚博会*/
+.bdsharebuttonbox_w{width: 610px;
+height:380px;
+position:fixed;
+_position: absolute;
+_top: expression(documentElement.scrollTop + 382 + 'px');
+top:342px;right:50%;margin-right:-506px;
+
+background: url(http://m.591wed.com/images/wuge_dafasdf.jpg);
+border:2px #FF4B4B solid;
+overflow:hidden;
+display:none;
+padding:10px 0;
+}
+.bbq_w {
+border-top: 1px #CCCCCC solid;
+border-left: 1px #CCCCCC solid;
+border-right: 1px #CCCCCC solid;
+height: 91px;
+}
+.line_p_w{width:10px; height:99px; background:#ffffff;position:fixed;
+_position: absolute;
+_top: expression(documentElement.scrollTop + 384 + 'px');
+top:344px;right:50%;margin-right:-507px; z-index:999;display:none}
+.line_p_1{width:10px; height:88px; background:#ffffff;position:fixed;
+_position: absolute;
+_top: expression(documentElement.scrollTop + 292 + 'px');
+top:292px;right:50%;margin-right:-509px; z-index:999;display:none}
+/*五哥婚博会end*/

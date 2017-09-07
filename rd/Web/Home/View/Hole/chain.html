@@ -1,0 +1,50 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>连锁酒店-酷结网</title>
+</block>
+
+<block name="style">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/newhotel_index.css">
+<script type="text/javascript" src="__PUBLIC__/js/newhotel_index.js"></script>
+	
+</block>
+
+<block name="eachContent">
+
+<div class="adclsaa_05">
+	<div class="adclsaa_05_left">
+		<div style="border-bottom: 1px dashed #E4E4E4;">
+			<dt>婚宴类型:</dt>
+			<dd><a href="__CONTROLLER__/index" title="酷结婚宴酒店" rel="nofollow">全部</a>
+				<a href="__CONTROLLER__/five" title="五星级婚宴酒店">五星级酒店</a>&nbsp;
+				<a href="__CONTROLLER__/four" title="四星级婚宴酒店">四星级酒店</a>&nbsp;
+				<a href="__CONTROLLER__/three" title="三星级婚宴酒店">三星级酒店</a>&nbsp;
+				<a href="__CONTROLLER__/chain" title="知名连锁酒店婚宴预订">连锁酒店</a>&nbsp;
+				<a href="__CONTROLLER__/sod" title="婚宴草坪酒店预订">婚宴草坪酒店</a>&nbsp;
+			</dd>
+		</div>
+		
+		
+
+	</div>
+</div>
+
+<!--所有酒店列表-->
+<div style="clear:both;"></div>
+
+<div class="nav" style="width:980px;">
+	<div class="allshow">
+		<volist name="chains" id="chain">
+		<ul>
+			<li><a href="__CONTROLLER__/detail/id/{$chain.id}" target="_blank" title="{$chain.holename}"><img src="__PUBLIC__/Uploads/hole/{$chain.pic}" alt="{$chain.holename}预订" height="155" width="236"></a></li>
+			<li><a href="#" target="_blank" title="{$chain.holename}预订"><span class="allshow_title">{$chain.holename}</span></a></li>
+			<li><span class="allshow_style">酒店类型：<if condition="$chain.style eq 0">五星级酒店<elseif condition="$chain.style eq 1"/>四星级酒店<elseif condition="$chain.style eq 2"/>三星级酒店<elseif condition="$chain.style eq 3"/>连锁酒店<else />草坪婚宴酒店</if></span></li>
+			<li><span class="allshow_style">婚宴价格：{$chain.price}元/桌</span></li>
+			<li><span class="allshow_style">最大桌数：{$chain.tabnum}桌</span></li>
+		</ul>
+		</volist>
+   	</div>	
+	<div style="clear:both;"></div>
+</div>
+
+</block>

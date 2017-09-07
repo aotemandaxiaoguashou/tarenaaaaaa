@@ -1,0 +1,220 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>CoolMarry-酷结网-抽奖区</title>
+</block>
+
+<block name="style">
+		<script src="__PUBLIC__/js/jquery-1.js"></script>
+
+		<script src="__PUBLIC__/js/global1.js"></script>
+  <style>
+	
+
+    .quick-entry{margin-bottom:15px;}
+
+    .quick-entry .quick-box{width:1100px; padding:0 7px;}
+
+    .quick-entry .quick-box li{margin:0 15px;}
+	
+	
+	<!--导航栏下拉样式-->
+		.newnav *{
+			text-decoration:none;
+		}
+		
+		.newmenu{
+			list-style:none;
+		}
+		.newnav{
+			list-style:none;
+			height:38px;
+			margin:0 auto;	
+		}
+		.newnav li{
+			float:left;
+			position:relative;
+		}
+		.newnav li a{
+			color:#fff;
+			height:38px;
+			line-height:38px;
+			padding:0 0px;
+			blr:expression(this.onFocus=this.close());
+			blr:expression(this.onFocus=this.blur());
+			display:inline-block;
+		}
+		.newnav li a:focus{ 
+			-moz-outline-style: none; 
+		}
+		.newnav li .drop-down{
+			position:absolute;
+			top:37px;
+			left:-1px;
+			list-style:none;
+			background-color:#333;
+			display:none;
+		}
+		.newnav li .drop-down li{
+			text-align:center;
+			clear:left;
+			width:90px;
+			height:35px;
+			line-height:35px;
+			position:relative;
+		}
+		.newnav li .drop-down li a{
+			height:34px;
+			line-height:34px;
+			width:90px;
+			padding:0;
+			display:inline-block;
+		}
+		
+		
+		
+#lottery{width:800px;height:600px;padding:5px 20px;margin:20px auto;}
+#lottery table td{width:150px;height:150px;text-align:center;vertical-align:middle;font-size:24px;color:#333;font-index:-999}
+#lottery table td button{width:300px;height:300px;line-height:300px;display:block;font-size:50px;color:#aceace;background-color:#FA598F;}
+#lottery table td.active{background-color:#ea0000;}
+
+  </style>
+
+</block>
+
+<block name="eachContent">
+<div id="did" style="width:250px;height:100px;border:1px solid #cyan;float:left;background:#aceace;font-size:18px;color:red;">
+	亲爱的{$rk}--用户,你有一次抽奖机会,请珍惜机会.祝福您婚姻幸福美满!
+</div>
+<div class="w pb20">
+    <!--标题-->
+    
+<div id="lottery">
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="lottery-unit lottery-unit-0"><img src="__PUBLIC__/images/prize/1.jpg" width="145px" height="145px" alt="公仔熊"></td>
+			<td class="lottery-unit lottery-unit-1"><img src="__PUBLIC__/images/prize/2.jpg" width="145px" height="145px"></td>
+			<td class="lottery-unit lottery-unit-2"><img src="__PUBLIC__/images/prize/3.jpg" width="145px" height="145px"></td>
+            <td class="lottery-unit lottery-unit-3"><img src="__PUBLIC__/images/prize/4.jpg" width="145px" height="145px"></td>
+		</tr>
+		<tr>
+			<td class="lottery-unit lottery-unit-11"><img src="__PUBLIC__/images/prize/5.jpg" width="145px" height="145px"></td>
+			<td colspan="2" rowspan="2"><button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">点击抽奖</button></td>
+			<td class="lottery-unit lottery-unit-4"><img src="__PUBLIC__/images/prize/6.jpg" width="145px" height="145px"></td>
+		</tr>
+		<tr>
+			<td class="lottery-unit lottery-unit-10"><img src="__PUBLIC__/images/prize/7.jpg" width="145px" height="145px"></td>
+			<td class="lottery-unit lottery-unit-5"><img src="__PUBLIC__/images/prize/8.jpg" width="145px" height="145px"></td>
+		</tr>
+        <tr>
+			<td class="lottery-unit lottery-unit-9"><img src="__PUBLIC__/images/prize/9.jpg" width="145px" height="145px"></td>
+			<td class="lottery-unit lottery-unit-8"><img src="__PUBLIC__/images/prize/10.jpg" width="145px" height="145px"></td>
+			<td class="lottery-unit lottery-unit-7"><img src="__PUBLIC__/images/prize/11.jpg" width="145px" height="145px"></td>
+            <td class="lottery-unit lottery-unit-6"><img src="__PUBLIC__/images/prize/12.jpg" width="145px" height="145px"></td>
+		</tr>
+	</table>
+</div>
+
+<!--导航栏下拉菜单js-->
+
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	var lottery={
+		index:-1,	//当前转动到哪个位置，起点位置
+		count:0,	//总共有多少个位置
+		timer:0,	//setTimeout的ID，用clearTimeout清除
+		speed:20,	//初始转动速度
+		times:0,	//转动次数
+		cycle:50,	//转动基本次数：即至少需要转动多少次再进入抽奖环节
+		prize:-1,	//中奖位置
+		init:function(id){
+			if ($("#"+id).find(".lottery-unit").length>0) {
+				$lottery = $("#"+id);
+				$units = $lottery.find(".lottery-unit");
+				this.obj = $lottery;
+				this.count = $units.length;
+				$lottery.find(".lottery-unit-"+this.index).addClass("active");
+			};
+		},
+		roll:function(){   //转动函数
+			var index = this.index;
+			var count = this.count;
+			var lottery = this.obj;
+			$(lottery).find(".lottery-unit-"+index).removeClass("active");  //转动的时候过了图片时去掉样式
+			index += 1;//每次加一个
+			if (index>count-1) {  //大于总数就重新开始
+				index = 0;
+			};
+			$(lottery).find(".lottery-unit-"+index).addClass("active");//转动的时候到图片时加样式
+			this.index=index;
+			return false;
+		},
+		stop:function(index){  //停止函数
+			this.prize=index;
+			return false;
+		}
+	};
+
+	function roll(){
+		lottery.times += 1;
+		lottery.roll();//调用转动过程的函数
+		if (lottery.times > lottery.cycle+10 && lottery.prize==lottery.index) {
+			//转动次数大于基本转动次数和得奖位置在起始位置是会自动清零
+			clearTimeout(lottery.timer);
+			lottery.prize=-1;
+			lottery.times=0;
+			click=false;
+		}else{
+			if (lottery.times<lottery.cycle) {
+				lottery.speed -= 10;//降低转动速度
+			}else if(lottery.times==lottery.cycle) {   //减少转动次数
+				var index = Math.random()*(lottery.count)|0;
+				lottery.prize = index;//得到得奖位置
+			}else{
+				if (lottery.times > lottery.cycle+10 && ((lottery.prize==0 && lottery.index==7) || lottery.prize==lottery.index+1)) {
+					lottery.speed += 110;//加快转动速度
+				}else{
+					lottery.speed += 20;
+				}
+			}
+			if (lottery.speed<40) {   //小于40的速度时  就固定速度
+				lottery.speed=40;
+			};
+			
+			//console.log(lottery.times+'^^^^^^'+lottery.speed+'^^^^^^^'+lottery.prize);
+			lottery.timer = setTimeout(roll,lottery.speed);//设置转动时间
+		}
+		return false;
+	}
+	//alert("公仔熊");
+	var click=false;
+	var counts=1;
+	window.onload=function(){
+		//得到转动节点
+		lottery.init('lottery');
+		$("#lottery button").click(function(){   //按钮点击函数
+			
+			if (click) {
+				return false;
+			}else{
+				counts++;
+				if(counts==2){
+
+					//$("#did").css("display","block");
+					alert("亲爱的VIP用户,你有一次抽奖机会,请珍惜机会.祝福您");
+					lottery.speed=100;  //开始的速度
+					roll();
+					click=true;
+					return false;
+				}else{
+					alert("祝贺您亲爱的,你获得了由我们本站提供精美礼物,我们会将礼物尽快地发给你,请您填写一下地址");
+					location.href="__URL__/info";
+				}
+			}
+			
+		});
+	};
+	
+</script>
+	
+</div></div>
+</block>

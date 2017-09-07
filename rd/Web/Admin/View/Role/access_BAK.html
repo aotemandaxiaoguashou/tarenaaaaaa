@@ -1,0 +1,33 @@
+<div class="PageContent">
+	<div class="accountInfo">
+		<p>分配权限</p>
+	</div>
+</div>
+<div id="pageContent" layoutH="30">
+  <div class="box_table">
+	
+	<form method="post" action="__URL__/access_save/navTabId/access/" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)">
+	<input type="hidden" name="role_id" value="{$_GET['id']}"/>
+	<table width="90%">
+	<div class="pageFormContent">
+	
+	<volist name="node" id="vo">
+	<tr style="float:left;margin:0 15px;">
+		<td><span><label><input type="checkbox" name="rids[]" value="{$vo.id}" <if condition="in_array($vo[id],$rids)">checked</if> >{$vo.name}</label></span></td>
+	</tr>
+	</volist>
+	</div>
+
+	<div class="formBar">
+		<label style="float:left"><input type="checkbox" class="checkboxCtrl" group="rids[]" />全选</label>
+		<ul>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="checkboxCtrl" group="rids[]" selectType="invert">反选</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+		</ul>
+	</div>
+	</table>
+</form>
+	
+  </div>
+</div>
+

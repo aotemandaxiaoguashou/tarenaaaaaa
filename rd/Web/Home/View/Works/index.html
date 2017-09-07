@@ -1,0 +1,60 @@
+<extend name="Public:layout" />
+<block name="title">
+  <title>作品展示</title>
+</block>
+<block name="style">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/weddings.css">
+  <link charset="utf-8" rel="stylesheet" href="__PUBLIC__/css/laydate.css">
+  <link charset="utf-8" rel="stylesheet" href="__PUBLIC__/css/laydate_002.css">
+</block>
+<block name="eachContent">
+<div class="w pb20"> 
+  <!--标题-->
+  <div class="ui-nav-class  clx">
+    <span><a href="__APP__" style='color:#FA0D82'>首页</a>&nbsp;&gt;&nbsp;作品列表页</span>
+  </div>
+  <div class="wrap clx pt20">
+    <div class="wrap-fl fl"> 
+      <div class="opus-list">
+        <ul class="opus-list-ul" >
+          
+		<volist name="plist" id="pimg" empty="暂时没有数据">
+		  <li class="mode-7"> 
+            <!-- 如果图片 <= 3 -->
+            <div class="opus-title">
+              <div class="fl">
+                <h4>主题：<a href="__CONTROLLER__/info/id/{$pimg.id}" target="_self">{$pimg.title}</a> </h4>
+                <div class="opus-author">
+                  <div class="opus-name"><span>举行：</span>{$pimg.hole_name}</a> </div>
+                </div>
+              </div>
+              <div class="fr"><span>{$pimg.addtime|date='Y-m-d H:i:s',###}</span> </div>
+            </div>
+            <!-- 循环图片 li,有大小判断 -->
+			
+            <div class="opus-img">
+              <ul class="opus-img-ul">
+			  <volist name="pimg['img_name']" id="imgs">
+                <li class="item-1"> <a href="__CONTROLLER__/info/id/{$pimg.id}"> <img src="__PUBLIC__/{$imgs.pic_name}" class="imgLoad" alt="" height="230" width="230"> </a> </li>            
+              </volist>
+			   <li class="item-13"> <a href="__CONTROLLER__/info/id/{$pimg.id}" class="all">查看详情</a> </li>
+			  </ul>
+            </div>
+          </li>
+		</volist>
+        </ul>
+      </div>
+      
+      <!-- 分页: 如果没有数据或者没有分页 分页导航不显示 -->
+      <div id="j-mod-page" class="mod-page mt20" data-pagecount="27">
+        <div class="inner"> <span class="no-link disabled">&lt;&lt;上一页</span><span class="on">1</span><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">7</a><a href="#">8</a><span class="dot">...</span><a href="#">26</a><a href="#">27</a><a href="#" class="no-link">下一页&gt;&gt;</a> <span>共27页，到
+          <input value="2" type="text">
+          页
+          <input value="确认" type="button">
+          </span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</block>

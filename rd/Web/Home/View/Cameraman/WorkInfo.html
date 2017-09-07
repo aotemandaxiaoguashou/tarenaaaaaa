@@ -1,0 +1,105 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>作品详情 - 易结网</title>
+</block>
+<block name="style">
+		<link rel="shortcut icon" href="http://easywed.cn/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/weddings.css">
+	<link charset="utf-8" rel="stylesheet" href="http://static.easywed.cn/dist/js/lib/laydate/need/laydate.css?141110"><link charset="utf-8" rel="stylesheet" href="http://static.easywed.cn/dist/js/lib/laydate/skins/molv/laydate.css?141110">
+</block>
+<block name="eachContent">	
+	<div class="w pb20">
+    <!--标题-->
+    <div class="ui-nav-class  clx">
+	<ul class="fl">
+					<li><a href="__APP__/compere/index" >主持人</a></li>
+					<li><a href="__APP__/designer/index" >婚礼造型</a></li>
+					<li><a href="__APP__/cameraman/index" class="on">婚礼摄像</a></li>
+					<li><a href="__APP__/assigner/index">场地布置</a></li>
+					<li><a href="__APP__/planner/index">婚礼策划</a></li>
+			</ul>
+</div>
+
+        <!-- 面包屑 -->
+        <div class="ui-nav-crumbs text-overflow pt10">
+            <a href="__URL__/index">首页</a><i>&gt;</i>
+			
+									<a href="__URL__/index">摄像师</a><i>&gt;</i>
+																																							<a href="__URL__/work/"></a>摄像师<i>&gt;</i>
+			摄像师的不归之路        </div>
+		<!-- 面包屑end-->
+		
+        <div class="wrap clx pt10 opus-d">
+            <div class="wrap-fl fl">
+				<dl class="opus-d-info">
+										
+										
+					<dt>
+                        <h2>提供的服务</h2>
+                    </dt>
+                    <dd class="clx">
+                        <div class="info">
+                            <strong>服务：</strong>
+														<span>婚礼造型设计</span>
+														                        </div>
+                    </dd>
+					                </dl>				
+								
+				
+                <div class="opus-d-img pt20" id="j-img-list">
+                    <div class="title">
+                        作品图片区
+                    </div>
+                    <ul>
+					<volist name="data" id="vo">
+                        <!-- 图片列表循环, 循环li标签 -->
+												                        <li>
+                            <div class="pic">
+                                <img title="点击查看大图" class="imgLoad" src="__PUBLIC__/Uploads/image/{$vo.pic}" width="888" style="display: block;">
+
+                                <!-- 如果图片赞过则在下面a标签上添加class +="on" -->
+								                                <a data-hit="0" data-id="32935" id="j-photo-zan-32935" href="javascript:;" class="j-zan-btn"><i></i></a>
+							</div>
+							                        </li>
+							</volist>											                        <li>
+                             
+												                    </ul>
+                </div>
+				
+				            </div>
+            <!-- 右 -->
+			<div class="wrap-fr fr">
+				<volist name="p" id="vos">
+                <!-- 作者信息 -->
+                <div class="opus-d-author">
+                    <div class="ui-photo c150-150-2">
+                        <a href="__URL__/work/id/{$vos.id}" target="_blank">
+                            <img width="150" height="150" src="__PUBLIC__/Uploads/marriager/{$vos.pic}" alt="{$vos.name}">
+                            <i class="hack"></i>
+                        </a>
+                    </div>
+                    <div class="title text-overflow">
+                        <a href="__URL__/work/id/{$vos.id}" target="_blank">{$vos.name}</a>
+                    </div>
+                    <div class="job">
+						                        <span>
+                            <i class="icons  icon-job-3"></i>摄像师                        </span>
+						                    </div>
+                    <div class="hit">
+                        <span class="item-1 text-overflow">
+                            <i class="icons icon-19"></i>赞<i id="j-zan-num" class="num">5</i>
+                        </span>
+                        <span class="item-2 text-overflow">
+                            <i class="icons icon-21"></i>作品<i class="num">3</i>
+                        </span>
+                    </div>
+					
+                </div>
+				</volist>
+
+              
+	</div>
+</div>
+</div>	
+</block>

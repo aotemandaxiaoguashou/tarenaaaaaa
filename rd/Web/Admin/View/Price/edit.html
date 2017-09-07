@@ -1,0 +1,45 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/servelist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<input type="hidden" name="id" value="{$datas.id}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>婚礼人:</dt>
+				<dd>
+					<select name="uid">
+						<option value="0">请选择婚礼人</option>
+						<volist name="list" id="cat">
+							<option value="{$cat.id}">{$cat.name}</option>
+						</volist>
+					</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>服务类型:</dt>
+				<dd>
+					<input type="text" name="type"  class="required" value="{$datas.type}">
+				</dd>
+			</dl>
+			<dl>
+				<dt>服务价格:</dt>
+				<dd>
+					<input type="text" name="price" class="required" value="{$datas.price}" >
+				</dd>
+			</dl>
+			<dl>
+				<dt>服务说明:</dt>
+				<dd><textarea type="text" name="detail" class="required"  rows="3" cols="15">{$datas.detail}</textarea>
+					
+			</dl>
+		</div>
+
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

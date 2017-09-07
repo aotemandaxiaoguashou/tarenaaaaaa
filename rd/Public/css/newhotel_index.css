@@ -1,0 +1,397 @@
+
+/*弹出区域CSS*/
+.hotel_adds_s{width:257px; height:230px; border: 1px #E5E5E5 solid;;z-index:104;position:absolute; background-color:#FFF;  padding:0 0 5px 12px; top:85px; left:0px;}
+.hotel_adds_s p{ padding:10px 0 5px 0; font-size:13px; font-weight:bold; color:#999999;margin-left: -30px;}
+.hotel_adds_s ul{ height:auto; overflow:hidden; margin:0; padding:0;}
+.hotel_adds_s h3{clear:both; }
+.hotel_adds_s ul{float:left;}
+.hotel_adds_s ul li{ width:80px; height:25px;float:left;padding:0;margin:0; font-size:12px; color:#999999;}
+.hotel_adds_s li input{vertical-align:middle; margin-right:2px;}
+.areabtn{width: 80px;height: 26px;margin: 15px 0 0 10px;background: #FF4B4C;text-align: center;color: #ffffff;line-height: 26px; float:left;cursor: pointer;}
+.areabtns{width: 80px;height: 26px;margin: 15px 0 0 10px;background: #999999;text-align: center;color: #ffffff;line-height: 26px;float: left;cursor: pointer;}
+/*结束*/
+.adclsaa{width:265px;height:90px;color:#666666; padding-top: 5px;background:#E5E5E5;font-size: 12px;float: left;text-align: center;font-family:Arial;}
+.adclsaa h1{font-weight: 500;font-size: 12px;display: inline;}
+.adclsaa_02 ul li{width:160px;float:left;height:95px;margin-left:16px;}
+.adclsaa_02 ul li img{margin-top:20px;float:left;}
+.adclsaa_02 ul li span{color:#666666;}
+.adclsaa_03{font-size:14px;font-weight:700;margin-top:20px;display:block;margin-left:12px;width:75px;float:left;}
+.adclsaa_04{display:block;margin-left:15px;_margin-left:10px; height:30px;float:left; overflow:hidden;line-height:17px;}
+.adclsaa_05{width:980px; padding-top:10px; padding-bottom:20px; position:relative; margin:auto;}
+.adclsaa_05_left{width:730px;float:left;border:solid 1px #FF4B4C}
+.adclsaa_05_left a:hover{color:#FF4B4C;}
+.adclsaa_05_left div{padding: 0;padding-left: 20px;margin: 0;height:45px;}
+.adclsaa_05_left div dt{font-size: 14px;color:#FF4B4C;font-weight:700;float: left;width: 70px;overflow: hidden;margin: 14px 0 4px 0px;clear: both;}
+.adclsaa_05_left div dd{float: left;width: 620px;overflow: hidden;margin: 14px 0 4px 0px; margin-left:10px;}
+.adclsaa_05_left div dd a{color:#666666;display: inline-block;}
+.adclsaa_05_left_dtbling {border-bottom: 1px dashed #E4E4E4;margin: 0px;height: 2px;margin-bottom: 3px;}
+.adclsaa_05_left_dtblingtou{border-bottom: 1px dashed #E4E4E4;margin: 0px;height: 2px;margin-bottom: 3px;width: 630px;}
+
+.adclsaa_05_right{margin-left: 15px;width: 230px;height: 190px;float: left;overflow:hidden;}
+.time_red{background:#FF4B4C;color:#fff; width:218px; height:32px;overflow:hidden;padding-left:12px;line-height:32px;}
+.time_gray{background:#e5e5e5;color:#fff;width:230px; height:158px;}
+.dang_month{background:url(/images/hotel_ntime_bg.png) no-repeat; margin:17px 0 0 17px; float:left; width:64px; height:54px; color:#000;text-align: center; }
+.dang_desc{float:left; margin:17px 0 0 5px;}
+.dang_tit{color:#323232;font-size: 18px;line-height: 28px;font-weight:700;}
+.dang_p{ color:#676767}
+.dang_button{text-align:center;}
+.dang_month span{margin-top: 24px;display: inline-block; font-size: 18px}
+.dang_month  font{font-size:18pt;font-weight:700}
+.dtbling {border-bottom: 1px solid #FFDDEB;margin: 0px;height: 2px;margin-bottom: 3px;}
+/*档期弹窗*/
+#calendarMsg{position:absolute;top:165px;border:1px #dedede solid;width:380px;height:160px;background:#fff; display:none; z-index:777;color:#999999;}
+ #calendarMsg .dangqi{position:absolute;top:20px;left:22px} #calendarMsg .dangqi b{color:#ff5f5f} #calendarMsg .text{position:absolute;top:42px;left:22px}
+ #calendarMsg input{position:absolute;top:72px;left:22px;width:160px;height:24px;text-indent:6px;line-height:24px} 
+ #calendarMsg .msg{position:absolute;top:75px;left:195px;display:none;color:red;} 
+ #calendarMsg .msg b{color:#ff5f5f;font-weight:normal}
+ #calendarMsg .btn{position:absolute;top:114px;left:22px;background:#f44;padding:4px 10px;color:#fff;font-weight:bold;cursor:pointer;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out} 
+ #calendarMsg .btn:hover{background:#FF647C} 
+ #calendarMsg .text2{position:absolute;top:117px;left:80px;color:#ccc} 
+ #calendarMsg #close{background:url(/images/close_hui.png) no-repeat;width:15px;height:15px;cursor:pointer;position:absolute;top:8px;right:8px;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out} 
+ #calendarMsg #close:hover{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);transform:rotate(180deg)}
+
+
+
+/*限时优惠*/
+.preferential{width:980px;height:170px;margin-top:20px;margin-bottom:20px; margin:auto;}
+.srollpic{ height:130; overflow:hidden; border: solid 1px #E4E4E4;position:relative;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;padding-top: 5px;}
+.srollpic a.prev{ position:absolute; top:45px; left:0px; width:48px; height:58px; overflow:hidden; display:inline-block; background:url(/images/hotel_20140402_0018.jpg) no-repeat; text-indent:9999em;margin-left:12px;_margin-left: 2px;}
+.srollpic a.next{ position:absolute; top:45px; right:0px; width:38px; height:58px; overflow:hidden; display:inline-block; background:url(/images/hotel_20140402_0019.jpg) no-repeat; text-indent:9999em;}
+.box_container{ width:890px; height:145px; overflow:hidden; margin-left:37px;}
+.box_container li{ float:left; width:170px; height:145px; margin-right:10px; text-align:center; overflow:hidden;}
+.box_container li img{ width:170px; height:100px; }
+.box_container li a{ font-size:12px; color:#FF4B4C; text-decoration:none;display:block;}
+.ccds{display:block;margin-top: -30px;_margin-top:-50px;;background-color: rgba(255, 255, 255, 0.7);width: 158px;overflow: hidden;}
+.ccds_001{display: block;height: 24px;width: 20px;background: #FF4B4C;line-height: 24px;float: left;color:#ffffff;overflow: hidden;}
+.ccds_002{display: block;height: 24px;background: #777777;color: #ffffff;line-height: 24px;text-align: left;overflow: hidden;}
+/*提交框样式*/
+.hotelorder_new_0404{ width:265px; height:325px;}
+.hotelorder_new_0404 a{ cursor:pointer}
+.hotelordernew_04_04p{ width:100%; height:58px; background-image:url(/images/qq_max_03.jpg); background-position:center}
+.hotelorder_new_0404p_2_{padding-left:20px}
+.hotelorder_new_0404p_2{ display:block; float:left; width:62px; text-align:center; color:#999999; border:solid 1px #E4E4E4; margin-right:17px; height:21px; line-height:21px;}
+.hotr_new_0404p_2{ display:block; float:left; width:62px; text-align:center; color:#fff; margin-right:17px;border:solid 1px #FF4B4C; color:#FF4B4C; height:21px; line-height:21px;}
+.hotelorder_new_0404p_3_{padding-left:20px}
+.hotelorder_new_0404p_3{ display:block; float:left; width:95px; text-align:center; color:#999999; border:solid 1px #E4E4E4;  margin-bottom:10px; height:21px; line-height:21px;}
+.hotr_new_0404p_3{ display:block; float:left; width:95px; text-align:center; color:#fff;margin-bottom:10px;color:#FF4B4C;border:solid 1px #FF4B4C; height:21px; line-height:21px;}
+.roworderBtnNew{ display:block; width:104px; height:27px; background-color:#FF4B4C; text-align:center; line-height:27px; color:#FFF; font-weight:bold;_margin-top:13px;*margin-top:13px;}
+/*幻灯样式*/
+.turn-pic {
+	width: 700px;
+	height: 325px;
+	position: relative;
+}
+#adpica {
+	width: 700px;
+	height: 325px;
+	overflow: hidden;
+}
+#adtipa {
+	bottom: 15px;
+	position: absolute;
+	right: 10px;
+}
+#adpica img {
+	width: 700px;
+	height: 325px;
+}
+#adtipa ul li {
+	background: #fff;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	border-radius:10px;
+	float: left;
+	width: 10px;
+	height: 10px;
+	line-height: 15px;
+	margin: 0 3px;
+	text-indent: -9999em;
+}
+#adtipa ul li.current {
+	background: #FF4B4C;
+}
+#adpica span {
+	bottom: 0px;
+	padding:10px 0;
+	left: 0px;
+	background-color: rgba(255, 255, 255, 0.7);
+	background: #fff\9;
+	filter: alpha(opacity=70);
+	position: absolute;
+	text-indent: -9999em;
+	width:700px;
+	overflow: hidden;
+}
+#adpica p {
+	bottom: 0px;
+	left: 0px;
+	padding-left: 5px;
+	position: absolute;
+	width: 580px;
+	height: 30px;	
+	line-height: 20px;
+	overflow: hidden;
+	font-size:12px;
+	color:#000;
+	margin-left:10px;
+}
+#adpica p b{font-size: 14px;} 
+
+
+/*原hotel_new.css*/
+.roworder{width:270px;margin:4px 0px 0px 0px;float:left;border:1px #E5E5E5 solid;height:325px}
+.roworder h5{height:43px; margin-bottom:5px;}
+.roworder li{float:left; padding-left:3px;display:block;margin-top:2px;}
+.roworder li input{vertical-align:middle; margin-top:-3px;*margin-top:-4px; position:relative;}
+.roworder li b{font-size:12px; padding:5px 10px 0px; display:inline-block; color:#333333;line-height:19px;font-weight: 100;margin-left: 15px;}
+.roworder li label{width:95px;float:left; margin-left:25px; display:inline;vertical-align:middle; _margin:3px 0 3px 32px;color:#999999;border: solid 1px #E4E4E4;text-align: center;}
+.roworder li label.labelfirst{width:45px;float:left; margin-left:25px; display:inline;vertical-align:middle; _margin:3px 0 3px 32px;color:#999999;}
+.roworder li label.labelsecond{width:75px;float:left; margin-left:15px; display:inline;vertical-align:middle; _margin:3px 0 3px 10px;color:#999999;}
+.nav{width:980px;margin:8px auto;height:auto}
+.nav_top{width:980px;margin:15px auto;height:20px;_height:1px;display:block}
+
+.nav_write{font-weight:bolder;font-family:微软雅黑;font-size:20px;color:#FF6699}
+.nav_writeone{font-weight:bolder;font-family:微软雅黑;font-size:20px;color:#666666}
+.nav_li{float:right;margin-top:-23px;}
+.nav_li span{color:#999999}
+.roworder_img{position:relative;top:-3px;right:1px;_right:0px}
+.underline{width:980px;margin:-2px auto;_margin-top:-10px;}
+.content_img{width:700px;margin:4px 0px 0px 0px; float:left;}
+.head_img{width:700px;margin:4px 0px 7px 0px;float:right;overflow:hidden;}
+
+.allshow{width:1198px;margin:5px auto}
+.allshow ul{margin-right:12px;_margin-right:12px;float:left;margin-bottom:10px}
+
+.allshow_title{color:#FF4B4C;font-size:14px;font-weight:bolder}
+.allshow_style{color:#999999}
+.allshow_styleone{color:#FF6699;}
+/*酒店右边*/
+
+.hotelRight{ width:265px;float:right;margin-top:4px;}
+.clicktxt_ct{width:265px;float:right;overflow:hidden;zoom:1; font-size:12px; background-color:#FFFFFF; border:1px solid #ECECEC;}
+.clicktxt_ct span{font-size:14px; padding:8px 0 3px 10px; color:#FF6699;display:block;font-weight:200;border-bottom:1px solid #ece8e9;height:28px;line-height:28px;background-color:#FBFBFB}
+.clicktxt_ct h2{ font-size:14px;font-weight: 100;padding:4px 0 3px 10px; color:#FBFBFB;border-bottom:1px solid #ece8e9;height:28px;line-height:28px;background-color:#FF4B4C}
+.clicktxt_ct ul{padding:5px 0 5px 0px;margin:0px auto;border:1px solid #fff;background-color:#fff;overflow:hidden;zoom:1;white-space:nowrap;}
+.clicktxt_ct ul li,.clickcon ul li{float:left;display:inline; line-height:25px;}
+.clicktxt_ct ul.no{border:none;background:none;line-height:14px;padding:7px 0 5px 10px;margin:0 auto;overflow:hidden;zoom:1;white-space:nowrap;background-color:#F9F9F9;width:265px;height:21px;}
+.clicktxt_ct ul.no .lt01{display:inline-block;}
+.clicktxt_ct-ct ul.no li.lt01{ margin-right:3px;}
+.clicktxt_ct ul.no .lt02,.clicktxt_ct ul .lt01{display:none;}
+.clicktxt_ct ul li a{color:#FF4B4C; text-decoration:none;font-weight: 700;}
+.lt02{width:200px; line-height:18px;color:#7d7d7d;margin-left:9px;}
+.cover:link,.cover:visited{width:73px;height:50px; display:block; float:left; margin-right:5px;_margin-right:2px;display:inline; padding:1px; border:1px solid #ccc; }
+.clicktxt_ct ul li img{width:73px;height:50px; background:url(http://www.591wed.com/image/loading1.gif) no-repeat center;}
+.Ranknum:link,.Ranknum:visited{padding:0 5px; background-color:#898989; color:#FFF;} 
+.Ranknumots:link,.Ranknumots:visited{padding:0 5px; background-color:#FF4B4C; color:#FFF;} 
+.bigname:link,.bigname:visited{color:#FF6379; font-weight:700; font-size:12px;} 
+.bigname:hover{color:#F00;}
+
+/*酒店搜索页面*/
+.hotelmian{width:980px; margin:10px auto 8px auto; height:auto; overflow:hidden; clear:both;}
+.SearchLeft{width:750px; height:auto; overflow:hidden; float:left;}
+.slescthotel{ width:747px; height:35px; background:#EDEDED;overflow:hidden;margin:10px 0; float:left; line-height:35px; font-size:12px; color:#828282; margin-bottom:15px;}
+.slescthotel .red{ color:#FF5E85;font-size:16px}
+.slescthotel span{ font-size:14px; color:#818181; font-weight:bold; margin-left:15px;}
+.slescthotel h1 {float:left;font-size:12px;margin-left:5px}
+.hotelcontent { width:747px; height:auto;overflow:hidden;float:left;}
+.hotelcontent li{margin-bottom:15px; background:#F9F8F8}
+.hotel_con{float:left; height:205px; width:250px; background:#F9F8F8;}
+.hotel_con img{margin-top:10px; margin-left:10px;}
+.hotel_show{float:left; height:205px; background:#F9F8F8; width:487px; padding-left:10px;}
+.show_yuyue{margin-left:20px;margin-top:-5px}
+.hotel_show table{margin-top:5px}
+.hotel_shp{font-size:12px; color:#888888; margin-top:10px; display:inline;}
+.hotel_sp{font-size:14px; font-weight:bold;color:#F66082; margin-top:10px;}
+.hotel_sp a:link,.hotel_sp a:visited{font-weight:bold;color:#F66082; }
+.hotel_shop{height:10px;_height:3px; width:497px;}
+.show_tab_td{border-bottom:1px dashed  #D9D9D9;}
+.td_span{color:#FF6699}
+.show_under{width:747px; height:15px; background-image:url(/images/hotelbottepj.jpg);clear:both;}
+
+
+.SearchRight{width:220px; height:auto; overflow:hidden; float:right;}
+.Search_title{background-image:url(/images/hotelorery.jpg); width:220px; height:212px;}
+.Search_title img{margin-left:52px; margin-top:12px;}
+.Right_cont{font-size:12px; color:#FFFFFF; padding-top:10px; margin-left:10px;}
+.Right_cont1{font-size:12px; color:#FFFFFF;margin-left:10px; margin-top:-5px;}
+.Right_cont2{font-size:12px;margin-left:10px; color:#FFF043; margin-top:5px;}
+.Right_cont3{margin-left:15px; margin-top:15px; color:#7D7D7D; vertical-align:middle;}
+.Right_inp{border:1px solid #BEBEBE; background:#FFFFFF; width:145px; height:23px; vertical-align:middle}
+
+.Right_center{margin-top:15px; width:218px; height:118px; border:1px solid #FFD7E0; margin-bottom:15px;}
+
+
+.SearchOption{width:745px; height:auto; overflow:hidden; float:left; border:1px solid #E5E5E5; background-color:#FEFDF8; padding:10px 0 20px 0;}
+.SearchOption dl{ padding:0; padding-left:25px; margin:0;}
+.SearchOption dl dt{ float:left; width:70px; overflow:hidden;margin:3px 0; clear:both;}
+.SearchOption dl dd{ float:left;width:620px; overflow:hidden;margin:3px 0 4px 0px; color:#FF3300;}
+.SearchOption dl dt{font-size:14px; color:#666666; font-weight:700; }
+.dtbling{border-bottom:1px solid #FFDDEB; margin:0px; height:2px; margin-bottom:3px;}
+.dtblingtou{border-bottom:1px solid #FFDDEB; margin:0px; height:2px;margin-bottom:3px; width:630px;}
+.Searcha:link,.Searcha:visited{color:#FF6C9B; padding:2px 3px 0 3px;display:inline-block;margin-bottom:3px; }
+.Searcha:hover{background-color:#FF6C9B; color:#FFF;}
+.Searchass:link,.Searchass:visited{background-color:#FF6C9B; color:#FFF;padding:2px 3px 0 3px;display:inline-block;margin-bottom:3px;}
+
+
+
+.hotelmianor{width:978px; margin:0px auto 8px auto; height:auto; overflow:hidden; clear:both;}
+.border{border:1px solid #E8E8E8;}
+.hh5{width:965px;height:28px; line-height:28px; font-size:12px; padding:5px 0 0 15px; background:#F9F9F9; border-bottom:1px solid #EEE; color:#FF294F; font-weight:100;}
+.hh5 span{margin-left:135px; color:#FF294F; font-size:12px;}
+.bottomleft{ width:215px; height:220px;float:left; border-right:1px solid #EEE; padding:10px 0 0 15px;}
+.bottomleft li{line-height:45px;}
+.Img_a:link,.Img_a:visited{ width:40px; height:40px; display:block;border:1px solid #ccc; float:left; margin:7px 5px 0 0; padding:1px;clear:left;}
+.Img_a:hover{border:1px solid #F00;}
+.Img_a img{width:40px; height:40px;}
+.f14:link,.f14:visited{font-size:14px; padding-left:5px; display:inline-block; float:left; clear:right; color:#6D6D6D; vertical-align:middle;}
+.f14:hover{ color:#F00;}
+.module_left_right{ height:45px;float:left;cursor:pointer; padding:200px 15px 50px 15px;}
+.goLeft:link,.goLeft:visited{ width:20px; height:33px; display:block; background:url(http://www.591wed.com/image/common.png) -180px -25px no-repeat;outline:none;}
+.goLeft:hover{background:url(http://www.591wed.com/image/common.png) -245px -25px no-repeat;}
+.goRight:link,.goRight:visited{ width:20px; height:33px; display:block; background:url(http://www.591wed.com/image/common.png) -200px -25px no-repeat;outline:none;}
+.goRight:hover{background:url(http://www.591wed.com/image/common.png) -270px -25px no-repeat;}
+
+.hotelLeft{width:745px; height:auto; float:left;}
+.hotelOne{ float:left;}
+.hotelOne h3{ width:745px;border-bottom:5px solid #D7D7D7;background:url(http://www.591wed.com/image/test.png) 0px 0px no-repeat; font-size:14px; color:#FFF; font-weight:normal; height:24px; text-indent:18px; margin-bottom:5px; position:relative; padding-top:2px;}
+.hotelOne .h3position1{background:url(http://www.591wed.com/image/test.png) 0px -32px no-repeat;}
+.hotelOne .h3position2{background:url(http://www.591wed.com/image/test.png) 0px -66px no-repeat;}
+.hotelOne .h3position3{background:url(http://www.591wed.com/image/test.png) 0px -100px no-repeat;}
+.hotelOne ul{ width:745px;}
+.hotelOne li{width:176px; height:210px; overflow:hidden; line-height:20px; margin:5px 4px; _margin:5px 4px; float:left; display:inline;}
+.hotelOne .he{height:230px;}
+.hotelOne span{color:#666;}
+.hotelOne li img { width:170px; height:116px; margin-bottom:5px; float:left; background:url(http://www.591wed.com/image/loading1.gif) no-repeat center;}
+.himga{ width:170px; height:116px;border:1px solid #999; padding:1px; display:block;}
+.himga:hover{border:1px solid #F00;}
+.na{font-size:14px; color:#FF2854; padding-top:5px; display:inline-block; line-height:normal;white-space:nowrap;}
+.na:hover{color:#C50C35; }
+.detailed{ color:#C50C35;}
+.detailed:hover{text-decoration:underline;}
+.more{color:#F10000; position:absolute; right:5px; top:3px; font-size:12px;}
+.more:hover{text-decoration:underline}
+.newmore{width:35px; height:12px; display:block;background:url(http://www.591wed.com/image/test.png) 0px -140px no-repeat; position:absolute; right:5px; top:10px;}
+.song{background:url(http://www.591wed.com/image/hotel.png) -85px -110px no-repeat; padding:2px 24px; position:relative; *top:1px;*display:inline-block; color:#FF82AC }
+.hotelOne .red{color:#F10000; padding:0; margin:0;white-space:nowrap;}
+.hotelOne .color_span{color:#FF6600;}
+.bott{width:730px; height:230px; float:right;}
+.hotelOne .ulw{width:220px; overflow:hidden; padding:0;}
+.hotelOne .liw{ margin:5px 22px;}
+.new_module{padding:100px 5px 0 5px;}
+#socoll2{ color:#FF82AC;}
+.hotellist {width:880px; position:relative;height:445px;margin-bottom:10px;overflow:hidden;float:left;}
+.prolist_content{position:absolute; width:32000px;top:15px;left:0px;padding:0;}
+.hotellist ul{float:left; width:205px;padding-left:15px;}
+.hei{width:660px; height:230px;}
+
+/*用户浏览记录*/
+.userPvList li{ padding:3px 0px;width:220px; clear:both;}
+.userPvList li img{ border:#ddd solid 1px; padding:1px; }
+.userPvList li a{ float:left;}
+.userPvList li a:link,.userPvList li a:visited{ font-weight:normal;}
+
+/*婚宴品牌介绍*/
+.Adbanner{width:232px; height:114px; background:#FFFFFF; margin-top:10px; margin-left:36px; float:left; display:block;text-align:center}
+.Adbanner2{width:170px; height:114px; background:#FFFFFF; margin-top:10px;_margin-top:5px;margin-top:10px;float:right; display:block;margin-right:30px;margin-left:-30px;_margin-right:15px;_margin-left:-15px}
+.Adbanner2 img{ margin-left:60px; margin-top:8px;}
+.Adbanner2 a:visited,.Adbanner2 a:link{outline:none;}
+.Adbanner2:hover{ background:#FFF7F9;}
+
+.Adbanner_main{width:978px; height:95px; border:1px solid #EAEAEA; overflow:hidden;display:inline-block;margin-top:5px}
+.adbanner{margin-top:10px;margin-left:75px;_margin-left:35px;color:#FF90AA;font-weight:600;font-size:12px;float:left}
+.adbanner_title{margin-left:60px; font-weight:bold; color:#FF6699;clear:both;margin-top:5px;}
+.adbanner_title a{color:#FF6699;font-size:14px;}
+.adbanner_title a:visited,.adbanner_title a:link{outline:none;display:block;}
+.adbanner_title2{margin-left:40px; color:#666666}
+.adbanner_title3{margin-left:30px; color:#666666}
+
+/*婚宴下面横版预约*/
+#tm2008style3 .select_box,#tm2008style2 .select_box,#tm2008style .select_box{width:142px;height:27px; font-size:14px;}
+ #tm2008style3 div.tag_select,#tm2008style2 div.tag_select, #tm2008style div.tag_select{display:block;color:#000;width:122px;height:27px;background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) no-repeat -1px 0;padding:0 10px;line-height:27px;}
+ #tm2008style3 div.tag_select_hover,#tm2008style2 div.tag_select_hover, #tm2008style div.tag_select_hover{display:block;color:#000;width:122px;height:27px;background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) no-repeat -1px 0;padding:0 10px;line-height:27px;}
+ #tm2008style3 div.tag_select_open,#tm2008style2 div.tag_select_open,#tm2008style div.tag_select_open{display:block;color:#000;width:122px;height:27px;background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) no-repeat -1px -27px;padding:0 10px;line-height:27px;}
+ #tm2008style3 ul.tag_options li.open_hover,#tm2008style2 ul.tag_options li.open_hover , #tm2008style ul.tag_options li.open_hover{background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) no-repeat -1px -77px;color:#000}
+ #tm2008style3 ul.tag_options li.open_selected,#tm2008style2 ul.tag_options li.open_selected , #tm2008style ul.tag_options li.open_selected{background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) no-repeat -1px -52px;color:#19555F}
+ 
+ #tm2008style ul.tag_options li{background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) repeat-y -152px -30px;display:block;width:105px;padding:0 10px;height:26px;text-decoration:none;line-height:26px;color:#000;}
+#tm2008style ul.tag_options{position:absolute;margin:0;list-style:none;background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) no-repeat left bottom;width:142px;padding:0 0 0px;margin:0;width:142px; height:190px; overflow-y:scroll; border-bottom:#FF6600 1px solid; border-right:#FF6600 1px solid;}
+
+#tm2008style3 ul.tag_options li,#tm2008style2 ul.tag_options li{background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) repeat-y -152px -30px;display:block;width:122px;padding:0 10px;height:26px;text-decoration:none;line-height:26px;color:#000;}
+#tm2008style3 ul.tag_options,#tm2008style2 ul.tag_options{position:absolute;margin:0;list-style:none;background:transparent url(http://m.591wed.com/images/neworder_hotel_03.jpg) no-repeat left bottom;width:142px;padding:0 0 1px;margin:0;width:142px; height:auto;overflow-y:hidden;}
+#tm2008style{float:left; margin-top:35px; margin-left:230px; display:inline;}
+#tm2008style2{float:left;margin-top:35px; margin-left:50px;}
+#tm2008style3{ float:left;margin-top:35px; margin-left:60px;}
+#bar_hotel_order{background-image:url(http://m.591wed.com/images/neworder_hotel_sub.jpg); width:91px; height:27px;}
+
+/*热门区域结婚网*/
+.max_seo{margin-top:42px;height:auto;width: 980px;margin: 0 auto;overflow: hidden;}
+.Hot {margin: 5px auto;background-position: left;background-repeat: repeat-y;margin-bottom: 8px;_margin: 0px auto;*margin: 0px auto;}
+.Hot .TabTitle_hot {clear: both;}
+.Hot .TabTitle_hot ul {list-style: none;clear: right;cursor: pointer;z-index: 3;position: relative;margin-bottom: -1px; _margin-bottom: -3px;}
+.Hot .TabTitle_hot .clenk {color: #333;font-weight: bold;border: 1px #E6E6E6 solid;border-bottom: 1px solid white;background-color: white;margin-left: 15px;}
+.Hot .TabTitle_hot .photo {color: #666666;margin-left: 15px; font-family:"宋体";}
+.Hot .TabTitle_hot li {float: left;width: 140px;cursor: pointer;padding: 0 0 0 0;list-style-type: none;text-align: center;line-height: 24px;margin-bottom: -2px;overflow: hidden;margin-right: 2px;font-size: 12px;}
+.Hot .TabContent_hot {overflow: hidden;width: auto;margin: 0px auto;padding: 2px 0 0 0;_padding: 0 auto;border-top: 1px #E6E6E6 solid;font-size: 12px;}
+.TabContent_hot ul li{ float:left; width:115px; height:24px; overflow:hidden;margin-top: 3px;margin-left: 4px; _margin-left:0px;}
+
+.TabContent_hot a:link,.TabContent_hot a:visited {color: #787878;padding: 0 4px 4px 15px;display: inline-block;font-size: 12px;margin-top:4px; font-family:"宋体";}
+.TabContent_hot a:hover {color:#FF4B4C;}
+
+/*友情链接*/
+.max_hot_merry{padding-top:42px;height:auto;width: 980px;margin: 0 auto;overflow: hidden;}
+.nTab {margin: 5px auto;background-position: left;background-repeat: repeat-y;margin-bottom: 8px;_margin: 0px auto;*margin: 0px auto;}
+.nTab .TabTitle {clear: both;}
+.nTab .TabTitle ul {list-style: none;clear: right;cursor: pointer;z-index: 3;position: relative;margin-bottom: -1px; _margin-bottom: -3px;}
+.nTab .TabTitle .active {color: #333;font-weight: bold;border: 1px #E6E6E6 solid;border-bottom: 1px solid white;background-color: white;}
+.nTab .TabTitle .normal {color: #666666; font-family:"宋体";}
+.nTab .TabTitle li {float: left;width: 70px;cursor: pointer;padding: 0 0 0 0;list-style-type: none;text-align: center;line-height: 24px;margin-bottom: -2px;overflow: hidden;margin-right: 2px;font-size: 12px; margin-left:15px;}
+.nTab .TabContent {overflow: hidden;width: auto;margin: 0px auto;padding: 2px 0 0 0;_padding: 0 auto;border-top: 1px #E6E6E6 solid;font-size: 12px;}
+.TabContent ul li{ float:left; width:102px; height:24px; overflow:hidden;margin-top: 3px;margin-left: 4px; _margin-left:0px;}
+
+.TabContent a:link,.TabContent a:visited {color: #787878;padding: 0 4px 4px 15px;display: inline-block;font-size: 12px;margin-top:4px; font-family:"宋体";}
+.TabContent a:hover {color:#FF4B4C;}
+
+/* 专题文章  */
+.subject{ width:978px; margin:10px auto;height:auto; overflow:hidden; padding-bottom:8px;}
+.subject p{font-size: 16px;
+line-height: 25px;
+padding: 5px 0 0 10px;
+color: #333;
+height: 35px;
+margin-bottom: 15px;
+font-weight: bold;
+border-bottom: 2px #E6E6E6 solid;}
+.subject li{width:195px; float:left; text-indent:5px; color:#999999;height:25px;}
+.subject li a{color:#999999;}
+.subject li a:hover{color:#FF4B4C;}
+.morehy{ color:#999999; font-weight:normal; float:right; padding-right:18px; *margin-top:-27px;font-size:14px}
+.morehy:hover{ text-decoration:underline;}
+.TabContent a:hover{color:#FF4B4C;}
+
+
+/*分页*/
+.wt-pagelist{width:745px; height:45px; padding:10px 0px 20px 245px;font-size:12px; margin:0; clear:both; display:inherit; }
+.wt-pagelist a,.wt-pagelist span{display:inline-block; text-align:center; border:#ccc solid 1px;}
+.wt-pagelist .page-a{font-size:12px;height:20px;padding:0px 0px 0px;width:20px;color:#666;margin:0 3px; font-weight:bold; text-align:center;}
+.wt-pagelist .page-a:hover{}
+.wt-pagelist .cur-page{height:20px;font-size:12px; color:#666;padding:0px;width:20px;margin:0 1px; font-weight:bold; border:none;  font-family:Arial;}
+.wt-pagelist .page_more{background:none;padding:0px;width:18px;color:#3C477F;}
+.wt-pagelist .prev-page-a{width:50px;height:20px;padding:0px;color:#FF3366;margin-right:5px;}
+.wt-pagelist .prev-page-a:hover{}
+.wt-pagelist .prev-page-span{width:50px;height:20px;padding:0px;color:#b4b4b4;margin-right:5px;}
+.wt-pagelist .next-page-a{width:50px;height:20px;padding:0px;color:#FF3366; margin-left:5px;}
+.wt-pagelist .next-page-a:hover{}
+.wt-pagelist .next-page-span{width:50px;height:20px;padding:0px;color:#7a7a7a; margin-left:5px;}
+
+/*快速导航*/
+.daohang{background:url(http://www.591www.com/images/lead_road.jpg) no-repeat;width:114px;height:36px;float:left;text-align:center;line-height:36px}
+.link_dh{border:1px #FFCCDD solid;width:104px;height:36px;float:left;margin-left:2px;_margin-left:2px;background:#FFF9FB;text-align:center;line-height:36px;font-weight:600;color:#666666;display:block}
+.link_dh1{margin-left:3px;_margin-left:3px;_margin-right:-1px;}
+
+.hotel_n_submit{width:980px; height:86px;margin:10px auto; background-image:url(/images/hotel_20140402_015.jpg)}
+.sh2008style{float: left;margin-top: 50px;display: inline;}
+
+
+.loadimg{background:url(http://www.591wed.com/images/loadingnew.gif) no-repeat center;}
+.marginauto_Index{width:980px; margin:0 auto;}

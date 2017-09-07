@@ -1,0 +1,44 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/photoslist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>上级相册</dt>
+				<dd><select class="required" style="width:100%;" name="pid">
+					<volist name="vo" id="cat">
+						<option value="{$cat.id}">{:countPath($cat['path'])}{$cat.xname}</option>
+					</volist>
+					</select></dd>
+			</dl>
+			<input type="hidden" name="id" value="{$datas.id}">
+			<dl>
+				<dt>相册名：</dt>
+				<dd><input type="text" name="xname" class="required" value="{$datas.xname}"/>
+					
+			</dl>
+			<dl>
+				<dt>添加人：</dt>
+				<dd><select class="" style="width:100%;" name="uname">
+					<volist name="user" id="cats">
+						<option name="uname">{$cats.name}</option>
+					</volist>
+					</select></dd>
+			</dl>
+			<dl>
+				<dt>相册描述：</dt>
+				<dd><textarea class="span2 required" name="description" value="">{$datas.description}</textarea></dd>
+			</dl>
+			
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+
+

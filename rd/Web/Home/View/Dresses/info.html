@@ -1,0 +1,150 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>{$linfo.title}-酷结网</title>
+</block>
+
+<block name="style">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/hotel_new_css.css">
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/newhotel_header.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/max_hotel_header.css">
+	<script src="__PUBLIC__/js/jquery.js" type="text/javascript"></script>
+	<script src="__PUBLIC__/js/jquery.imageLens.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript">
+		$(function () {
+			$("#imgbig").imageLens({ lensSize: 200 });
+		});	
+	</script>
+	
+</block>
+
+<block name="eachContent">
+	<div class="w page-here mb10">
+		<span>当前位置：</span><a href="__APP__/Index">首页</a>&gt;<a href="__APP__/Dresses">婚纱摄影列表</a>&gt; <em>{$linfo.title}</em>
+	</div>
+	<div class="w clearfix">
+		<div class="sidebar fl">
+			<div class="module2">
+				<div class="mod-hd">酷结推荐</div>
+				<div class="mod-bd">
+					<ul class="recommen-list img-box">
+						<li class="item">
+							<a href=""><img src="__PUBLIC__/images/201412161329477548.jpg" alt="主持人筱玮"></a>
+							<div class="name-bg"></div>
+							<div class="img-name"><a href="">主持人筱玮</a> </div>
+						</li>
+						<li class="item">
+							<a href="#"><img src="__PUBLIC__/images/201412161332439950.jpg" alt="主持人李沐坤"></a>
+							<div class="name-bg"></div>
+							<div class="img-name"><a href="#">主持人李沐坤</a> </div>
+						</li>
+						<li class="item">
+							<a href="#"><img src="__PUBLIC__/images/201412161330521462.jpg" alt="主持人小松 "></a>
+							<div class="name-bg"></div>
+							<div class="img-name"><a href="#">主持人小松 </a> </div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="module2">
+				<div class="mod-hd">大家还喜欢</div>
+				<div class="mod-bd">
+					<ul class="item-list">
+						<li>
+							<div class="imgbox">
+							  <a href="#"><img title="婚纱摄影青木社摄影创作中心" alt="婚纱摄影青木社摄影创作中心" src="__PUBLIC__/images/thumb_201412311537086314.jpg" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="婚纱摄影青木社摄影创作中心" href="#">婚纱摄影青木社摄影创作中心</a>
+							</div>
+							<p class="price">市场价：<del>￥14300</del><br>酷结价：￥10999</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="#"><img title="婚礼摄影师宣野" alt="婚礼摄影师宣野" src="__PUBLIC__/images/thumb_201412311530099448.JPG" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="婚礼摄影师宣野" href="#">婚礼摄影师宣野</a>
+							</div>
+							<p class="price">市场价：<del>￥3500</del><br>酷结价：￥2000</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="#"><img title="主持人刘驰" alt="主持人刘驰" src="__PUBLIC__/images/thumb_201412311516496448.png" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="主持人刘驰" href="#">主持人刘驰</a>
+							</div>
+							<p class="price">市场价：<del>￥6000</del><br>酷结价：￥3600</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="#"><img title="化妆造型师蓉蓉" alt="化妆造型师蓉蓉" src="__PUBLIC__/images/thumb_201412311510109920.jpg" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="化妆造型师蓉蓉" href="#">化妆造型师蓉蓉</a>
+							</div>
+							<p class="price">市场价：<del>￥1500</del><br>酷结价：￥1000</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="#"><img title="『金手指花艺』粉色花艺套餐" alt="『金手指花艺』粉色花艺套餐" src="__PUBLIC__/images/thumb_201412311505213087.jpg" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="『金手指花艺』粉色花艺套餐" href="#">『金手指花艺』粉色花艺套餐</a>
+							</div>
+							<p class="price">市场价：<del>￥18000</del><br>酷结价：￥10260</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+        </div>
+	<div class="main-cont fr">
+		<div class="product mb15">
+			<div class="hotelinfo_new_jiben">
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td width="500">
+								<img  id="imgbig" src="__PUBLIC__/{$linfo.pic_name}" style="margin-top: 5px;" title="{$linfo.title}" alt="{$linfo.title}" height="280" width="470">
+								<p style="color:#EA2285;font-size:16px">{$linfo.content}</p>
+							</td>
+							<td valign="top">
+								<div class="h11"><h1>{$linfo.title}</h1></div>
+								<div class="clear"></div>
+								<div class="clear"></div>
+								<p class="hotelinfo_new_p3_2"> <span onclick="showDiv('order');show_hide('easyOrder_Hotel','easyOrder_Hotel_main','');" id="hotel_in_order">免费预约豪礼相送</span>
+								<!-- <a href="javascript:addcook('2395','add');" title="收藏北京港澳中心瑞士酒店" class="hotelinfo_new_margin1">收藏</a></p> -->
+								<div class="hotel_in_p">
+									<p class="hotel_in_lb">先预约再订单加送28888元新婚大礼包!</a></p>
+								</div>
+								<span class="hotelinfo_new_p3 hotelinfo_new_p3_1">市场价格：:{$linfo.sale|number_format=###, 2, '.', ''}&nbsp元</span>
+								<span class="hotelinfo_new_p3" style="margin-left:55px;">优惠价：{$linfo.price|number_format=###, 2, '.', ''}&nbsp元</span>
+							
+								<p class="hotelinfo_new_p3">更新时间：                    
+									<span>{$linfo.addtime|date='Y-m-d H:i:s',###}</span>
+								</p>
+								<p class="hotelinfo_new_p3">咨询热线：<span class="top_phone">{$linfo.phone}</span>(9:30-18:00)</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="product-promise">
+				<p><img alt="" src="__PUBLIC__/images/112.jpg" style="width: 965px; height: 52px;"></p>
+			</div>
+		</div>
+			<div class="porduct-details mb15">
+				<ul id="pro-det-title" class="pro-det-title">
+					<li class="pro-curr">详细介绍</li>
+				</ul>
+				<div id="pro-de-wrap" class="pro-de-wrap" style='padding:10px; border:1px solid #f4f4f4'>
+                  
+					{$linfo.info}
+                                                                        
+                </div>
+			</div>
+		</div>
+	</div>
+	
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["qzone","bdysc","bdxc","tqf","douban","bdhome","sqq","thx","ibaidu","taobao","meilishuo","huaban"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"7","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</block>

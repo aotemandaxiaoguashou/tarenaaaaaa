@@ -1,0 +1,78 @@
+<extend name="Public:layout" />
+
+<block name="title">
+	<title>会员中心-订单中心-酷结网</title>
+</block>
+
+<block name="style">
+	<script type="text/javascript" src="__PUBLIC__/js/WdatePicker.js"></script>
+	<link type="text/css" rel="stylesheet" href=<"__PUBLIC__/css/WdatePicker.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/member.css">
+</block>
+
+<block name="eachContent">
+	<div class="w page-here mb10">
+  <span>当前位置：</span><a href="__APP__/Index/index">首页</a>&gt; <em>个人中心</em>
+</div>
+<div class="w clearfix mb15">
+    <div class="sidebar fl">
+		<div class="user-moudle clearfix">
+			<div class="user-hd tc">个人中心首页</div>
+			<div class="user-bd">
+				<dl class="user-menu pb10">
+				  <dt><i></i>交易管理</dt>
+				  <dd><a href="__CONTROLLER__/ordercenter">订单中心</a></dd>
+				</dl>
+				<dl class="user-menu pb10">
+				  <dt><i></i>个人中心</dt>
+				  <dd><a href="__CONTROLLER__/userIM">个人信息管理</a></dd>
+				  <dd><a href="__CONTROLLER__/changepwd">修改密码</a></dd>
+				  <dd><a href="__CONTROLLER__/address">收货地址</a></dd>
+				</dl>
+			</div>
+		</div>
+	</div> 
+	<div class="maincont fr">
+		<div class="user-title">
+		  订单中心
+		</div>
+		<div class="clearfix user-content">
+			<div class="clearfix p10 mb10">
+				<table class="user-tab3 usertab" width="100%" cellpadding="0" cellspacing="0">
+				  <thead>
+					<tr>
+					  <th width="15%">订单号</th>
+					  <th width="10%">总金额</th>
+					  <th width="25%">下单时间</th>
+					  <th width="10%">审核状态</th>
+					  <th width="10%">支付状态</th>
+					  <th width="10%">发货状态</th>
+					  <th width="10%">操作</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<volist name="orders" id="ord">
+						<tr>
+						  <td><a href="__CONTROLLER__/ordDetail/id/{$ord.id}">{$ord.ident}</a></td>
+						  <td>{$ord.all-price}</td>
+						  <td>{$ord.addtime|date="Y-m-d H:i",###}</td>
+						  <td><if condition="$ord.issure eq 0">未审核<else/>已审核</if></td>
+						  <td><if condition="$ord.ispay eq 0">未支付<else/>已支付</if></td>
+						  <td><if condition="$ord.issend eq 0">未发货<elseif condition="$ord.issend eq 1 and $ord.isgets eq 1" />已收货<elseif condition="$ord.issend eq 1 and $ord.isgets eq 0"/>已发货</if></td>
+						  <td><if condition="$ord.ispay eq 0"><a href="__APP__/User/dopay/id/{$ord.id}" target="_blank">付款</a><elseif condition="$ord.ispay eq 1 and $ord.issend eq 0"/>等待发货
+								<elseif condition="$ord.ispay eq 1 and $ord.issend eq 1 and $ord.isgets eq 0" /><a href="__APP__/Indent/dogets/id/{$ord.id}">确认收货</a></if></td>
+						</tr>
+					</volist>
+				  </tbody>
+				</table>
+			</div>
+			<div class="clearfix fr user-page">
+				<div class="pages mb15">
+				  <div class="page-box"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</block>

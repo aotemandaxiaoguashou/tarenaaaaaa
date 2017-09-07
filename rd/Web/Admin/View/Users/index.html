@@ -1,0 +1,90 @@
+<!-- 起始页 开始2015年1月5日16:45:49-->
+<form id="pagerForm" action="__URL__/index" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<!-- 结束部分 -->
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> &nbsp; 关键字：<input type="text" name="keyword" value="{$Think.post.keyword}"/>[会员名][年龄][地址]
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<!-- 已经在框架中定义好每个class属性具体使用的特征 -->
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add/navTabId/userslist" target="dialog" width="550" height="380" rel="usersadd" title="添加学生信息"><span>添加</span></a></li>
+			<!--防止冲突修改左右定界符-->
+			<li><a class="delete" href="__URL__/del/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/userslist" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/userslist"  width="550" height="380" target="dialog"><span>修改</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	<table class="list" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<!-- 绑定一个单击事件获取当前的排序字段名和排序名 -->
+				<!-- 字段排序的设置 orderField="值" 属性的值是表的列名-->
+				<th width="40" orderField="id" <if condition="$Think.request._order eq 'id'"> class="{$Think.request._sort}"</if>>ID</th>
+				<th width="40" orderField="username" <if condition="$Think.request._order eq 'username'"> class="{$Think.request._sort}"</if>>会员名</th>
+				<th width="60">Email</th>
+				<th width="80">注册时间</th>
+				<th width="40">会员积分</th>
+				<th width="40">是否禁用</th>
+				<th width="60">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo">
+				<tr target="item_id" rel="{$vo.id}">
+					<td>{$vo.id}</td>
+					<td>{$vo.username}</td>
+					<td>{$vo.email}</td>
+					<td>{$vo.regtime|date="Y-m-d H:i",###}</td>
+					<td>{$vo.points}</td>
+					<td><if condition="$vo.isdel eq 1"><span class="green">使用</span><else/><span class="red">禁用</span></if></td>
+					
+					<td>
+					<if condition="$vo.isdel eq 1">
+					<a href="__URL__/dodel/id/{$vo.id}" target="ajaxTodo"><span style="color:blue;">禁用</span></a>
+					<else/><a href="__URL__/dodel/id/{$vo.id}" target="ajaxTodo"><span style="color:blue;">启用</span></a>
+					</if>
+					<a href="__URL__/view/id/{$vo.id}" target="navTab" title="会员信息详情"><span style="color:orange;">详情</span></a>&nbsp;&nbsp;
+					<a href="__URL__/edit/id/{$vo.id}/navTabId/userslist" class="btnEdit" target="navTab" title="编辑会员信息"><span>编辑会员信息</span></a>
+					<a href="__URL__/del/id/{$vo.id}" class="btnDel" target="ajaxTodo" title="确定要删除吗?"><span>删除会员</span></a></td>
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<!-- 只要给DIV指定DWZ框架中定义好的属性,指定class属性和必须从PHP的值给指定的属性参数即可完成分页 -->
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+	</div>
+</div>

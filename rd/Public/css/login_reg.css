@@ -1,0 +1,36 @@
+.login-reg-header{width:1200px; margin:0 auto;}
+.login-reg-header .logo{float:left; padding:15px 0;}
+.login-reg-box{padding:74px 0; border-top:1px solid #eee; background:#f6f6f6 url("../images/login-bg.png") no-repeat center 0;}
+.login-reg-box .login-reg-area{width:937px; height:475px; margin:0 auto; border:1px solid #d7d7d7; box-shadow:#d7d7d7 0px 0px 20px; background-color:#fff;}
+.login-reg-box .login-bg{background:#fff url("../images/login-bg2.png") no-repeat 490px 90px;}
+.login-reg-box .left-area{float:left; width:444px; height:475px; border-right:1px solid #eee;}
+.login-reg-box .right-area{float:left; position:relative; height:475px; line-height:475px; padding:0 70px;}
+.login-reg-box .right-area a{color:#1ad0e6;}
+.login-reg-box .right-area .icon-or{position:absolute; left:-12px; top:50%; margin-top:-12px; width:24px; height:24px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; border-radius:50%; background-color:#e3e3e3;}
+.login-reg-box h1{height:48px; line-height:48px; text-indent:24px; font-size:16px; color:#382b32;}
+.login-reg-box dl{height:70px;}
+.login-reg-box dt, .login-reg-box dd{float:left; height:70px;}
+.login-reg-box dt{width:134px; font-size:14px; color:#999999; line-height:38px; text-align:right;}
+.login-reg-box dt em{font-style:normal; color:red; padding:0 3px;}
+.login-reg-box .txt-input{position:relative; float:left; width:263px; height:36px; padding-left:5px; border:1px solid #cccccc;}
+.login-reg-box .txt-input .txt1{width:230px; height:18px; padding:9px 0; border:none; background-color:#fff; line-height:18px;}
+.login-reg-box .txt-input .icon{position:absolute; right:10px; top:10px; width:16px; height:18px; background:url("../images/icon7.png") no-repeat 0 1px;}
+.login-reg-box .txt-input .icon1{background-position:0 -19px;}
+.login-reg-box .login-error{clear:both;height:26px;color:#f00;font-weight:bold;line-height:26px;visibility:hidden;}
+.login-reg-box .txt-input2{padding-left:134px; color:#333;}
+.login-reg-box .txt-input2 label{margin-right:30px; cursor:pointer;}
+.login-reg-box .txt-input2 input{vertical-align:middle; margin-right:6px;}
+.login-reg-box .txt-input3{float:left; width:130px; height:36px; padding-left:5px; border:1px solid #cccccc;}
+.login-reg-box .txt-input3 .txt3{width:120px; height:18px; padding:9px 0; border:none; background-color:#fff; line-height:18px;}
+.login-reg-box .login-btn-box{padding-top:20px;}
+.login-reg-box .login-btn{display:block; width:307px; height:34px; margin-left:98px; border:none; background:url("../images/login-btn.png") no-repeat 0 0; cursor:pointer; text-indent:-99999px; overflow:hidden;}
+.login-reg-box .reg-btn{background-position:0 -34px;}
+.login-reg-box .third{padding:0 0 40px 97px;}
+.login-reg-box .third h3{font-weight:bold; line-height:24px; color:#333333;}
+.login-reg-box .login-or-reg{position:relative; padding-top:34px; border-top:1px solid #e3e3e3; text-align:center;}
+.login-reg-box .login-or-reg .icon-or{position:absolute; top:-12px; left:50%; margin-left:-12px; width:24px; height:24px; text-align:center; line-height:22px; font-size:12px; color:#ffffff; font-weight:bold; border-radius:50%; background-color:#e3e3e3;}
+.login-reg-box .login-or-reg a{color:#1ad0e6;}
+.login-ad-box{padding:45px 0;}
+.login-reg-box .reg-box{width:680px;}
+.login-reg-box .reg-box .reg-confirm{float:left; padding-left:15px; line-height:38px;}
+.login-reg-box .reg-box .reg-confirm img{margin-right:5px; vertical-align:middle;}

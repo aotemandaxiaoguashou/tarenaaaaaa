@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>确认订单</title>
+<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/layout.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/user.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/guestbook.css" rel="stylesheet" />
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/jquery.superslide.2.1.1.js"></script>
+<script src="__PUBLIC__/js/index.js"></script>
+<script src="__PUBLIC__/js/user.js"></script>
+<script src="__PUBLIC__/verify/verify.js"></script>
+<script src="__PUBLIC__/js/city.js"></script>
+<script>
+	var cityUrl="__MODULE__/User/getCity/";
+</script>
+</head>
+<body>
+<div class="container">
+	<!--header区域-->
+	<include file="Public:header"/>
+	<!--header区域结束-->
+
+	<!--主体区域-->
+	<div id="main">
+		
+		
+		<div class="path">
+			所在位置：<a href="__MODULE__">首页</a>> 确认订单
+		</div>
+		
+		<!-- 用户中心侧边栏区域 -->
+			<include file="Common:userleft"/>		
+		  <!-- 用户中心侧边栏区域结束 -->
+		  <div class="rightCloumns span9">
+			<div class="userShop">
+				<div class="title">
+					<h3>确认订单</h3>
+				</div>
+				<div class="goodsCards">
+					<form action="__URL__/buy" method="post">
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="ttls_tab">商品信息</td>
+						</tr>
+						<tr>
+							<th width="340">商品名称</th>
+							<th width="95">商品价格</th>
+							<th width="70">会员价</th>
+							<th width="60">购买数量</th>
+						</tr>
+						<!-- 商品01 Begin-->
+						<volist name="goodsinfo" id="goods">
+						 <tr>
+							<td style="text-align:left;"><a target="_blank" href="__MODULE__/Category/info/id/{$goods.goods_id}">{$goods.goods_name}</a></td>
+							<td>{$goods.goods_price}元</td>
+							<td>{$goods.goods_price}元</td>
+							<td>{$goods.buynum}                                
+							<input type="hidden" name="goods_id[]" value="{$goods.goods_id}">
+							<input type="hidden" name="buy_num[]" value="{$goods.buynum}">
+							</td>
+						 </tr>
+						</volist>
+						
+					</table>
+					
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="ttls_tab">收货地址信息</td>
+						</tr>
+						<volist name="addr" id="address">
+						 <tr>
+							<td class="left" style="text-align:left;"><span><input type="radio"  value="{$address.info}" name="address_info" <eq name="address.is_default" value="1">checked</eq> > {$address.info}</span></p>
+							</td>
+						</tr>
+						</volist>
+						<tr id="new_address">
+							<td class="add"><span><a href="javascript:void(0);" id="add_address"><i class="icon-plus"></i>新增收货地址</span>
+							</td>
+						</tr>
+					</table>
+					
+					
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="ttls_tab">配送方式</td>
+						</tr>
+						 <tr>
+							<td style="text-align:left;"><span><input type="radio"  value="1" name="shipping" checked >普通配送</span>
+							</td>
+							<td>配送方式1</td>
+						</tr>
+					</table>
+					
+					<table class="table table-bordered">
+						<tr>
+							<td colspan="4" class="ttls_tab">确认订单信息</td>
+						</tr>
+						 <tr>
+							<td class="span2">订单附言:</td>
+							<td><textarea class="span7" name="buy_msg" id=""  rows="2"></textarea>
+							</td>
+						</tr>
+						<tr>
+						<td class="right" colspan="4">
+						<div>商品总价:<span class="fbolder red">{$price}</span>元</div>
+						<div>使用商城积分:<span id="coin_show" class="fbolder red">0.00</span>元											</div>
+						<div>运费:<span id="shipping_fee_show" class="fbolder red">0.00</span>元<input type="hidden" value="" id="shipping_fee" name="shipping_fee">
+						</div>
+						<div>应付金额:<span id="order_amount_show" class="fbolder red">{$price}</span>
+							元<input type="hidden" value="1400" id="order_amount" name="order_amount">
+						</div>
+						</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+	                        <input type="submit" value="确认提交" name="submit" class="btn btn-warning">
+                            </td>
+						</tr>
+					</table>
+					</form>
+					
+					
+					<!--Modal-->
+					<script>
+					$(function(){
+						$("#add_address").click(function(){
+							$("#myModal").modal({
+								backdrop:true,
+								keyboard:true,
+								show:true,
+							});
+						});
+						$("#goaddress").click(function(){
+							$("form[name='address']").submit();
+						});
+						$("form[name='address']").submit(function () {
+								//alert($(this).serialize()); 
+								$.ajax({
+									url:'__MODULE__/Address/insert',
+									data:$(this).serialize(),
+									type:'post',
+									dataType:'json',
+									success:function(data){
+										if(data['info']=='error'){
+											alert("收货地址有误！");
+										}else{
+										info='<tr><td class="left" style="text-align:left;"><span><input type="radio"  value="'+data['addr']+'" name="address_info" checked />'+data['addr']+'</span></p></td></tr>';
+										$('#new_address').before(info);	
+										}
+									},
+								});
+							  $('#myModal').modal('hide');
+							  return false;
+							});
+					});
+					</script>
+					<div id="myModal" class="modal hide fade">
+					<div class="modal-header">
+						  <a class="close" data-dismiss="modal" >&times;</a>
+						  <h3>新增收货地址</h3>
+					</div>
+					<div class="modal-body">
+						<form name="address" method="post">
+							<table class="tab_input_br" border="0" width="100%">
+							<tbody>
+							<tr>
+							
+								<th>收件人姓名：</th>
+									<td width="50">
+										<input type="hidden" name="model" value="1">
+										<input class="txt" type="text" verifys="{d:'收件人姓名',v:{r:/^.{2,10}$/}}" value="" name="to_user_name">
+									</td>
+									<td>
+										<div id="to_user_nameTip" class="error">收件人姓名</div>
+									</td>
+							</tr>
+							<tr>
+								<th>所在地区：</th>
+								<td style="text-align:left;">
+									<select name="user_province" id="citys" verifys="{d:'选择地区',v:{r:/^.{1,}/}}">
+										<option value="">--选择--</option>
+									</select>
+								</td>
+								<td>
+									<div id="user_provinceTip" class="error">选择地区</div>
+								</td>
+							</tr>
+							<tr>
+								<th>详细地址：</th>
+								<td>
+									<input class="txt" type="text" value="" verifys="{d:'详细地址',v:{r:/^.{1,200}$/}}" name="full_address"/>
+								</td>
+								<td>
+									<div id="full_addressTip" class="error">详细地址</div>
+								</td>
+							</tr>
+							<tr>
+								<th>邮政编码：</th>
+								<td>
+									<input class="txt" type="text"  value="" verifys="{d:'邮政编码',v:{r:/^[0-9]{1,100}$/}}" name="postcode"/>
+								</td>
+								<td>
+									<div id="postcodeTip" class="error">邮政编码</div>
+								</td>
+							</tr>
+							<tr>
+								<th>手机：</th>
+								<td>
+									<input class="txt" type="text" value="" verifys="{d:'手机',v:{r:/^1[358]\\d{9}$|14[57]\\d{8}$|17[678]\\d{8}$/}}" name="mobile"/>
+								</td>
+								<td>
+									<div id="mobileTip" class="error">手机</div>
+								</td>
+							</tr>
+							<tr>
+								<th></th>
+								<td colspan="2">
+									<a href="javascript:void(0);" class="btn span1" id="goaddress">提交</a>
+								</td>
+							</tr>
+							
+							</tbody>
+							
+							</table>
+						</form>
+						</div>
+					</div>
+					<!--Modal end-->
+					
+				</div>
+				
+			</div>
+			
+		  </div>
+		  </div>
+
+		 </div>
+	
+	</div>
+	<!--主体区域结束-->
+
+	<!--页脚区域-->
+	<include file="Public:footer"/>
+	<!--页脚区域结束-->
+</div>
+</body>
+</html>

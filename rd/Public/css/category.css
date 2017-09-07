@@ -1,0 +1,95 @@
+/*全部分类页面css*/
+#main .area .pd12{
+	border:1px solid #ddd;
+	margin:10px 0px;
+	padding:15px;
+}
+#main .area h2{
+    border-bottom: 2px solid #f76f10;
+    font-weight: normal;
+    height: 40px;
+    line-height: 43px;
+    position: relative;
+    text-align: left;
+}
+#main .area h2 span{
+    font-family: "黑体";
+    font-size: 26px;
+}
+#main .area h2 span b {
+    color: #f76f10;
+    font-weight: normal;
+}
+#main .area h2 em {
+    color: #e0e0e0;
+    font-family: Arial;
+    font-size: 16px;
+    margin-left: 6px;
+}
+#main .area h2 a.more, h3 a.more {
+    font-size: 12px;
+    position: absolute;
+    right: 18px;
+    top: 0;
+}
+#main .area h3 a.more {
+    right: 8px;
+}
+
+#main .area .category_list {
+    background: none repeat scroll 0 0 #fcf2e7;
+    overflow: hidden;
+    padding: 12px;
+	margin:5px;
+}
+
+#main .area .category_list3 {
+    border: 1px solid #f76f10;
+    padding: 11px;
+}
+#main .area .pro_class h3 { 
+    display: block;
+    font-size: 14px;
+    font-weight: bolder;
+    height: 20px;
+    margin-top: 0;
+    padding-left: 12px;
+}
+#main .area .pro_class h3 a {
+    color: #333;
+}
+#main .area .pro_class dl {
+    clear: both;
+    display: inline;
+    float: left;
+    margin: 0 9px;
+    overflow: hidden;
+    padding: 7px 0 4px;
+    width: 920px;
+}
+#main .area .pro_class dd {
+    color: #666666;
+    font-size: 11px;
+    height: 20px;
+    overflow: hidden;
+    padding: 3px 15px 3px 0;
+}
+#main .area .pro_class dt, .pro_class dd {
+    float: left;
+    white-space: nowrap;
+}
+#main .area .pro_class dd a:link, .pro_class dd a:visited {
+    color: #f76f10;
+    font-size: 13px;
+}
+#main .area .pro_class dd a {
+    margin-right: 5px;
+}
+#main .area .pro_class .right {
+    float: right;
+}
+#main .area .pro_class ul li {
+    border-bottom: 1px dotted #ccc;
+    line-height: 22px;
+    padding: 5px 0;
+}

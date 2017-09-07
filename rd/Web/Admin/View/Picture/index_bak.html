@@ -1,0 +1,64 @@
+<form id="pagerForm" action="__URL__/index" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	
+</div>
+	<form method="post" action="__URL__/bak" onsubmit="return navTabSearch(this)">
+	<table class="list" width="100%" layoutH="112">
+			<tr id="">
+				<th style="font-size:17px;color:blue">请选择相册：</th>
+				<td>
+					<select name="pid" class="span2 required">
+						<option value='0'>请选择相册</option>
+						<volist name="lists" id="cat">
+							<option value="{$cat.id}">{:countPath($cat['path'])}{$cat.xname}</option>
+						</volist>
+					</select>
+				</td>
+				<td><input type="submit" value="提交"></td>
+			</tr>	
+		</form>
+		
+		  <tr>
+			<th width="70" orderField="id" <if condition="$Think.request._order eq 'id'"> class="{$Think.request._sort}"</if>>ID</th>
+			<th width="80">图片名</th>
+			<th width="100">图片显示</th>
+			<th width="100">图片描述</th>
+			<th width="100">操作</th>	
+		  </tr>
+			<volist name="pic" id="vo">
+				<tr target="item_id" rel="{$vo.id}">
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td><img src="__PUBLIC__/Uploads/image/{$vo.pic}" width="150px" height="100px"></td>
+					<td>{$vo.content}</td>
+					<td>
+					<a href="__URL__/ups/id/{$vo.id}/navTabId/picturelist" class="btnEdit" target="navTab" title="编辑"><span>编辑</span></a>
+					<if condition="$vo.id gt 0 ">
+					<a href="__URL__/del/id/{$vo.id}/" class="btnDel" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a>
+					</if>
+					</td>
+				
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+

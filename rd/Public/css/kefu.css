@@ -1,0 +1,14 @@
+
+/*public*/
+#gohead  .fl{display:inline;float:left}.fr{display:inline;float:right}.mybtn{cursor:pointer}.mybtn:hover{text-decoration:none!important}
+/*main*/
+#gohead {position: fixed;z-index: 100;bottom: 100px;left: 50%;margin-left: 596px;border: 2px solid #eee;width: 63px;text-indent: -40000px;background: #fff;display:block;}
+#gohead #goCart, #goChat, #goTop, #feedback {background-image: url('../images/toTop.png')!important}
+#gohead #feedback {width: 63px;height: 59px;border-bottom: 2px solid #EEEEEE;background-position: -1px -770px}
+#gohead #feedback:hover {background-position: -1px -829px}
+#gohead #goCart, #goChat, #goTop {position: relative;width: 63px;height: 59px;background: -1px -1px no-repeat;cursor: pointer}
+#gohead #goChat {background-position: -1px -238px}
+#gohead #goCart:hover {background-position: -1px -180px}
+#gohead #goChat:hover {background-position:-1px -238px}
+#gohead #goTop{display:none;width:63px;height:61px;opacity:0.5;filter:alpha(opacity=50);-moz-transition:opacity 0.3s ease-in,opacity 0.3s ease-out;-webkit-transition:opacity 0.3s ease-in,opacity 0.3s ease-out;transition:opacity 0.3s ease-in,opacity 0.3s ease-out;background-color:#000!important;background-position:-1px -119px!important;cursor:pointer}
+#gohead #goTop:hover{opacity:1;filter:alpha(opacity=100);-moz-transition:opacity 0.3s ease-in,opacity 0.3s ease-out;-webkit-transition:opacity 0.3s ease-in,opacity 0.3s ease-out;transition:opacity 0.3s ease-in,opacity 0.3s ease-out}

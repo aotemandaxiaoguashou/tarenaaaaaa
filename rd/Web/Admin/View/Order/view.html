@@ -1,0 +1,66 @@
+<div class="PageContent">
+	<div class="accountInfo">
+		<p>订单详情</p>
+	</div>
+</div>
+
+<div class="pageContent">
+		<div class="pageFormContent" layoutH="60">	
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">订单信息</h3>
+			<ul>
+				<li><span>订单编号：</span>{$order.ident}</li>
+				<li><span>订单总价：</span>￥{$order.all-price}元</li>
+				<li><span>下单时间：</span>{$order.addtime|date="Y-m-d H:i:s",###}</li>
+				<li><span>支付时间：</span>{$order.paytime|date="Y-m-d H:i:s",###}</if></li>			
+				<li><span>订单状态：</span><eq name="order.ispay" value="1">已支付<else/>请支付</eq>
+					<eq name="order.issure" value="1">已确认<else/>等待商家确认</eq>
+					<eq name="order.issend" value="1">已发货<else/>待发货</eq></li>			
+			</ul>
+			</div> 
+			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">收货人信息</h3>
+			<ul>
+				<li><span>收件人信息：</span>{$users.tname}</li>			
+				<li><span>电话信息：</span>{$users.phone}</li>			
+				<li><span>邮箱信息：</span>{$users.zipcode}</li>			
+				<li><span>地址信息：</span>{$users.address}</li>			
+			</ul>
+			</div> 
+			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">会员信息</h3>
+			<ul>
+				<li><span>会员名：</span>{$users.username}</li>
+				<li><span>手机：</span>{$users.phone}</li>
+				<li><span>邮箱：</span>{$users.email}</li>		
+			</ul>
+			</div>
+			
+			<div class="items" style="width:100%;margin:0 auto;">
+			<h3 class="ttlm">商品信息</h3>
+			<div class="box_table" style="width:95%;">
+			<table width="100%"><!--这个加上，处理小bug-->
+				<th>商品：</th>
+				<!-- <td><span>商品名称：</span><a href="__ROOT__/Home/Category/info/id/{$vo.goods_id}" target="_blank">{$vo.goodsname}</a> <span>商品价格：</span><a href="#" >￥{$vo.goods_price}</a></td> -->
+				<foreach name="gids" item="g">	
+						
+						<tr>
+							<td>
+								<img src="__PUBLIC__/Uploads/goods/{$g['gdetail'].pic}" alt="{$good.goodsname}" width="38" height="50">
+							</td>
+							<td class="user-tab6-name"><a href="__APP__/Goods/detail/id/{$g['gdetail'].id}" title="粉色唯美花艺套餐">{$g['gdetail'].goodsname}</a></td>
+							<td>{$g['gdetail'].price}</td>
+							<td>{$g.buynum}</td>
+							<td>{$g.sum-price}</td>
+						</tr>
+						
+					</foreach>	 
+			
+			</table>
+			</div>
+			</div> 
+		</div>
+</div>
+

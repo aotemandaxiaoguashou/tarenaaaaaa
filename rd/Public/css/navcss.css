@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+   margin:0 auto;
+   font-size:12px; 
+   color:#666;
+   font-family:"Microsoft yahei";
+}
+
+.navbg{ height:48px; border-bottom:2px solid #ff4b4b;background:#fff;}
+.nav_aaa{ width:980px; margin:0 auto; position:relative;}
+.nav_aaa a:hover{ text-decoration:none;}
+.nav-main_aaa a:hover{ text-decoration:none; color:#ff4b4b}
+/*nav-main*/
+.nav-main_aaa{
+    width:972px;
+    height: 48px;
+	margin:0 4px;
+	position:relative;
+}
+.nav-main_aaa li a span{
+    display: inline-block;
+    margin-left: 10px;
+    width: 11px;
+    height: 7px; 
+	background:url(../images/icon_downj.jpg) no-repeat;
+}
+/*图标向上旋转*/
+.hover-up_xxx{
+	transition-duration: .5s;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    /*background:url(../images/icon_upj.jpg) no-repeat 86px center;*/
+}
+/*图标向下旋转*/
+.hover-down_xxx{
+	transition-duration: .5s;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    /*background:url(../images/icon_downj.jpg) no-repeat 86px center;*/
+}
+.hotimg{ width:26px; height:16px; position:absolute; right:100px; top:13px;}
+/*导航条设置*/
+.nav-main_aaa li{
+    width: 108px;
+    height: 100%;
+    float: left;
+    color: #fff;
+	line-height:48px;
+	text-align: center;
+	overflow:hidden;}
+.nav-main_aaa>li{
+    width: 108px;
+    height: 100%;
+    float: left;
+    color: #fff;
+	line-height:48px;
+	text-align: center;
+	
+}
+.nav-main_aaa>li a{ display:block; width:100%; color:#333333; font-size:16px;overflow:hidden;}
+.nav-main_aaa li a{ display:block; width:100%; color:#333333; font-size:16px;overflow:hidden;}
+/*隐藏盒子设置*/
+.hidden-box_xxx{
+	border-top:2px solid #ff4b4b;
+    width: 118px;
+    position: absolute;
+    display: none;
+    top: 48px;
+	background:#eaeaea;
+	padding-top:5px;
+	z-index:999;
+	_z-index:999;
+	*z-index:999;
+}
+.hidden-box_xxx li{
+	margin-top:3px;
+
+}
+.hidden-box_xxx li a{
+	height:30px;
+	line-height:30px;
+	display:block;
+	background:url(../images/libg.jpg) no-repeat;
+	text-align:left;
+	padding-left:32px;
+    color: #666;
+	font-size:15px;
+	overflow:hidden;
+	font-family:'宋体';
+}
+.hidden-box_xxx li a:hover{background:url(../images/lihover.jpg); color:#fff;}
+/*隐藏盒子位置设置*/
+.hidden-1_xxx{
+    left: 70px;
+}
+.hidden-2_xxx{
+    left: 180px;
+}
+.hidden-3_xxx{
+    left: 290px;
+}
+.hidden-4_xxx{
+    left: 390px;
+}
+.hidden-5_xxx{
+    left: 502px;
+}
+.hidden-6_xxx{
+    left: 610px;
+}
+
+

@@ -1,0 +1,717 @@
+/*easywed - v2.0.0 - 2014-10-11  11:10:12*/
+@charset "UTF-8";
+.wrap-fl {
+	width: 950px
+}
+.wrap-fr {
+	width: 220px
+}
+.wrap-empty {
+	font-size: 14px;
+	color: #666
+}
+#j-fixed-side.fixed {
+	position: fixed;
+	top: 0;
+	width: 220px
+}
+.opus-d .wrap-fl {
+	width: 940px
+}
+.opus-list-ul>li {
+	border-top: 1px solid #97bf55;
+	margin-top: 20px;
+	padding-top: 20px
+}
+.opus-list-ul>li:first-child {
+	border-top: none;
+	margin-top: 0;
+	padding-top: 0
+}
+.opus-title {
+	height: 30px
+}
+.opus-title h4 {
+	float: left;
+	font-size: 16px;
+	border-left: 3px solid #97bf55;
+	padding-left: 10px
+}
+.opus-title .fl {
+	height: 22px;
+	line-height: 22px
+}
+.opus-title h4 a {
+	color: #97bf55;
+*top:-2px;
+*position:relative
+}
+.opus-title .fr {
+	color: #747474
+}
+.opus-title .fr span {
+	padding-left: 15px
+}
+.opus-title .fr span:first-child {
+	padding-left: 0
+}
+.opus-img {
+	height: 230px;
+	overflow: hidden
+}
+.opus-img-ul {
+	margin-right: -10px;
+	margin-bottom: -10px;
+	overflow: hidden
+}
+.opus-img-ul>li {
+	float: left;
+	margin: 0 10px 10px 0;
+	width: 110px;
+	height: 110px;
+	overflow: hidden
+}
+.opus-img-ul .all {
+	display: block;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	line-height: 110px;
+	background-color: #e8e8e8;
+	font-size: 18px;
+	color: #97bf55
+}
+.opus-img-ul .video {
+	position: relative;
+	background: url(/res/images/loading-32-32-gray.gif) center center no-repeat #f6f6f6
+}
+.opus-img-ul .video a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	background: url(../../images/home/vendors/player-icon.png) center center no-repeat
+}
+.opus-img-ul .video embed {
+	display: block;
+	width: 100%;
+	height: 120%
+}
+.opus-img-ul .video a:hover {
+	background-color: rgba(0,0,0,.2)
+}
+.opus-tag {
+	overflow: hidden;
+	margin: -10px -20px 0 0;
+	font-size: 0;
+	line-height: 16px
+}
+.opus-tag span {
+	background-color: #97bf55;
+	padding: 0 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	margin: 10px 15px 0 0;
+	vertical-align: top
+}
+.opus-img-ul img {
+	width: 100%;
+	height: 100%
+}
+.opus-img-ul a {
+	display: block;
+	height: 100%;
+	width: 100%
+}
+.opus-img-ul .item-1, .opus-list-ul .mode-4 .opus-img-ul>li {
+	width: 230px;
+	height: 230px
+}
+.opus-list-ul .mode-4 .all {
+	line-height: 230px
+}
+.opus-list-ul .mode-7 .item-1, .opus-list-ul .mode-7 .item-2, .opus-list-ul .mode-7 .item-3 {
+	width: 230px;
+	height: 230px
+}
+.opus-author {
+	float: left;
+	padding-left: 20px;
+*line-height:20px
+}
+.opus-name {
+	font-size: 16px;
+	font-weight: 700;
+	float: left
+}
+.opus-address {
+	float: left;
+	padding-left: 5px;
+	color: #666
+}
+.opus-address .icons {
+	margin-right: 5px;
+	vertical-align: -2px;
+*vertical-align:middle
+}
+.opus-info {
+	padding-top: 10px
+}
+.opus-hit {
+	color: #666;
+	float: left;
+	width: 100px;
+	padding-right: 10px;
+	overflow: hidden;
+	height: 22px;
+	line-height: 22px
+}
+.opus-hit i.num {
+	color: #97bf55;
+	font-size: 14px;
+	padding-left: 10px;
+	vertical-align: -1px
+}
+.opus-hit .icons {
+	margin-right: 5px;
+	vertical-align: -1px;
+*vertical-align:middle
+}
+.opus-author-list {
+	float: left;
+	color: #666;
+	padding-left: 60px;
+	padding-top: 2px
+}
+.opus-author-list>i {
+	float: left;
+	width: 50px;
+	margin-left: -60px;
+	text-align: right;
+	line-height: 16px
+}
+.opus-author-href {
+	width: 780px;
+	font-size: 0;
+	margin-top: -10px;
+	margin-right: -10px;
+	line-height: 16px
+}
+.opus-author-href a {
+	background-color: #97bf55;
+	padding: 0 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	margin: 10px 15px 0 0;
+	vertical-align: top
+}
+.wrap-side {
+	background-color: #f6f6f6;
+	padding-top: 8px
+}
+.side-security {
+	height: 70px;
+	color: #666;
+	text-align: center
+}
+.side-security>ul {
+	width: 212px;
+	margin: 0 auto
+}
+.side-security li {
+	float: left;
+	width: 70px;
+	border-left: 1px dotted #ccc
+}
+.side-security li:first-child {
+	border-left: none
+}
+.side-security .icons {
+	display: block;
+	margin: 0 auto
+}
+.side-desc dl {
+	padding: 0 15px 20px
+}
+.side-desc dt {
+	font-size: 14px;
+	font-weight: 700;
+	padding-top: 10px
+}
+.side-desc dt:first-child {
+	padding-top: 0
+}
+.side-desc dd {
+	color: #666;
+	line-height: 22px
+}
+.side-desc>strong {
+	display: block;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	background-color: #97bf55;
+	color: #fff;
+	font-size: 18px;
+	overflow: hidden;
+	font-weight: 400
+}
+.ui-h3 {
+	color: #97bf55;
+	font-size: 18px;
+	line-height: 20px;
+	height: 20px;
+	border-left: 6px solid #97bf55;
+	padding-left: 10px
+}
+.ui-h2 {
+	color: #97bf55;
+	font-size: 18px;
+	line-height: 20px;
+	height: 20px;
+	border-left: 3px solid #97bf55;
+	padding-left: 10px
+}
+.opus-d-info {
+	padding: 10px 10px 0;
+	background-color: #fafafa
+}
+.opus-d-info dt {
+	padding-bottom: 6px
+}
+.opus-d-info dd {
+	padding-bottom: 16px
+}
+.opus-d-info h2 {
+	font-size: 18px
+}
+.opus-d-info .info {
+	float: left;
+	padding-right: 50px
+}
+.opus-d-info .info span {
+	padding-left: 20px;
+	color: #666
+}
+.opus-d-info .info strong {
+	font-weight: 400;
+	font-size: 14px
+}
+.opus-d-info .author-list {
+	overflow: hidden;
+	line-height: 18px
+}
+.opus-d-info .author-list ul {
+	margin: -15px 0 0 -30px
+}
+.opus-d-info .author-list li {
+	float: left;
+	padding-left: 30px;
+	padding-top: 15px;
+	height: 18px;
+	overflow: hidden
+}
+.opus-d-info .author-list span {
+	display: inline-block;
+	padding: 0 6px;
+	background-color: #97bf55;
+	color: #fff;
+	margin-right: 5px
+}
+.opus-d-info .author-list a {
+	display: inline-block;
+	color: #97bf55
+}
+.opus-d-content {
+	color: #666;
+	line-height: 24px
+}
+.opus-d-img .title {
+	height: 36px;
+	line-height: 36px;
+	font-size: 24px;
+	background: url(../../images/home/weddings/i.png) center center no-repeat;
+	text-align: center;
+	color: #97bf55
+}
+.opus-d-img li {
+	padding-top: 25px
+}
+.opus-d-img .pic {
+	position: relative
+}
+.opus-d-img .pic img {
+	max-width: 100%;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto
+}
+.opus-d-img .pic a {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -42px;
+	margin-top: -42px;
+	width: 85px;
+	height: 85px;
+	background-image: url(../../images/home/weddings/zan.png)
+}
+.opus-d-img .pic a>i {
+	height: 100%;
+	width: 100%;
+	display: none;
+	background: url(/res/images//loading-16-16.gif) center center no-repeat
+}
+.opus-d-img .pic a.on {
+	background-position: 0 -85px
+}
+.opus-d-img .pic a.loading {
+	background-position: 0 -170px
+}
+.opus-d-img .pic a.loading i, .opus-d-img .pic:hover a {
+	display: block
+}
+.opus-d-img .text {
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+	padding-top: 10px;
+	line-height: 26px
+}
+.opus-d-img embed {
+	display: block;
+	margin: 0 auto
+}
+.opus-d-author {
+	border: 1px solid #f6f6f6;
+	border-top: 2px solid #97bf55;
+	margin-top: 60px;
+	padding-top: 100px;
+	position: relative;
+	padding-bottom: 10px
+}
+.opus-d-author .ui-photo {
+	position: absolute;
+	left: 50%;
+	top: -53px;
+	margin-left: -78px
+}
+.opus-d-author .title {
+	font-size: 16px;
+	text-align: center;
+	height: 30px;
+	line-height: 30px
+}
+.opus-d-author .job {
+	padding-top: 4px;
+	text-align: center
+}
+.opus-d-author .job span {
+	padding-left: 10px;
+	color: #666
+}
+.opus-d-author .job span:first-child {
+	padding-left: 0
+}
+.opus-d-author .hit {
+	font-size: 0;
+	color: #666;
+	padding-top: 10px
+}
+.opus-d-author .hit .icons, .opus-d-author .job .icons {
+	vertical-align: -1px;
+*vertical-align:middle;
+	margin-right: 4px
+}
+.opus-d-author .hit span {
+	display: inline-block;
+	width: 100px;
+	font-size: 12px
+}
+.opus-d-author .hit .item-1 {
+	padding-right: 9px;
+	text-align: right
+}
+.opus-d-author .hit .item-2 {
+	padding-left: 9px
+}
+.opus-d-author .hit .num {
+	color: #97bf55;
+	font-size: 14px;
+	padding-left: 10px
+}
+.opus-d-author .hit a:hover {
+	text-decoration: none
+}
+.detail-share {
+	height: 16px;
+	overflow: hidden;
+	text-align: center
+}
+.detail-share a {
+	padding-left: 7px;
+*padding-left:10px;
+	cursor: pointer
+}
+.detail-share .icons {
+	vertical-align: top
+}
+.detail-fr .detail-share {
+	text-align: left
+}
+.icon-douban, .icon-rr, .icon-sina, .icon-tx, .icon-wx {
+	width: 16px;
+	height: 16px;
+	vertical-align: middle
+}
+.icon-sina {
+	background-image: url(../../images/lib/icon/sina.png)
+}
+.icon-tx {
+	background-image: url(../../images/lib/icon/tx.png)
+}
+.icon-wx {
+	background-image: url(../../images/lib/icon/weixin.png)
+}
+.icon-rr {
+	background-image: url(../../images/lib/icon/renren.png)
+}
+.icon-douban {
+	background-image: url(../../images/lib/icon/douban.png)
+}
+.opus-preview {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 28px;
+	padding: 10px 0;
+	text-align: center;
+	background-color: #ccc
+}
+.opus-preview-top {
+	bottom: auto;
+	top: 0
+}
+.opus-preview span {
+	width: 500px;
+	display: inline-block;
+	font-size: 18px
+}
+.mod-service {
+	background-color: #f8f8f8;
+	padding-top: 10px
+}
+.mod-service .str {
+	color: #97bf55;
+	font-size: 18px;
+	line-height: 18px;
+	height: 18px;
+	border-left: 6px solid #97bf55;
+	padding-left: 10px
+}
+.mod-service h3 {
+	font-size: 24px;
+	padding-left: 15px;
+	padding-bottom: 10px
+}
+.mod-service li {
+	height: 34px;
+	overflow: hidden;
+	border: 1px solid #dbdbdb;
+	margin-top: 16px;
+	background-color: #fff
+}
+.mod-service li:first-child {
+	margin-top: 0
+}
+.mod-service .text-wrap {
+	height: 100%;
+	position: relative;
+	padding: 0 10px
+}
+.mod-service form {
+	padding: 10px
+}
+.mod-service li.submit {
+	border: none;
+	background-color: #f8f8f8;
+	padding-right: 0;
+	height: 30px
+}
+.mod-service li.success {
+	border: none;
+	background-color: #f8f8f8;
+	font-size: 14px;
+	color: #ccc;
+	height: auto
+}
+.mod-service .text {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	padding: 7px 0;
+	border: none;
+	color: #999;
+	font-size: 14px;
+	background-color: #fff;
+*padding-top:6px
+}
+.mod-service .text[disabled] {
+	cursor: default
+}
+.mod-service .focus {
+	border-color: #97bf55
+}
+.mod-service .focus .text {
+	color: #333
+}
+.mod-service .btn {
+	font-size: 20px;
+	color: #fff;
+	background-color: #97bf55;
+	border: none;
+	padding: 0 16px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer
+}
+.mod-service .btn[disabled] {
+	background-color: #b5b6b3;
+	cursor: default
+}
+.mod-service .btn.loading[disabled] {
+	background: url(/res/images/loading-16-16.gif) 10px center no-repeat #b5b6b3;
+	padding-left: 35px
+}
+.mod-service .ajax-after {
+	display: none
+}
+.mod-service .ajax-loading {
+	height: 60px;
+	background: url(/res/images/loading-16-16.gif) center center no-repeat #f8f8f8
+}
+.mod-service .hidden {
+	display: none
+}
+.photo-wrap {
+	background-color: #fff;
+	position: relative;
+	width: 100%;
+	height: 100%
+}
+.photo-inner {
+	padding-right: 270px
+}
+.photo-info {
+	width: 230px;
+	margin-right: -270px;
+	padding: 0 20px
+}
+.photo-img {
+	background-color: #000;
+	width: 100%;
+	position: relative
+}
+.photo-img, .photo-info, .photo-inner {
+	height: 100%
+}
+.photo-img-src {
+	width: 100%;
+	height: 100%;
+	background: url(/res/images/loading-16-16.gif) center center no-repeat;
+	text-align: center
+}
+.photo-img-hack {
+	display: inline-block;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	margin-left: -1px;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle
+}
+.photo-img-src img {
+	max-width: 99%;
+	max-height: 100%;
+	vertical-align: middle
+}
+.photo-wrap .next, .photo-wrap .prev {
+	display: block;
+	position: absolute;
+	width: 27px;
+	height: 44px;
+	overflow: hidden;
+	text-indent: -9999em;
+	top: 50%;
+	margin-top: -22px
+}
+.photo-wrap .prev {
+	left: 10px;
+	background-image: url(../../images/home/weddings/weddings.png?20141011111012);
+	background-position: 0 0
+}
+.photo-wrap .prev:hover {
+	background-image: url(../../images/home/weddings/weddings.png?20141011111012);
+	background-position: -27px 0
+}
+.photo-wrap .next {
+	right: 10px;
+	background-image: url(../../images/home/weddings/weddings.png?20141011111012);
+	background-position: -54px 0
+}
+.photo-wrap .next:hover {
+	background-image: url(../../images/home/weddings/weddings.png?20141011111012);
+	background-position: -81px 0
+}
+.photo-close {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	right: -12px;
+	top: -12px;
+	background-image: url(../../images/home/weddings/weddings.png?20141011111012);
+	background-position: 0 -44px;
+	overflow: hidden;
+	text-indent: -999em
+}
+.photo-close:hover {
+	background-image: url(../../images/home/weddings/weddings.png?20141011111012);
+	background-position: -30px -44px
+}
+.photo-zan {
+	text-align: center
+}
+.photo-desc {
+	line-height: 24px;
+	font-size: 14px;
+	color: #666
+}
+.photo-hit {
+	position: absolute;
+	bottom: 0;
+	height: 30px;
+	line-height: 30px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	font-size: 16px;
+	opacity: .8;
+	filter: alpha(opacity=80)
+}
+.photo-hit>span {
+	display: inline-block;
+	background-color: #fff;
+	padding: 0 10px
+}
+.opus-dialog .ui-dialog-inner {
+	border: none
+}
+.opus-dialog .ui-dialog-close {
+	display: none
+}

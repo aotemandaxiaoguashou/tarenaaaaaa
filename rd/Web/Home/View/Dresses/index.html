@@ -1,0 +1,42 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>婚纱摄影-酷结网</title>
+</block>
+
+<block name="style">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/newhotel_index.css">
+<script type="text/javascript" src="__PUBLIC__/js/newhotel_index.js"></script>
+	
+</block>
+
+<block name="eachContent">
+
+<!--婚纱摄影列表-->
+<div style="clear:both;"></div>
+
+<div class="nav" style="width:980px;">
+	<div class="allshow">
+		<volist name="deslist" id="dlist">
+		<ul>
+			<li><a href="__CONTROLLER__/info/id/{$dlist.id}" target="_self" title="{$dlist.title}"><img src="__PUBLIC__/{$dlist.pic_name}" alt="{$dlist.title}预订" height="170px"  style='border:solid 1px #fc2c93'></a></li>
+			<li><a href="__CONTROLLER__/info/id/{$dlist.id}" target="_self" title="{$dlist.title}预订"><span class="allshow_title">{$dlist.title}</span></a></li>
+			<li><span class="allshow_style">市场价格：<del>{$dlist.sale}元</del></span></li>
+			<li><span class="allshow_style" style='color:#fc2c93'>优惠价格：{$dlist.price}元</span></li>
+		</ul>
+		</volist>
+   	</div>
+	
+	<div style="clear:both;"></div>
+</div>
+
+	
+<script type="text/javascript">
+var bd_cpro_rtid="PWRLP6";
+</script>
+<script type="text/javascript" src="__PUBLIC__/images/rt.js"></script>
+<noscript>
+<div style="display:none;">
+<img height="0" width="0" style="border-style:none;" src="#" />
+</div>
+</noscript>
+</block>

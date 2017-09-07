@@ -1,0 +1,44 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/userlist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<input type="hidden" name="uid" value="{$vo.uid}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>用户名：</dt>
+				<dd>{$vo.username}</dd>
+			</dl>
+			
+			<dl>
+				<dt>邮箱：</dt>
+				<dd><input type="text" name="email" value="{$vo.email}"></dd>
+			</dl>
+			
+			<dl>
+				<dt>会员余额：</dt>
+				<dd><input type="text" name="money" value="{$vo.money}"></dd>
+			</dl>
+			
+			<dl>
+				<dt>积分：</dt>
+				<dd><input type="text" name="point" value="{$vo.point}"></dd>
+			</dl>
+			
+			<dl>
+				<dt>是否启用</dt>
+				<dd>
+				<input type="radio" name="locked" value="0" <if condition="$vo.enabled eq 0">checked</if>/>启用
+				<input type="radio" name="locked" value="1" <if condition="$vo.enabled eq 1">checked</if>/>禁用</dd>
+			</dl>
+			
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

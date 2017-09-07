@@ -1,0 +1,143 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>CoolMarry-酷结网</title>
+</block>
+
+<block name="style">
+  <link href="__PUBLIC__/css/shopping.css" rel="stylesheet" type="text/css">
+</block>
+
+<block name="eachContent">
+<div class="w clearfix">
+	<div class="clearfix page_area">
+		<div class="user_default">
+			<div class="nav_1"></div>
+			<div class="title_s"><span class="title01_s">我的购物车</span></div>
+			<form action="__APP__/Indent/updategd" method="post">
+			<div class="flow">
+				<table class="cart-tab-f1" bgcolor="#cccccc" border="0" cellpadding="0" cellspacing="1" width="100%">
+					<thead>
+						<tr>
+							<th width="10%">图片</th>
+							<th width="40%">商品名称</th>
+							<th>市场价</th>
+							<th width="10%">酷结价</th>
+							<th width="15%">数量</th>
+							<th width="10%">小计</th>
+							<th width="10%">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+					<foreach name="info" item="inf">
+					<foreach name="inf['goods']" item="goods">
+					<input type="hidden" name="carid[]" value="{$inf.id}">
+						<tr id="content_3009">
+							<td><img src="__PUBLIC__/Uploads/goods/{$goods.pic}" height="50"></td>
+							<td class="tab-f1-name">
+								<a href="__APP__/Goods/detail/id/{$inf.goodsid}">{$goods.goodsname}</a>             
+							</td>
+							<td align="center" bgcolor="ffffff"><del>￥{$goods.mar-price}</del></td>
+							<td><span class="f_ff1b71">￥</span><span class="f_ff1b71" id="cart_price_3009">{$goods.price}</span></td>
+							<td>
+								<div class="numbera">
+									<a class="reduce" href="javascript:void(0)" onclick="setAmount.reduce('#pamount_3009')">-</a>
+									<input size="4" id="pamount_3009" onblur="setAmount.modify('#pamount_3009')" value="{$inf.total}" name="total[]" type="text">
+									<a class="add" href="javascript:void(0)" onclick="setAmount.add('#pamount_3009')">+</a>
+								</div>
+							</td>
+							<td>￥<span id="subtotal_3009">{$goods.sum-price}</span></td>
+							<td class="tab_hover">
+								<a href="__CONTROLLER__/del?id={$inf['id']}" onclick="deleteCart(3009)">删除</a>
+							</td>
+						</tr>
+						
+					</foreach>
+					</foreach>
+					
+						                 
+						<tr>
+							<td colspan="7" class="font_14 tab-f1-count"><strong>商品总价：<span class="f_ff1b71" id="total_money_show">{$info.all-price}</span></strong></td>
+						</tr>
+					</tbody>
+				</table>
+	            <div class="coupon_inte">
+	            	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	                	<tbody>
+							<tr>
+								<td align="right"><a href="__CONTROLLER__/del?userid={$inf['userid']}">清空购物车</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+            <div class="cartbnt">
+            	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+                	<tbody><tr>
+                    	<td align="left"><a href="__APP__/Index" onclick="javascript:location='index.php'">&lt;&lt; 继续挑选商品</a></td>
+                        <td align="right"><!--<input name="settlement" id="settlement" class="jiesuan" type="button" />--><input value=" " id="settlement" class="jiesuan" type="submit" /></td>
+                    </tr>
+					</tbody>
+				</table>
+            </div>
+			</div>
+		</form>
+		</div>
+	</div>
+
+</div>
+
+<!--商品小计和商品总价以及数量加减的js start-->
+<script>
+
+	$(function(){  
+		//执行加1计算
+		$(".add").click(function(){  
+			var t=$(this).parent().find('input[id*=pamount_3009]'); //获取当前对象的数量
+			t.val(parseInt(t.val())+1); 
+			setTotal();  
+		});  
+		
+		//执行减一计算
+		$(".reduce").click(function(){ 
+			var t=$(this).parent().find('input[id*=pamount_3009]');
+			//alert(t.val());
+			if(t.val()>1){
+				t.val(parseInt(t.val())-1);  
+				setTotal();
+			} else{
+				alert('数量最小为1');
+			}
+		});  
+		
+		//计算商品小计和商品总价的方法
+		function setTotal(){ 	
+			var s=0;
+			$(".numbera").each(function(){
+				var price=$(this).parent().prev().find('span[id*=cart_price_3009]'); //获取到当前商品的单价
+				//alert(price.text());
+				var total=$(this).find('input[id*=pamount_3009]'); //获取到当前商品的数量
+				//alert(total.val());
+				var sumprice=$(this).parent().next().find('span[id*=subtotal_3009]'); //获取到当前商品的小计
+				//alert(sumprice.text());
+				sumprice.text((parseInt(total.val()) * parseFloat(price.text()))); //重新计算商品小计，覆盖掉之前的值
+				//alert(sumprice.text());
+				s+=(parseInt(total.val()) * parseFloat(price.text()));
+				//alert(s);	
+				
+			});
+			$('#total_money_show').text(s); //当前商品总价
+			//alert(allprice);
+			
+			
+		}  
+	})  
+	
+	
+	
+	
+	
+</script>
+<!--商品小计和商品总价以及数量加减的js end-->
+
+
+</block>

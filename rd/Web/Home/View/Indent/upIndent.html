@@ -1,0 +1,56 @@
+<extend name="Public:layout" />
+
+<block name="title">
+	<title>订单提交成功 - 酷结网</title>
+</block>
+
+<block name="style">
+	<link href="__PUBLIC__/css/shopping.css" rel="stylesheet" type="text/css">
+</block>
+
+<block name="eachContent">
+    <div class="w clearfix">
+        <div class="clearfix page_area">
+			<div class="user_default">
+				<div class="nav_3"></div>
+				<div class="title_s mb0"><span class="title01_s">成功提交订单</span></div>
+				<div class="address_info" style="padding:60px 0;">
+					<table class="font_14" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody>
+							<tr>
+								<td align="center">感谢您的购物,您的订单已经提交成功,请记住您的订单号：<strong><span class="f_ff1b71">{$orders.ident}</span></strong></td>
+							</tr>
+							<tr>
+								<td align="center">您的应付金额为<strong><span class="f_ff1b71">￥{$orders.all-price} </span></strong></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="flow">
+					<div class="reminder">
+						我们的婚礼顾问会马上与您取得联系，确认订单！<br>
+						为避免给您带来不便，如您选择的是有档期的人员类商品，请等待婚礼顾问与您确认档期后再选择支付。<br>
+						您也可到“<a href="__APP__/User/ordercenter">我的酷结—订单中心</a>”中选择付款。
+					</div>
+					<div class="submt_button01">
+						<form action="__CONTROLLER__/goPay" method="post" target="_blank" id="submitpaypal">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									<tr>
+										<td align="center">
+											<input name="userid" value="{$orders.userid}" type="hidden">
+											<input name="points" value="{$orders.points}" type="hidden">
+											<input name="orderid" value="{$orders.id}" type="hidden">
+											<input name="" id="go_pay_open" class="ljzf_s" value=" " type="submit">
+																		
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</block>

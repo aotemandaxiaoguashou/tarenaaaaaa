@@ -1,0 +1,46 @@
+<div class="PageContent">
+	<div class="accountInfo">
+		<p>修改文章</p>
+	</div>
+</div>
+
+<div id="pageContent"  layouth="100" style="overflow:auto;">
+	<form method="post" action="__URL__/update/navTabId/articlelist/"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+	<table class="form_table">
+		<tbody>
+		<input type="hidden" name="article_id" value="{$vo.article_id}"/>
+		<!-- {$vo.article_id}
+		{$vo.cat_name} -->
+		<tr>
+			<th>标题：</th>
+			<!-- 是由$vo公共类分类过来的数组 -->
+			<td><input type="text" value="{$vo.title}" name="title" class="span2 required"></td>
+		</tr>
+		<tr><th></th><td class="gray">文章标题</td></tr>
+		
+		<tr>
+			<th>分类：</th>
+			<td>
+				<select name="cat_id">
+					<volist name="catlist" id="cat">
+						<option value="{$cat.id}"  <if condition="$vo['cat_id'] eq $cat['id']">selected</if>>{$cat.cat_name}</option>
+					</volist>
+				</select>
+				
+			</td>
+		</tr>
+			
+		<tr>
+			<th>内容：</th>
+			<td>
+				<textarea class="span5 editor" rows="13" name="content">{$vo.content}</textarea>
+			</td>				
+		</tr>
+
+		<tr><th></th><td><input type="submit" value="更新文章"/></td>
+		</tr>
+	</tbody>
+	</table>
+	</form>
+</div>			

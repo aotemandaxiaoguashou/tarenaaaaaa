@@ -1,0 +1,19 @@
+<div id="pageContent"  layouth="60" style="overflow:auto;">
+	<form action="__URL__/shopset_save/navTabId/pagelist/" method="post" class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this, navTabAjaxDone);">
+	<table class="form_table">
+		<tbody>
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		<tr>
+			<th>是否开启客服中心：</th>
+			<td>
+				<input type="radio" name="is_kf" value="1" <eq name="vo.is_kf" value="1">checked</eq> >启用
+				<input type="radio" name="is_kf" value="0" <eq name="vo.is_kf" value="0">checked</eq> >关闭
+			</td>
+		</tr>
+		<tr><th></th><td><input type="submit" value="更新站点设置"/></td>
+		</tr>
+		</tbody>
+	</table>
+	</form>
+</div>	

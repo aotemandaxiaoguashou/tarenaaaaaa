@@ -1,0 +1,298 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>酒店详情-酷结网</title>
+</block>
+
+<block name="style">
+  <script>
+  function strtotimed(datetime){   
+      var tmp_datetime = datetime.replace(/:/g,'-');
+      tmp_datetime = tmp_datetime.replace(/ /g,'-');
+      var arr = tmp_datetime.split("-");
+      var y=arr[0];
+      var m=arr[1]-1;
+      var d=arr[2];
+      var h=arr[3]-8; ///兼容八小时时差问题
+      var i=arr[4];
+      var s=arr[5];
+      //兼容无"时:分:秒"模式
+      if(arr[3]=='undefined' || isNaN(h)){
+        h=00;
+      }
+      if(arr[4]=='undefined' || isNaN(i)){
+        i=00;
+      }
+      if(arr[5]=='undefined' || isNaN(s)){
+        s=00;
+      }
+      var now = new Date(Date.UTC(y,m,d,h,i,s));
+      return parseInt(now.getTime()/1000);
+  }
+  
+    $(function(){
+      $("input[name=year_day]").val('');
+      $("input[name=month_day]").val('');
+      $("input[name=day_day]").val('');
+    $(".time-box").hide();
+      $("#imgScroll").jcImgScroll({});
+      $("#pro-det-title").tabs({
+        cntSelect: "#pro-de-wrap",
+        tabEvent: "click",
+        tabStyle: "normal",
+        onStyle : "pro-curr"
+      });
+      
+      $('.pro-join-cart').click(function(){
+        var num = ischecktime();
+        if(num==3){
+            var product_number = $("#pamount").val();
+            var number = ($("input[name=goods_num]").val()>0)?$("input[name=goods_num]").val():1;
+            var product_id = $("#product_id").val();
+            var year = $("input[name=year_day]").val(),month=$("input[name=month_day]").val(),day=$("input[name=day_day]").val();
+            var datetime = year+'-'+month+'-'+day;
+            var date_time = strtotimed(datetime);
+            $.getJSON('cart.php',{'act':'save','goods_id':40765,'product_id':product_id,'number':number,'type':'joincart','datetime':date_time},function(json){
+              if(json.ok==1){
+                location.reload();
+              }
+            });
+        }
+          //$.post('cart.php?act=save&goods_id=40765&product_id='+product_id+'&number=1',);
+          //location.href='cart.php?act=save&goods_id=40765&product_id='+product_id+'&number=1';
+        });
+      
+      $('.pro-buy-now').click(function(){
+        var num = ischecktime();
+        if(num==3){
+            var product_number = $("#pamount").val();
+            var number = ($("input[name=goods_num]").val()>0)?$("input[name=goods_num]").val():1;
+            var product_id = $("#product_id").val();
+            var year = $("input[name=year_day]").val(),month=$("input[name=month_day]").val(),day=$("input[name=day_day]").val();
+            var datetime = year+'-'+month+'-'+day;
+            var date_time = strtotimed(datetime);
+            //alert('cart.php?act=save&goods_id=40765&product_id='+product_id+'&number='+number+'&datetime='+date_time);
+            location.href='cart.php?act=save&goods_id=40765&product_id='+product_id+'&number='+number+'&datetime='+date_time;
+        }
+     });
+     $('.amount-plus').click(function(){
+    $(this).prev().val(parseInt($(this).prev().val())+1);
+    });
+    $('.amount-minus').click(function(){
+    var cur_val=parseInt($(this).next().val());
+    if((cur_val-1)>0)
+    {
+      $(this).next().val(cur_val-1);
+    }
+    });
+      //图片切换
+      $(".product-pic-list").find("img").mouseover(function(){
+        var imgSrc=$(this).attr("name");
+        $(".product-picture").find("img").eq(0).attr("src",imgSrc);
+      });
+      $("#year li").click(function(){
+        $(this).parent().children().removeClass("curr");
+        $(this).addClass("curr");
+        $(this).parent().hide();
+        $(this).parent().next().show();
+        $("#year_day").html($(this).text()+"<i class='icon1'></i>");
+        $("input[name=year_day]").val(parseInt($(this).text()));
+        $("#year_day").removeClass("current");
+        $("#month_day").addClass("current");
+      });
+      $("#month li").click(function(){
+        $(this).parent().children().removeClass("curr");
+        $(this).addClass("curr");
+        $("#month_day").html($(this).text()+"<i class='icon1'></i>");
+        $("input[name=month_day]").val(parseInt($(this).text()));
+        var y=$("#year .curr").attr("name");
+        var m=$(this).attr("name");
+        var id=40765;
+        $.ajax({
+          type:"POST",
+          url:"?act=getDays",
+          async:false,
+          data: "_year="+y+"&_month="+m+"&id="+id,
+          dataType:"html",
+          success:function(html){
+            $("#day").html(html);
+          }
+        });
+        $(this).parent().hide();
+        $(this).parent().next().show();
+        $("#month_day").removeClass("current");
+        $("#day_day").addClass("current");
+
+        $("#year_day").html($("#year .curr").text()+"<i class='icon1'></i>");
+      });
+      $("#day").on('click','li',function(){
+        if($(this).attr('class')!='noitem'){
+          $(this).addClass("curr");
+            $("#day_day").html($(this).text()+"<i class='icon1'></i>");
+            $("#day_day").removeClass('current');
+            $(this).parent().parent().hide();
+
+            $("#year_day").html($("#year .curr").text()+"<i class='icon1'></i>");
+            $("#month_day").html($("#month .curr").text()+"<i class='icon1'></i>");
+            $("input[name=day_day]").val(parseInt($(this).text()));
+        }
+      });
+    });
+    
+    function ischecktime(){
+            return 3;
+          }
+  </script>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/css/hotel_new_css.css">
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/newhotel_header.css">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/hotel_shop.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/max_hotel_header.css">
+	<script type="text/javascript" src="__PUBLIC__/js/Scroll_loading.js"></script>
+	<script>
+		$(function(){
+			$(".loadimg").scrollLoading();	
+		})
+	</script>
+</block>
+
+<block name="eachContent">
+	<div class="w page-here mb10">
+		<span>当前位置：</span><a href="__APP__/Index">首页</a>&gt;<a href="__APP__/{$hole.english}">{$hole.columnname}</a>&gt; <em>{$hole.holename}</em>
+	</div>
+	<div class="w clearfix">
+		<div class="sidebar fl">
+			<div class="module2">
+				<div class="mod-hd">酷结推荐</div>
+				<div class="mod-bd">
+					<ul class="recommen-list img-box">
+						<li class="item">
+							<a href="http://www.coolmarry.cn/goods.php?goods_id=40954"><img src="__PUBLIC__/images/201412161329477548.jpg" alt="主持人筱玮"></a>
+							<div class="name-bg"></div>
+							<div class="img-name"><a href="http://www.coolmarry.cn/goods.php?goods_id=40954">主持人筱玮</a> </div>
+						</li>
+						<li class="item">
+							<a href="http://www.coolmarry.cn/goods.php?goods_id=41075"><img src="__PUBLIC__/images/201412161332439950.jpg" alt="主持人李沐坤"></a>
+							<div class="name-bg"></div>
+							<div class="img-name"><a href="http://www.coolmarry.cn/goods.php?goods_id=41075">主持人李沐坤</a> </div>
+						</li>
+						<li class="item">
+							<a href="http://www.coolmarry.cn/goods.php?goods_id=41024"><img src="__PUBLIC__/images/201412161330521462.jpg" alt="主持人小松 "></a>
+							<div class="name-bg"></div>
+							<div class="img-name"><a href="http://www.coolmarry.cn/goods.php?goods_id=41024">主持人小松 </a> </div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="module2">
+				<div class="mod-hd">大家还喜欢</div>
+				<div class="mod-bd">
+					<ul class="item-list">
+						<li>
+							<div class="imgbox">
+							  <a href="http://www.coolmarry.cn/goods.php?goods_id=41419"><img title="婚纱摄影青木社摄影创作中心" alt="婚纱摄影青木社摄影创作中心" src="__PUBLIC__/images/thumb_201412311537086314.jpg" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="婚纱摄影青木社摄影创作中心" href="http://www.coolmarry.cn/goods.php?goods_id=41419">婚纱摄影青木社摄影创作中心</a>
+							</div>
+							<p class="price">市场价：<del>￥14300</del><br>酷结价：￥10999</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="http://www.coolmarry.cn/goods.php?goods_id=41417"><img title="婚礼摄影师宣野" alt="婚礼摄影师宣野" src="__PUBLIC__/images/thumb_201412311530099448.JPG" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="婚礼摄影师宣野" href="http://www.coolmarry.cn/goods.php?goods_id=41417">婚礼摄影师宣野</a>
+							</div>
+							<p class="price">市场价：<del>￥3500</del><br>酷结价：￥2000</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="http://www.coolmarry.cn/goods.php?goods_id=41415"><img title="主持人刘驰" alt="主持人刘驰" src="__PUBLIC__/images/thumb_201412311516496448.png" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="主持人刘驰" href="http://www.coolmarry.cn/goods.php?goods_id=41415">主持人刘驰</a>
+							</div>
+							<p class="price">市场价：<del>￥6000</del><br>酷结价：￥3600</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="http://www.coolmarry.cn/goods.php?goods_id=41413"><img title="化妆造型师蓉蓉" alt="化妆造型师蓉蓉" src="__PUBLIC__/images/thumb_201412311510109920.jpg" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="化妆造型师蓉蓉" href="http://www.coolmarry.cn/goods.php?goods_id=41413">化妆造型师蓉蓉</a>
+							</div>
+							<p class="price">市场价：<del>￥1500</del><br>酷结价：￥1000</p>
+						</li>
+						<li>
+							<div class="imgbox">
+							  <a href="http://www.coolmarry.cn/goods.php?goods_id=41411"><img title="『金手指花艺』粉色花艺套餐" alt="『金手指花艺』粉色花艺套餐" src="__PUBLIC__/images/thumb_201412311505213087.jpg" height="61" width="82"></a>
+							</div>
+							<div class="img-name">
+							  <a title="『金手指花艺』粉色花艺套餐" href="http://www.coolmarry.cn/goods.php?goods_id=41411">『金手指花艺』粉色花艺套餐</a>
+							</div>
+							<p class="price">市场价：<del>￥18000</del><br>酷结价：￥10260</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+        </div>
+	<div class="main-cont fr">
+		<div class="product mb15">
+			<div class="hotelinfo_new_jiben">
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td width="500">
+								<img src="__PUBLIC__/Uploads/hole/{$hole.pic}" style="margin-top: 5px;" title="{$hole.holename}" alt="{$hole.holename}" height="280" width="470">
+							</td>
+							<td valign="top">
+								<div class="h11"><h1>{$hole['holename']}</h1></div>
+								<div class="clear"></div>
+								<div class="clear"></div>
+								<p class="hotelinfo_new_p2">&nbsp;&nbsp;{$hole['intro']}</p>
+								<p class="hotelinfo_new_p3_2"> <a onclick="showDiv('order');show_hide('easyOrder_Hotel','easyOrder_Hotel_main','');" id="hotel_in_order">免费预约看场地</a></p>
+								<span class="hotelinfo_new_p3 hotelinfo_new_p3_1">婚宴价格：{$hole.price}元/桌</span>
+								<span class="hotelinfo_new_p3" style="margin-left:55px;">容纳桌数：{$hole['tabnum']}桌</span>
+								<div class="hotelinfo_new_p3"><p class="hotelinfo_new_p3a">酒店地址：<a href="#">东城区</a>—{$hole['address']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
+								<div id="hotelch" class="phone_yuyue addiv_03">
+									<div class="suc_title">
+										<img src="__PUBLIC__/images/border_exit.jpg" class="img001" onclick="testDisplay2('hotelch')">提交成功！婚礼顾问会尽快与您联系并将相关信息发送给您。                    </div>
+								</div>
+								<p class="hotelinfo_new_p3">酒店特色：                    
+									<a href="#" title="{$hole['style']}预定"><if condition="$hole.style eq 0">五星级酒店<elseif condition="$hole.style eq 1"/>四星级酒店<elseif condition="$hole.style eq 2"/>三星级酒店<elseif condition="$hole.style eq 3"/>连锁酒店<else />草坪婚宴酒店</if></a>
+								</p>
+								<p class="hotelinfo_new_p3">咨询热线：<span class="top_phone">{$hole['phone']}</span>(9:30-18:00)</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="product-promise">
+				<p><img alt="" src="__PUBLIC__/images/112.jpg" style="width: 965px; height: 52px;"></p>
+			</div>
+		</div>
+			<div class="porduct-details mb15">
+				<ul id="pro-det-title" class="pro-det-title">
+					<li class="pro-curr">详细介绍</li>
+				</ul>
+				<div id="pro-de-wrap" class="pro-de-wrap">
+                    <div style="display: block;" class="details-content p15 clearfix">
+						<p><strong><span style="font-size:16px;"><span style="font-family:宋体;">【{$hole.columnname}】{$hole.holename}</span></span></strong></p>
+						<p>&nbsp;</p>
+						<p style="text-align: center;"><img alt="" src="__PUBLIC__/Uploads/hole/{$hole.pic}" style="width: 600px; height: 400px;"></p>
+						<p><strong><span style="font-size:14px;"><span style="font-family:宋体;">详情介绍：</span></span></strong></p>
+						<p>&nbsp;</p>
+						<p><span style="font-size:14px;"><span style="font-family:宋体;">名称：{$hole.holename}。</span></span></p>
+						<p>&nbsp;</p>
+						<p><span style="font-size:14px;"><span style="font-family:宋体;">商品详情：</span></span></p>
+						<p>&nbsp;</p>
+					</div>
+                    <div class="details-content clearfix">
+						{$hole.detail}
+					</div>
+                                                                        
+                </div>
+			</div>
+		</div>
+	</div>
+</block>

@@ -1,0 +1,55 @@
+<extend name="Public:layout" />
+<block name="title">
+  <title>作品展示-{$wlist.title}</title>
+</block>
+<block name="style">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/weddings.css">
+  <link charset="utf-8" rel="stylesheet" href="__PUBLIC__/css/laydate.css">
+  <link charset="utf-8" rel="stylesheet" href="__PUBLIC__/css/laydate_002.css">
+</block>
+<block name="eachContent">
+<div class="w pb20"> 
+  <!-- 面包屑 -->
+  <div class="ui-nav-crumbs text-overflow pt10"> <a href="__APP__">首页</a><i>&gt;</i><a href="__CONTROLLER__" target="_self">作品区</a><i>&gt;</i>{$wlist.title}</div>
+  <!-- 面包屑end-->
+  
+  <div class="wrap clx pt10 opus-d">
+    <div class="wrap-fl fl">
+      <dl class="opus-d-info">
+        <dt>
+          <h2>场地信息</h2>
+        </dt>
+        <dd class="clx">
+          <div class="info"> <strong>地点：</strong><span>{$wlist.hole_name}</span></div>
+          <div class="info"> <strong>时间：</strong> <span>{$wlist.addtime|date='Y-m-d H:i:s',###}</span> </div>
+        </dd>
+        <dt>
+          <h2>提供的服务</h2>
+        </dt>
+        <dd class="clx">
+          <div class="info"> <strong>服务：</strong> <span>室内婚礼</span><span>{$wlist.price}元</span> </div>
+        </dd>
+      </dl>
+      <h3 class="ui-h2 mt20">新人档案</h3>
+      <div class="opus-d-content pt10">{$wlist.presoninfo}</div>
+      <h3 class="ui-h2 mt20">新人婚礼要求</h3>
+      <div class="opus-d-content pt10">{$wlist.requires} </div>
+      <h3 class="ui-h2 mt20">服务亮点</h3>
+      <div class="opus-d-content pt10"> 圣诞 </div>
+      <div class="opus-d-img pt20" id="j-img-list">
+        <div class="title"> 作品图片区 </div>
+        <ul>
+          <!-- 图片列表循环, 循环li标签 -->
+          <li>
+            <div class="pic">  
+              {$wlist.detail}
+            </div>
+          </li>    
+        </ul>
+      </div>
+    </div>
+    <!-- 右 -->
+  </div>
+</div>
+</block>

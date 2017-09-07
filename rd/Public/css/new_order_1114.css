@@ -1,0 +1,66 @@
+/* CSS Document */
+body{margin:0;padding:0 0 12px 0;font-size:12px;line-height:22px;font-family:"Arial","微软雅黑","宋体",HELVETICA;background:#fff;_background-image: url(about:blank);_background-attachment: fixed; }form,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}input,select{font-size:12px;line-height:16px;cursor: pointer;}img{border:0;}ul,li{list-style-type:none;}a{ text-decoration:none;}
+#order1_{width:800px; height:auto;
+overflow:hidden;
+background:#FFFFFF;
+	z-index:990;
+	left:50%;/*FF IE7*/
+	top: 50%;/*FF IE7*/
+	margin-left:-391px!important;/*FF IE7 该值为本身宽的一半 */
+	margin-top:-285px!important;/*FF IE7 该值为本身高的一半*/
+	margin-top:0px;
+	position:fixed!important;/*FF IE7*/
+	position:absolute;/*IE6*/
+	_top:       expression(eval(document.compatMode &&
+				document.compatMode=='CSS1Compat') ?
+				documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+				document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/}
+.red_main{margin:20px  auto;width:796px;height:426px;background:#FFFFFF}
+.all_tit{width:656px;margin:10px auto;line-height:140px;color:#666666;font-size:14px;margin-bottom:35px;float:left;margin-left:60px}
+.all_type{width:656px;margin:0 auto}
+.all_type ul li{width:85px;text-align:center;float:left;margin-right:29px}
+.a_label{display:block;width:83px;height:75px;background:#d2d2d2;text-align:center;padding-top:10px;overflow:hidden;cursor:pointer;}
+.all_close{float:right;margin-right:30px;margin-top:10px}
+.all_close img{ cursor:pointer}
+.all_type ul li a:hover{background:#ff4b4b;}
+.all_type ul li div{line-height:30px;font-size:14px;color:#666666}
+.all_type ul li input{float:left;margin-top:8px}
+.all_type ul li label{float:left;}
+.li_span{ -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background:#FFAAA9;color:#FFFFFF;padding:0 2px}
+.hui_span{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background:#FFAAA9;color:#FFFFFF;padding:0 2px}
+.two_a{width:555px;margin:0 auto;margin-top:30px;text-align:center;overflow:hidden}
+.ret_a{color:#999999;font-size:14px; cursor:pointer;display:block;float:left;width:140px;line-height:50px;background:#d2d2d2;margin-top:2px;margin-left:10px}
+.next_div{width:240px;float:left;margin-left:50px}
+.yell_bg{width:240px;background:#feff63;color:#666666;text-align:center;line-height:25px; visibility:hidden}
+.next_a{width:240px;line-height:36px;color:#FFFFFF;background:#ff4b4b;text-align:center;font-size:16px;border:none; cursor:pointer;font-weight:bold;float:left}
+.order0506_bottomBorder_{ width:800px; height:5px; overflow:hidden; background:#ff4b4b; background-repeat:no-repeat;}
+.name_{width:80px;border:1px #d2d2d2 solid;float:left;height:34px;line-height:34px;padding-left:5px;color:#999999;margin-top:2px;margin-right:10px;font-size:14px}
+.phone_{width:140px;border:1px #d2d2d2 solid;float:left;;height:34px;line-height:34px;padding-left:5px;color:#999999;margin-top:2px;margin-right:10px;font-size:14px}
+.span_grey{margin:40px auto;width:555px;color:#999999;margin-top:20px}
+
+
+#order2_{width:550px; height:auto;
+overflow:hidden;
+background:#FFFFFF;
+	z-index:990;
+	left:50%;/*FF IE7*/
+	top: 50%;/*FF IE7*/
+	margin-left:-281px!important;/*FF IE7 该值为本身宽的一半 */
+	margin-top:-185px!important;/*FF IE7 该值为本身高的一半*/
+	margin-top:0px;
+	position:fixed!important;/*FF IE7*/
+	position:absolute;/*IE6*/
+	_top:       expression(eval(document.compatMode &&
+				document.compatMode=='CSS1Compat') ?
+				documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+				document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/}
+.red_main_{margin:0  auto;width:548px;height:320px;background:#FFFFFF}
+.all_tit_{width:426px;margin:10px auto;line-height:140px;color:#666666;font-size:14px;float:left;margin-left:50px;margin-top:50px}
+.all_close_{float:right;margin-right:30px;margin-top:10px;margin-top:30px}
+.all_close_ img{ cursor:pointer}
+.span_grey_{margin:10px auto;width:436px;color:#999999;}	
+.order0506_bottomBorder_1{ width:550px; height:5px; overflow:hidden; background:#ff4b4b; background-repeat:no-repeat;}	
+.two_a_{width:435px;margin:40px auto;margin-top:30px;text-align:center;overflow:hidden}
+.next_a_{width:160px;line-height:36px;color:#FFFFFF;background:#ff4b4b;text-align:center;font-size:16px;border:none; cursor:pointer;font-weight:bold;float:left}	
+.order0506_private,.order0506_private a{ color:#ccc;margin:10px auto;width:436px;}
+.order0506_private a{ text-decoration:underline}

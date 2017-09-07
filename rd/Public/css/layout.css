@@ -1,0 +1,109 @@
+	/*公共样式及头部样式在common.css里面*/
+	
+	/*内容区域 大图轮播*/
+	#main .foucs_photo{
+		width:950px;
+		height:116px;
+		float:left;
+		padding-right:10px;
+		position:relative;
+	}
+	#main .foucs_photo ul{ list-style: none ; }
+
+	#main .foucs_photo .num {position:absolute;bottom:0px;right:25px;  }
+	#main .foucs_photo .num li {
+		width:20px;line-height:20px;text-align:center;
+		font-family:"微软雅黑"; color: #FFFFFF; background: #444444; margin-right: 10px; border-radius:50%;cursor:pointer; float: left; 
+	}
+	#main .foucs_photo .num li.on { background: #FF7700; } /*当前项*/
+	
+	/*文章帮助区域*/
+	#main .area{}
+	
+	#main .path{
+		height:28px;
+		line-height: 28px;
+		margin:8px 0px;
+		padding:4px;
+	}
+	
+	/*左区域*/
+	#main .area_l{margin:5px;}
+	#main .area_l .box{
+		border:1px solid #ccc;
+		margin:4px 6px 10px 0px;
+		padding:0px 8px;
+		height:auto;
+	}
+	
+	/*左区域文章*/
+	#main .area_l .box h3,#main .area_r .box2 h3{
+		font-size: 14px;
+		height:30px;
+		line-height:30px;
+		color:#666;
+		position: relative;
+		background-color: #EEEEEE;
+		padding:2px 5px;
+	}
+	#main .area_l .box .list_help{
+		padding:2px 5px;
+		margin:3px;
+		font-size: 12px;
+		height:auto;
+		overflow:hidden;
+	}
+	#main .area_l .box .list_help h4{
+		font-size:15px;
+	}
+	#main .area_l .box .list_help h5{
+		padding-left: 34px;
+		font-size:12px;
+	}
+	
+	/*右区域*/
+	#main .area_r{
+		border:1px solid #ccc;
+		margin:4px 6px 10px 0px;
+		padding:0px 8px;
+		height:auto;
+	}
+	#main .area_r .article li{
+		margin:5px;
+		padding:5px;
+		border-bottom: 1px dashed #ddd;
+		position: relative;
+	}
+	/*文章列表时间靠右侧显示*/
+	#main .area_r .article li .right{
+		position:absolute;
+		right:2px;
+	}
+	/*右区域标题*/
+	#main .area_r .box2 h3{
+		font-size:15px;
+		padding:2px 5px;
+	}
+	
+	/*右区域文章详情*/
+	#main .area_r .box2>h2{
+		text-align: center;
+		font-size:18px;
+		font-weight: bold;
+		
+	}
+	#main .area_r .box2>p{
+		text-align: center;
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 5px;
+	}
+	#main .area_r .box2>.artcontent{
+		border-bottom: 1px solid #ddd;
+		padding:8px;
+	}
+	#main .area_r .box2>.next_page{
+		padding:8px;
+	}
+	
+	
+	/*页脚区域样式在common.css里面*/

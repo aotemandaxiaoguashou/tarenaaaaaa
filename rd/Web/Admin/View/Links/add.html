@@ -1,0 +1,42 @@
+<div class="PageContent">
+	<div class="accountInfo">
+		<p>添加链接</p>
+	</div>
+</div>
+<div id="pageContent"  layouth="60" style="overflow:auto;">
+	<!--callbackType/closeCurrent不能随便添加-->
+	<form action="__URL__/insert/navTabId/linkslist/callbackType/closeCurrent" method="post" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone);">
+		<table class="form_table">
+		<input type="hidden" name="id" value="{$vo.id}"/>
+			<tbody>
+				<tr>
+					<th>链接名称：</th>
+					<td><input type="text" value="" name="linksname" class="span2 required"></td>
+				</tr>
+				<tr>
+					<th>链接地址：</th>
+					<td><input type="text" value="" class="url"  name="urls" class="span2 required"></td>
+				</tr>
+				<tr>
+					<th>链接Lsogo：</th>
+					<td><input type="file" name="logo"></td>
+				</tr>
+				<tr><th></th><td class="gray"></td></tr>
+				<tr>
+						<th>是否前台显示</th>
+						<td>
+						<input type="radio" name="shows"  value="1"<if condition="$vo.shows eq 1">checked</if>/>启用
+						<input type="radio" name="shows" value="0"  <if condition="$vo.shows eq 0">checked</if>/>禁用</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+

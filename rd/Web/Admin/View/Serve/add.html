@@ -1,0 +1,55 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/serve_save/navTabId/servelist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>服务人:</dt>
+				<dd>
+					<select name="uid">
+						<option value="0">请选择婚礼人</option>
+						<volist name="list" id="cat">
+							<option name="uid">{$cat.name}</option>
+						</volist>
+					</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>服务类型:</dt>
+				<dd>
+					<input type="text" name="type"  class="required" >
+				</dd>
+			</dl>
+			<dl>
+				<dt>服务时间:</dt>
+				<dd>
+					<input type="text" name="s_time"  class="required" >
+				</dd>
+			</dl>
+			<dl>
+				<dt>支付方式:</dt>
+				<dd>
+					<input type="text" name="payment"  class="required" >
+				</dd>
+			</dl>
+			<dl>
+				<dt>服务语言:</dt>
+				<dd>
+					<input type="text" name="language"  class="required" >
+				</dd>
+			</dl>
+			<dl>
+				<dt>服务地区:</dt>
+				<dd><textarea type="text" name="area" class="required" value="" rows="3" cols="30"></textarea>
+					
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">添加</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

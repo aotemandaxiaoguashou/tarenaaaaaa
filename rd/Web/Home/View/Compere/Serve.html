@@ -1,0 +1,153 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>服务 - 主持人  - 易结网</title>
+</block>
+
+<block name="style">
+		<link rel="shortcut icon" href="http://easywed.cn/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/global.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/vendors.css">
+	<link charset="utf-8" rel="stylesheet" href="http://static.easywed.cn/dist/js/lib/laydate/need/laydate.css?141110"><link charset="utf-8" rel="stylesheet" href="http://static.easywed.cn/dist/js/lib/laydate/skins/molv/laydate.css?141110"></head>
+</block>
+<block name="eachContent">
+<div class="w pb20">
+    <div class="w pb20">
+    <!--标题-->
+    <div class="ui-nav-class  clx">
+	<ul class="fl">
+					<li><a href="" class="on">主持人</a></li>
+					<li><a href="__APP__/designer/index">婚礼造型</a></li>
+					<li><a href="__APP__/cameraman/index">婚礼摄像</a></li>
+					<li><a href="__APP__/assigner/index">场地布置</a></li>
+					<li><a href="__APP__/planner/index">婚礼策划</a></li>
+			</ul>
+</div>
+		
+<div class="w pb20">
+	<!--面包屑开始-->
+	<div class="ui-nav-crumbs pt10 text-overflow">
+		<a href="__URL__/index">首页</a><i>&gt;</i><a href="_URL__/index">找婚礼人</a><i>&gt;</i>服务
+	</div>
+	<!--面包屑结束-->
+	<!--主题内容开始-->
+	<div class="wrap clx pt20">
+		<div class="wrap-fl fl">
+		<!--婚礼人信息开始-->
+		<volist name="mod" id="vo">
+		<div class="author clx">
+	<div class="ui-photo c150-150 fl">
+		<img width="150" height="150" src="__PUBLIC__/Uploads/marriager/{$vo.pic}" alt="{$vo.name}">
+		<i class="hack"></i>
+	</div>
+
+	<div class="pl30 fl author-info pt16">
+		<div class="author-name">
+			<h2 class="text-overflow">{$vo.name}</h2>
+		</div>
+                <!--易结认证-->
+                <div class="vendors-easywed-rz mt10">
+                    <p>易结认证</p>
+                </div>            
+            		<div class="author-address pt10">
+						<span><i class="icons  icon-job-3"></i>主持人</span>
+					</div>
+
+		<div class="author-hit">
+			<p>
+				<i class="icons icon-19"></i>赞<i class="num">11</i>
+			</p>
+			<p>
+				<i class="icons icon-20"></i>浏览<i class="num">44</i>
+			</p>
+		</div>
+                <!--易结价-->
+                
+                
+                <!--普通-->
+                                    
+                                                <p class="vendors-easywed-price">易结价：￥4500</p>
+                            
+                     
+                
+	</div>
+		<div class="author-about fr pt16">
+		<h3 class="ui-h3 text-overflow">
+			关于我
+		</h3>
+		<!-- 关于我的内容,需要去HTML代码 -->		
+		<p class="pt10">
+	{$vo.detail}
+</p>
+	</div>
+	</div>
+		<!--婚礼人信息结束-->
+		<!--标签开始-->
+		<div class="ui-nav-big pt30">
+<!-- 
+如果有消息则给a里添加i
+高亮则给a.class = 'on'
+-->
+<ul class="clx">
+	<li>
+		<a href="__URL__/work/id/{$vo.id}">
+			作品<i>7</i>			<b class="arrow"></b>
+		</a>
+	</li>
+	<li>
+		<a href="__URL__/serve/id/{$vo.id}" class="on">
+			服务
+			<b class="arrow"></b>
+		</a>
+	</li>
+	<li>
+		<a href="__URL__/price/id/{$vo.id}">
+			报价
+			<b class="arrow"></b>
+		</a>
+	</li>
+	<li>
+		<a href="__URL__/special/id/{$vo.id}">
+			专栏<i></i>			<b class="arrow"></b>
+		</a>
+	</li>
+</ul>
+</div>
+</volist>		<!--标签结束-->
+		<!--服务内容开始-->		
+		<dl class="service-content pt20">
+			<dt>基本信息</dt>
+			<volist name="data" id="vos">
+			<dd>
+				<ul class="clx">
+									<li class="clx">
+							<p class="s-c-title">服务类别</p>
+							<p class="s-c-txt">{$vos.type}</p>
+					</li>
+										<li class="clx">
+							<p class="s-c-title">提供服务的地域范围</p>
+							<p class="s-c-txt">{$vos.area}</p>
+					</li>
+										<li class="clx">
+							<p class="s-c-title">支付方式？</p>
+							<p class="s-c-txt">{$vos.payment}</p>
+					</li>
+										<li class="clx">
+							<p class="s-c-title">服务时间</p>
+							<p class="s-c-txt">{$vos.s_time}</p>
+					</li>
+					<li class="clx">
+							<p class="s-c-title">服务语言</p>
+							<p class="s-c-txt">{$vos.language}</p>
+					</li>
+					    
+				</ul>
+			</dd>
+			</volist>
+		</dl>
+	<!--右侧信息开始-->
+	
+</div>
+</div>	
+</div>
+</div>	<!-- 加载全站js -->
+</block>		

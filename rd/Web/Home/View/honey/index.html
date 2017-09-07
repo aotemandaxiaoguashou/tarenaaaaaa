@@ -1,0 +1,124 @@
+<extend name="Public:layout" />
+<block name="title">
+	<title>一站式婚庆-蜜月攻略</title>
+</block>
+<block name="style">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/gonglue_channel.css">
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/head_divbycat_v6.css">
+<script type="text/javascript" src="__PUBLIC__/js/newhotel_index.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/myfocus-2.0.1.min.js"></script><!--引入库文件-->
+<script type="text/javascript" src="__PUBLIC__/js/mF_pconline.js"></script><!--引入风格文件-->
+<link  type="text/css" rel="stylesheet" href="__PUBLIC__/css/mF_pconline.css" /><!--引入风格css文件-->
+<style type='text/css'>
+	.page{
+		color:blue;
+		font-size:24px;
+		border:1px solid #FA5886;
+		margin-top:2px;
+		margin-bottom:2px;
+	}
+	.page a{
+		margin:8px;
+		color:#F53E71;
+	}
+
+</style>
+
+<script type="text/javascript"> 
+myFocus.set({ 
+    id:'boxID',//焦点图盒子ID 
+    pattern:'mF_pconline',//风格应用的名称 
+    time:3,//切换时间间隑(秒) 
+    trigger:'click',//触发切换模式:'click'(点击)/'mouseover'(悬停) 
+    width:1000,//设置图片区域宽度(像素) 
+    height:300,//设置图片区域高度(像素) 
+    txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏 
+}); 
+</script>
+
+</block>
+<block name="eachContent">
+  <div class="banner mb_25">
+    <div class="min_banner">
+		<div id="boxID"><!--焦点图盒子--> 
+		  <div  class=" pic">
+			<ul >
+			<volist name='alist' id='vo'>
+			  <li>
+				<img  style='width:1000px;height:300px' src="__PUBLIC__/Uploads/Ads/{$vo.pic}" alt="{$vo.adname}"></a>
+			  </li>
+			</volist>
+			</ul>
+		  </div>
+		</div>
+    </div>
+  </div>
+  <!-- end 首页轮播图 -->
+  <div class="wrap"> 
+    
+    <div class="tour_list tour_list_yellow threeCity">
+	
+	
+      <div class="partbox no_padding">
+        <div class="partbox_item">		  
+        </div>
+      </div>
+	  
+    </div>
+	<div class='page'></div>
+  </div>
+  <div id="test"></div>
+  <script>
+  
+	$('.page a[post-href]').live('click',function(){
+		$.cookie('page',$(this).attr('post-href'));
+		ajaxpage($(this).attr('post-href'));
+		
+	})
+	
+	$(function(){
+	
+
+		$.cookie('page',$.cookie('page')?$.cookie('page'):1)
+		
+		ajaxpage($.cookie('page'));
+	})
+	
+	
+  function ajaxpage(page){
+	var data={'page':page};
+		$.post('__CONTROLLER__/ajaxpage',data,function(data){
+		var list_Tpl='';
+			for(var i=0; i<data.length-1;i++){
+				var index=parseInt(i)+1;
+				list_Tpl+='<div class="part_list clearfix">\
+					<div class="pic"><a href="__CONTROLLER__/info/id/'+data[i].id+'"><img src="__PUBLIC__/'+data[i].pic+'" height="220" width="240"></a><span class="top"><i></i>'+index+'</span></div>\
+					<div class="des">\
+					  <div class="note_title"><i></i><em>'+data[i].area_name+'</em><span class="left_yh"></span><span>'+data[i].intro+'</span><span class="right_yh"></span></div>\
+					  <p class="mainmes mb_15">'+data[i].content+'</p>\
+					  <div class="about_line">\
+						<ul class="clearfix">\
+						  <li>\
+							<div class="pic"><a href="__CONTROLLER__/info/id/'+data[i].id+'"><img  src="__PUBLIC__/'+data[i].pic+'"></a></div>\
+							<div class="des">\
+							  <p class="note_title"><a target="_self" href="__CONTROLLER__/info/id/'+data[i].id+'" title='+data[i].title+'">'+data[i].title+'</a></p>\
+							  <p class="auther">来自：'+data[i].auther+'</a></p>\
+							</div>\
+						  </li>\
+						</ul>\
+					  </div>\
+					</div>\
+				  </div>';
+			}
+			$('.page').html(data[data.length-1]);
+			$('.partbox_item').html(list_Tpl);
+		},'json');
+  
+  }
+  
+  </script>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","tsina","bdysc","weixin","renren","tqq","kaixin001","tieba","douban","tsohu","iguba","twi","copy"],"bdPic":"","bdStyle":"0","bdSize":"16"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</block>
